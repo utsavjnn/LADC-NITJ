@@ -1,0 +1,23 @@
+.text-justify{
+    text-align: left;
+}
+.about-image{
+    height:250px;
+    width:100%;
+    align-items: center;
+}
+
+
+
+@media (max-width:575px)
+{
+.cimg{
+    height:250px;
+}
+}
+@media (min-width:576px)
+{
+    .cimg{
+        height:150px;
+    }  
+}
