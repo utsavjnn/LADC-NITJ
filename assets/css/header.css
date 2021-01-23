@@ -1,0 +1,20 @@
+.navbar{
+    background-color: aqua;
+    
+}
+
+.navcolor{
+    background-color: black;
+    text-align: centre;
+}
+
+.nav-link{
+   color: black !important;
+   font-weight: bold;
+   font-family: futura-pt;
+}
+
+.nav-link:hover{
+   color: white !important;
+   font-weight: bold;
+}
