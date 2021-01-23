@@ -7,6 +7,15 @@
     align-items: center;
 }
 
+.btn{
+    font-weight: bolder;
+   font-size:medium;
+    color: antiquewhite;
+    width:100%
+}
+.btn:hover{
+    color:antiquewhite;
+}
 
 
 @media (max-width:575px)
@@ -14,10 +23,19 @@
 .cimg{
     height:250px;
 }
+.btn{
+    width:70%;
+}
 }
 @media (min-width:576px)
 {
     .cimg{
         height:150px;
     }  
+}
+.card-text{
+    font-family: europa;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 17px;
 }
