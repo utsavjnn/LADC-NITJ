@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="css\header.css">
 <nav id="mainnavbar" class="navbar navbar-expand-lg navbar-light ">
     <a class="navbar-brand" href="#"></a>
-  <button onclick="myFunction()" id="menubutton" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <button onclick="hamburgerexpandtoggler()" id="menubutton" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarToggleExternalContent">
@@ -39,21 +39,4 @@
   </div>
 </nav>
 
-<script>
-    function myFunction() 
-    {
-       var element = document.getElementById("mainheading");
-       element.classList.toggle("maintexterase");
-       var element2 = document.getElementById("navbarToggleExternalContent");
-       var ham=document.getElementById("menubutton").getAttribute("aria-expanded");
-       console.log(ham);
-      if(ham==="false")
-      {
-        element2.classList.add("navcolor");
-      }
-       else
-       {
-       element2.classList.remove("navcolor");
-      }
-    }
-  </script>
+<script src="scripts\header.js"></script>
