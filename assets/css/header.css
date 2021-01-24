@@ -4,14 +4,15 @@
 }
 
 .navcolor{
-    background-color: black;
-    text-align: centre;
+    background-color: rgb(148, 34, 34);
+    text-align: left;
 }
 
 .nav-link{
+   margin-left: 5px;
    color: black !important;
    font-weight: bold;
-   font-family: futura-pt;
+   font-family: helvetica futura-pt;
 }
 
 .nav-link:hover{
