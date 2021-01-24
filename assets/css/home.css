@@ -107,16 +107,20 @@ p {
 
 
 .aboutimage{
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 20px;
-    height: 40vh;
-    width: 40vh;
+    height: 30vh;
+    width: 30vh;
 }
 
 .section-2btn{
+    margin: auto;
+    margin-top: 7%;
+    margin-bottom: 10%;
     text-align: center;
      height: 6vh;
      width: 27vh;
-     margin: auto;
      background-color: #df980c;
      letter-spacing: 3px;
      color: white;
