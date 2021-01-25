@@ -29,7 +29,7 @@ p{
     top: 0px;
     z-index: -2;
     height: 80vh;
-    width: 100vw;
+    width: 100%;
     filter: blur(3px);
     -webkit-filter: blur(3px);
 }
