@@ -1,3 +1,6 @@
+.josefine-sans{
+    font-family: Josefin Sans;
+}
 
 p{
     font-size: 1rem;
@@ -39,7 +42,16 @@ p{
     color: black;
     text-align: center;
     font-weight: bolder;
-    padding-top: 18%;
+    padding-top: 20vh;
+    font-family: Josefin Sans;
+    font-weight: 900;
+    transition: all 1s;
+    font-size: 4rem;
+}
+
+.maintext:hover{
+    transition: all 1s;
+    font-size: 4.5rem;
 }
 
 .section-2{

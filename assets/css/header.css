@@ -12,10 +12,11 @@
    margin-left: 5px;
    color: black !important;
    font-weight: bold;
-   font-family: helvetica futura-pt;
+   font-family: Josefin Sans;
 }
 
 .nav-link:hover{
    color: white !important;
    font-weight: bold;
 }
+
