@@ -1,41 +1,49 @@
-.text-justify{
-    text-align: left;
+.text-justify {
+  text-align: left;
 }
-.about-image{
-    height:250px;
-    width:100%;
-    align-items: center;
+.about-image {
+  height: 250px;
+  width: 100%;
+  align-items: center;
+}
+.mart-40 {
+  margin-top: 40px;
+}
+.marb-20 {
+  margin-bottom: 20px;
+}
+.mart-20 {
+  margin-top: 20px;
+}
+.marb-40 {
+  margin-bottom: 40px;
+}
+.btn {
+  font-weight: bolder;
+  font-size: medium;
+  color: antiquewhite;
+  width: 100%;
+}
+.btn:hover {
+  color: antiquewhite;
 }
 
-.btn{
-    font-weight: bolder;
-   font-size:medium;
-    color: antiquewhite;
-    width:100%
+@media (max-width: 575px) {
+  .cimg {
+    height: 250px;
+  }
+  .btn {
+    width: 70%;
+  }
 }
-.btn:hover{
-    color:antiquewhite;
+@media (min-width: 576px) {
+  .cimg {
+    height: 150px;
+  }
 }
-
-
-@media (max-width:575px)
-{
-.cimg{
-    height:250px;
-}
-.btn{
-    width:70%;
-}
-}
-@media (min-width:576px)
-{
-    .cimg{
-        height:150px;
-    }  
-}
-.card-text{
-    font-family: europa;
-    font-weight: 300;
-    font-style: normal;
-    font-size: 17px;
+.card-text {
+  font-family: europa;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 17px;
 }
