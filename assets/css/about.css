@@ -41,6 +41,13 @@
     height: 150px;
   }
 }
+@media (min-width: 1200px)
+{
+.col-xl-2 {
+    flex: 0 0 20%;
+    max-width: 20%;
+}
+}
 .card-text {
   font-family: europa;
   font-weight: 300;
