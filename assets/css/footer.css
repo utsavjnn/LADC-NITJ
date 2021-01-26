@@ -42,7 +42,10 @@
 .footer-links.inline li {
   display: inline-block;
 }
-
+.footer-col{
+ 
+  text-align: center;
+}
 @media (max-width: 991px) {
   .site-footer [class^='col-'] {
     margin-bottom: 30px;
