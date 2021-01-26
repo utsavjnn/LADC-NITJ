@@ -16,15 +16,7 @@
     "dependencies": {
       "ejs": "^3.1.5",
       "express": "^4.17.1",
-      "express-ejs-layouts": "^2.5.0",
-      "nodemon": "^2.0.7"
-    },
-    "repository": {
-      "type": "git",
-      "url": "git+https://github.com/shinigamicoder2000/LADC-NITJ.git"
-    },
-    "bugs": {
-      "url": "https://github.com/shinigamicoder2000/LADC-NITJ/issues"
-    },
-    "homepage": "https://github.com/shinigamicoder2000/LADC-NITJ#readme"
+      "express-ejs-layouts": "^2.5.0"
+    }
   }
+  
