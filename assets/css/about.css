@@ -44,6 +44,17 @@
 .card-text {
   font-family: europa;
   font-weight: 300;
-  font-style: normal;
   font-size: 17px;
+  text-align: left;
+}
+.card-btn{
+  position:absolute;
+  width:85%;
+  text-align:center;
+  bottom:20px;
+  align-self: center;
+  
+}
+.card-text{
+  margin-bottom:80px;
 }
