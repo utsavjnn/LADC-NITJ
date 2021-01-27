@@ -1,0 +1,20 @@
+.josefine-sans{
+    font-family: Josefin Sans;
+}
+
+body{
+    background:#f5f5f5;
+    margin-top:0px;
+}
+.top{
+    margin-top: 1.5rem;
+}
+.text-wrapper
+{
+    margin-top:20px;
+    font-size: 1.2rem;
+}
+
+p{
+    margin:0.1rem;
+}
