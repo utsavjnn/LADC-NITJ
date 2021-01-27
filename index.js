@@ -11,7 +11,7 @@ app.set('layout extractStyles',true);
 app.set('layout extractScripts',true);
 
 // use express router
-app.use('/',require('./routes') )
+app.use('/',require('./routes'))
 
 // setup view engine--ejs
 app.set('view engine', 'ejs');
