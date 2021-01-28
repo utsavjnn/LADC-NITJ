@@ -6,6 +6,7 @@
 .navcolor {
     background-color: rgb(148, 34, 34);
     text-align: left;
+    z-index: 1;
 }
 
 .nav-link {
