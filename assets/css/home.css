@@ -1,4 +1,5 @@
-.josefine-sans {
+
+.josefine-sans{
     font-family: Josefin Sans;
 }
 
@@ -46,7 +47,7 @@ p {
     font-size: 4rem;
 }
 
-.maintext:hover {
+.maintext:hover{
     transition: all 1s;
     font-size: 4.5rem;
 }

@@ -19,3 +19,15 @@
     color: white !important;
     font-weight: bold;
 }
+.nav-link{
+   margin-left: 5px;
+   color: black !important;
+   font-weight: bold;
+   font-family: Josefin Sans;
+}
+
+.nav-link:hover{
+   color: white !important;
+   font-weight: bold;
+}
+
