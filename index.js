@@ -1,4 +1,7 @@
 const express = require('express');
+
+const db = require('./config/mongoose');
+
 const app = express();
 const port = 8000;//when deployin to server we will change it to 80
 const expressLayouts = require('express-ejs-layouts');
