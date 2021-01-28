@@ -1,11 +1,11 @@
-const mongoose = require('mongoose');//require
+const mongoose = require('mongoose'); //require
 
-mongoose.connect('mongodb://localhost/ladc_db');//connected to db
+mongoose.connect('mongodb://localhost/ladc_db'); //connected to db
 
-const db = mongoose.connection;//this db is now our connection
+const db = mongoose.connection; //this db is now our connection
 
-db.on('error', console.error.bind(console, "Error in connecting to Database"));//event - error
+db.on('error', console.error.bind(console, "Error in connecting to Database")); //event - error
 
-db.once('open', function() {    //event-open
+db.once('open', function () { //event-open
     console.log('Successfully connected to LADC Database');
 })
