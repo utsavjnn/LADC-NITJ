@@ -1,21 +1,21 @@
-.navbar{
+.navbar {
     background-color: aqua;
-    
+
 }
 
-.navcolor{
+.navcolor {
     background-color: rgb(148, 34, 34);
     text-align: left;
 }
 
-.nav-link{
-   margin-left: 5px;
-   color: black !important;
-   font-weight: bold;
-   font-family: helvetica futura-pt;
+.nav-link {
+    margin-left: 5px;
+    color: black !important;
+    font-weight: bold;
+    font-family: Josefin Sans;
 }
 
-.nav-link:hover{
-   color: white !important;
-   font-weight: bold;
+.nav-link:hover {
+    color: white !important;
+    font-weight: bold;
 }
