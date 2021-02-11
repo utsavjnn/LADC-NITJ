@@ -23,6 +23,9 @@
 #email{
     height:50px;
 }
+#name{
+    height:50px;
+}
 .formbtn{
     margin-top: 6px;
     width:100%;
@@ -38,4 +41,12 @@
     padding-left:45px;
     padding-right:45px;
 
+}
+.postbtn{
+    width:40%;
+    margin-left: 30%;
+    margin-top:40px;
+}
+textarea{
+    width:100%;
 }

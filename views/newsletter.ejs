@@ -1,5 +1,20 @@
 <link rel="stylesheet" href="css/newsletter.css">
 <div class="container text-justify" style="margin-top: 130px; margin-bottom:130px;">
+
+  <!-- admin form -->
+  <div class="row justify-content-center mart-20">
+    <div class="col-12 col-sm-12 col-md-6">
+      <form action="/postnewsletter" method="POST">
+      <textarea name="newslettercontent" id="newslettercontent" cols="60" rows="10" placeholder="Newsletter Content"></textarea>
+    </div>
+    <div class="col-md-5 col-sm-12 col-12 newscol">
+       
+    <button type="submit" class="btn-lg btn-warning postbtn">Post</button>
+     </form>
+    </div>
+  </div>
+
+<!-- user form -->
   <div class="row justify-content-center mart-20">
     <div class="col-12 col-sm-12 col-md-5">
         <h3>Get the weekly email that delivers remarkable ideas and actionable insights</h3>
@@ -15,8 +30,10 @@
            <h4>Join 1M+ readers and add the free 3-2-1 Newsletter to your inbox.</h4>
          </div>
          <div class="forminput">
-            <input type="email" class="form-control" id="email" placeholder="Your Email">
+          <input type="text" class="form-control" id="name" placeholder="Name" name="name" required>
+            <input type="email" class="form-control" id="email" placeholder="Your Email" name="email" required>
             <button type="submit" class="btn btn-warning formbtn">Subscribe</button>
+            <div id="errormsg"><%=errormsg%></div>
             
          </div>
          <div class="formend">
@@ -27,4 +44,3 @@
     </div>
   </div>
   </div>
- 

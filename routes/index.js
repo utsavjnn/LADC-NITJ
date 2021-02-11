@@ -9,6 +9,6 @@ router.use('/membership',require('./membership'));
 router.use('/alumni',require('./alumni'));
 router.use('/blog',require('./blog'));
 router.use('/contact',require('./contact'));
-router.use('/newsletter',require('./newsletter'));
+router.use(require('./newsletter'));
 
 module.exports = router;
