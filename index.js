@@ -1,4 +1,9 @@
 const express = require('express');
+const bodyParser=require('body-parser');
+const session = require('express-session');
+const passport=require('passport');
+const mongoose=require('mongoose');
+const passportLocalMongoose=require('passport-local-mongoose');
 
 const db = require('./config/mongoose');
 
@@ -7,6 +12,24 @@ const port = 8000;//when deployin to server we will change it to 80
 const expressLayouts = require('express-ejs-layouts');
 
 app.use(express.static('./assets'));
+app.use(bodyParser.urlencoded({extended:true}));
+
+app.use(session({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: true,
+   
+  }));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+
+const Admin=require('./models/admin');
+passport.use(Admin.createStrategy());
+
+passport.serializeUser(Admin.serializeUser());
+passport.deserializeUser(Admin.deserializeUser());
 
 app.use(expressLayouts);
 //extract style and scripts from subpages into layout
