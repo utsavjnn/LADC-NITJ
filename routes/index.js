@@ -4,6 +4,7 @@ const homepageController = require('../controllers/homepage_controller')
 
 router.get('/',homepageController.homePage);
 router.use('/about', require('./about'));
+router.use('/admin', require('./admin'));
 router.use('/events',require('./events'));
 router.use('/membership',require('./membership'));
 router.use('/alumni',require('./alumni'));
