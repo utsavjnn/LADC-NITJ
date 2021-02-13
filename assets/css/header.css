@@ -1,12 +1,14 @@
 
+  
 .navbar {
     background-color: aqua;
-
+    height: 20vh;
 }
 
 .navcolor {
     background-color: rgb(148, 34, 34);
     text-align: left;
+    z-index: 1;
 }
 
 .nav-link {
@@ -21,4 +23,20 @@
     font-weight: bold;
 }
 
+.headerladclogo{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    height: 20vh;
+    width: 20vh;
+    transition: 1s;
+}
 
+.headerladclogo:hover{
+    height: 25vh;
+    width: 25vh;
+}
+
+.logodisappear{
+    display: none;
+}
