@@ -1,8 +1,12 @@
 const Admin = require("../models/admin");
 const passport = require("passport");
 const passportLocalMongoose = require("passport-local-mongoose");
+
 module.exports.home = (req, res) => {
-  res.render("admin", { title: "admin" });
+  if (req.isAuthenticated()) res.render("admin", { title: "admin" });
+  else {
+    res.redirect("/");
+  }
 };
 module.exports.signUp = function (req, res) {
   Admin.register(
@@ -35,4 +39,9 @@ module.exports.signIn = function (req, res) {
       });
     }
   });
+};
+
+module.exports.signOut = function (req, res) {
+  req.logout();
+  return res.redirect("/");
 };
