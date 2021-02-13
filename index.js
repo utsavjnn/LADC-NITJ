@@ -23,8 +23,14 @@ app.use(session({
 
 app.use(passport.initialize());
 app.use(passport.session());
-
-
+passport.setAuthentication=(req,res,next)=>{
+    if(req.isAuthenticated())
+    {
+        res.locals.user=req.user;
+    }
+    next();
+}
+app.use(passport.setAuthentication);
 const Admin=require('./models/admin');
 passport.use(Admin.createStrategy());
 
