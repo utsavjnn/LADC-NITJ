@@ -1,4 +1,5 @@
-module.exports.home = function(req,res){
+home = function(req,res){
+    
     if(req.query.msg)
     {
     return res.render('newsletter',{
@@ -15,7 +16,7 @@ else
 
 const Subscribers=require('../models/newsletter');
 console.log(Subscribers)
-module.exports.subscribe=function(req,res,next){
+subscribe=function(req,res,next){
     
 
         Subscribers.create({name:req.body.name,email:req.body.email},(err)=>{
@@ -36,21 +37,40 @@ module.exports.subscribe=function(req,res,next){
         }); 
 }
 
-const transporter=require('../config/mailing')
-module.exports.postnewsletter=function(req,res){
 
+async function sendMail(user,req){
+    let info = await transporter.sendMail({
+        from: 'ladcnitj2021@gmail.com', // sender address
+        to: user.email, // list of receivers
+        subject: "LADC NewsLetter", // Subject line
+        html:'<div style="background-color:red;">LADC NewsLetter</div><div>'+req.body.newslettercontent+'</div>' // html body
+      });
+console.log('email sent');
+}
+
+const transporter=require('../config/mailing')
+postnewsletter=function(req,res){
 
     Subscribers.find({},(err,result)=>{
         if(err)
         return console.log(err)
-        result.forEach((user)=>{
-             transporter.sendMail({
-                from: 'adevcodea@gmail.com', // sender address
-                to: user.email, // list of receivers
-                subject: "LADC NewsLetter", // Subject line
-                html:'<div style="background-color:red;">LADC NewsLetter</div><div>'+req.body.newslettercontent+'</div>' // html body
-              });
-        })
+        
+        for(let i=0;i<result.length;i++){
+           
+                sendMail(result[i],req).catch(e=>{
+                    console.log(e.message);
+                });  
+        
+            
+            }
+
     })
+    
     res.redirect('/newsletter');
 }
+
+module.exports={
+    home,
+    subscribe,
+    postnewsletter
+};
