@@ -1,3 +1,7 @@
+const transporter=require('../config/mailing')
+const Subscribers=require('../models/newsletter');
+
+
 home = function(req,res){
     
     if(req.query.msg)
@@ -14,8 +18,8 @@ else
 }
 }
 
-const Subscribers=require('../models/newsletter');
-console.log(Subscribers)
+
+// console.log(Subscribers)
 subscribe=function(req,res,next){
     
 
@@ -40,15 +44,14 @@ subscribe=function(req,res,next){
 
 async function sendMail(user,req){
     let info = await transporter.sendMail({
-        from: 'ladcnitj2021@gmail.com', // sender address
+        from: 'ladc@nitj.ac.in', // sender address
         to: user.email, // list of receivers
         subject: "LADC NewsLetter", // Subject line
         html:'<div style="background-color:red;">LADC NewsLetter</div><div>'+req.body.newslettercontent+'</div>' // html body
       });
-console.log('email sent');
+// console.log('email sent');
 }
 
-const transporter=require('../config/mailing')
 postnewsletter=function(req,res){
 
     Subscribers.find({},(err,result)=>{

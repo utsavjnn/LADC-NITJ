@@ -2,9 +2,11 @@ const express = require('express');
 const db = require('./config/mongoose');
 const bodyParser=require('body-parser');
 const app = express();
-const port = 8000;//when deployin to server we will change it to 80
+const dotenv = require('dotenv');
+dotenv.config();
+const port = process.env.LOCAL_PORT;//when deployin to server we will change it to 80
 const expressLayouts = require('express-ejs-layouts');
-
+console.log('port is ',process.env.LOCAL_PORT)
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
