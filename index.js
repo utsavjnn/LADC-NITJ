@@ -6,10 +6,16 @@ const mongoose = require("mongoose");
 const passportLocalMongoose = require("passport-local-mongoose");
 
 const db = require("./config/mongoose");
-
+const bodyParser=require('body-parser');
 const app = express();
-const port = 8000; //when deployin to server we will change it to 80
+const dotenv = require('dotenv');
+dotenv.config();
+const port = process.env.LOCAL_PORT;//when deployin to server we will change it to 80
 const expressLayouts = require("express-ejs-layouts");
+console.log('port is ',process.env.LOCAL_PORT)
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
 
 app.use(express.static("./assets"));
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -41,6 +47,7 @@ app.use(expressLayouts);
 //extract style and scripts from subpages into layout
 app.set("layout extractStyles", true);
 app.set("layout extractScripts", true);
+
 
 // use express router
 app.use("/", require("./routes"));
