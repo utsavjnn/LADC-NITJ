@@ -2,11 +2,28 @@
 .navbar {
     background-color: aqua;
 
+  
+.navbar {
+    background-color: aqua;
+    height: 20vh;
 }
 
 .navcolor {
     background-color: rgb(148, 34, 34);
     text-align: left;
+    z-index: 1;
+}
+
+.nav-link {
+    margin-left: 5px;
+    color: black !important;
+    font-weight: bold;
+    font-family: Josefin Sans;
+}
+
+.nav-link:hover {
+    color: white !important;
+    font-weight: bold;
 }
 
 .nav-link {
@@ -22,3 +39,20 @@
 }
 
 
+.headerladclogo{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    height: 20vh;
+    width: 20vh;
+    transition: 1s;
+}
+
+.headerladclogo:hover{
+    height: 25vh;
+    width: 25vh;
+}
+
+.logodisappear{
+    display: none;
+}
