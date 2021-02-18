@@ -21,18 +21,18 @@
             <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
             
           </div>
-                <button type="submit" class="btn btn-primary ml-4 btn-width">Submit</button>
+                <button type="submit" class="footerbtn ">Submit</button>
         </form>
         
         <%} else {%>
           <form action="/admin" method="GET">
             
-                  <button type="submit" class="btn btn-primary ml-4 btn-width">Go To Dashboard</button>
+                  <button type="submit" class="footerbtn">Go To Dashboard</button>
           </form>
           
           <form action="/admin/sign-out" method="GET">
             
-            <button type="submit" class="btn btn-danger ml-4 btn-width">Sign Out</button>
+            <button type="submit" class="footerbtn">Sign Out</button>
             </form>
 
           <% }%>

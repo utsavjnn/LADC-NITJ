@@ -56,11 +56,22 @@
 }
 .card-btn{
   position:absolute;
-  width:85%;
+  width:80%;
   text-align:center;
   bottom:20px;
-  align-self: center;
+  margin: auto;
+  background-color: #df980c;
+  letter-spacing: 3px;
+  color: white;
+  font-family: futura-pt;
+  font-size: 1rem;
+  font-weight: bold;
+  border-color: #df980c;
+  border-radius: 3px;
   
+}
+.card-btn:hover{
+  background-color: #d49f34;
 }
 .card-text{
   margin-bottom:80px;

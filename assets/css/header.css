@@ -1,39 +1,33 @@
 
   
 .navbar {
-    background-color: aqua;
+    background-color: #5d0e0e;
     height: 20vh;
 }
 
+.active{
+    color: yellow !important;
+}
+
 .navcolor {
-    background-color: rgb(148, 34, 34);
+    background-color: #5d0e0e;
     text-align: left;
     z-index: 1;
 }
 
 .nav-link {
     margin-left: 5px;
-    color: black !important;
+    color: white !important;
     font-weight: bold;
     font-family: Josefin Sans;
 }
 
 .nav-link:hover {
-    color: white !important;
+    color: yellow !important;
     font-weight: bold;
 }
 
-.nav-link {
-    margin-left: 5px;
-    color: black !important;
-    font-weight: bold;
-    font-family: Josefin Sans;
-}
 
-.nav-link:hover {
-    color: white !important;
-    font-weight: bold;
-}
 
 
 .headerladclogo{
