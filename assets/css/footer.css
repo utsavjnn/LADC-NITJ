@@ -118,17 +118,18 @@
   text-align: center;
   height: 6vh;
   width: 27vh;
-  background-color: #df980c;
   letter-spacing: 3px;
+  background-color: transparent;
   color: white;
   font-family: futura-pt;
   font-size: 1rem;
   font-weight: bold;
-  border-color: #df980c;
+  border-color: white;
   border-radius: 3px;
 }
 
 
 .footerbtn:hover {
-  background-color: #d49f34;
+  background-color: white;
+  color: black;
 }
