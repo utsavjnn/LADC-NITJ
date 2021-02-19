@@ -1,0 +1,64 @@
+#mheading{
+    display: block;
+    text-align: center;
+    margin: auto;
+    text-align: centre;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    font-family: Josefin Sans;
+}
+
+#formdiv{
+    margin-top: 50px;
+    height: 690px;
+}
+
+.fieldcontainer{
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+.fieldcontainer1{
+    height: 130px;
+    margin-bottom: 10px;
+}
+
+.field{
+    display: inline-block;
+    width: 52%;
+    text-align: left;
+    float: right;
+}
+
+.fieldlabel{
+    display: inline-block;
+    width: 45%;
+    text-align: right;
+    float: left;
+    font-size: 1.2rem;
+    margin-right: 3%;
+}
+
+
+.submitbtn{
+    display: block;
+    margin: auto;
+    margin-top: 35px;
+    background-color: #df980c;
+  letter-spacing: 3px;
+  color: white;
+  font-family: futura-pt;
+  font-size: 1rem;
+  font-weight: bold;
+  border-color: #df980c;
+  border-radius: 3px;
+  height: 40px;
+  width: 20%;
+}
+
+
+.submitbtn:hover{
+    
+    border-color: #df980c;
+    background-color: #d49f34
+  }
