@@ -26,8 +26,7 @@ function getAlumniList()
     url:`http://localhost:8000/admin/alumni-admin`,
     type:"GET",
     success:function(alumnis){
-    //   document.getElementById("all-alumnis").innerHTML = "";
-    //   var ul = document.getElementById("all-alumnis");
+
     const container = document.getElementById("list");
       alumnis.forEach(alumni => {
             const card = document.createElement('div');

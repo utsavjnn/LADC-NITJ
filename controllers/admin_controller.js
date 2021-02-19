@@ -10,13 +10,13 @@ module.exports.home = (req, res) => {
   }
 };
 module.exports.alumniHome=(req,res)=>{
-  // if (req.isAuthenticated())
-  // {
+  if (req.isAuthenticated())
+  {
     res.render("adminAlumni", { title: "Admin Alumni" });
-  // }
-  // else {
+  }
+  else {
     res.redirect("/");
-  // }
+  }
 }
 module.exports.signUp = function (req, res) {
   Admin.register(
