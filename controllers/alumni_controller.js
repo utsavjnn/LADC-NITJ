@@ -23,7 +23,7 @@ async function addAlumni(req,res){
 
 async function getAllAlumni(req,res){
     try {
-        let alumnis = await Alumni.find({});
+        let alumnis = await Alumni.find({approve:true});
         res.status(200).send(alumnis)
     //    return res.render('alumni',{
     //        data:alumnis
@@ -37,8 +37,8 @@ async function getAllAlumni(req,res){
 async function getAlumniByBatch(req,res){
     try {
         // console.log('requies is ',req.params.batch);
-        console.log("request is ",req.params.batch);
-        let alumnis = await Alumni.find({batch:req.params.batch});
+        // console.log("request is ",req.params.batch);
+        let alumnis = await Alumni.find({batch:req.params.batch,approve:true});
         res.status(200).send(alumnis)
         // console.log('data is',{title:"alumni",
         // data:alumnis})

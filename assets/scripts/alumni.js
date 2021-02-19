@@ -1,4 +1,5 @@
-
+let user = localStorage.getItem('user-type');
+console.log('user is ',user);
 function getAlumniList(batch)
 {
   $.ajax({
