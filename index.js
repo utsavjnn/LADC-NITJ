@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 const passportLocalMongoose = require("passport-local-mongoose");
 
 const db = require("./config/mongoose");
-const bodyParser=require('body-parser');
+// const bodyParser=require('body-parser');
 const app = express();
 const dotenv = require('dotenv');
 dotenv.config();
