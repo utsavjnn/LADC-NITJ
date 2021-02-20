@@ -24,14 +24,12 @@
 }
 
 .field{
-    display: inline-block;
     width: 52%;
     text-align: left;
     float: right;
 }
 
 .fieldlabel{
-    display: inline-block;
     width: 45%;
     text-align: right;
     float: left;
