@@ -7,8 +7,8 @@
 <footer class="site-footer">
   <div class="container ">
     <div class="row">
-      <div class="col-sm-12 col-md-6">
-        <h6>Admin</h6>
+      <div class="col-12 col-sm-12 col-md-6">
+        <h6 class="ml-3">Admin</h6>
         <% if(!locals.user) {%>
         <form action="/admin/sign-in" method="POST">
           <div class="form-group col-md-6">
@@ -38,7 +38,7 @@
           <% }%>
       </div>
 
-      <div class="col-xs-3 col-sm-3 col-md-3 footer-col">
+      <div class="col-xs-3 col-sm-6 col-md-3 footer-col">
         <h6>Quick Links</h6>
         <ul class="footer-links">
           <li><a href="/about">About Us</a></li>
@@ -47,11 +47,11 @@
         </ul>
       </div>
 
-      <div class=" footer-col col-xs-3 col-sm-3 col-md-3">
+      <div class=" footer-col col-xs-3 col-sm-6 col-md-3">
         <h6>Contact Us</h6>
         <ul class="footer-links">
           <li>Mail us at:</li>
-          <li> <a href="mailto:Ladc@nitj.ac.in">Ladc@nitj.ac.in</a></li>
+          <li> <a href="mailto:ladc@nitj.ac.in">ladc@nitj.ac.in</a></li>
         </ul>
       </div>
     </div>
