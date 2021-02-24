@@ -20,6 +20,7 @@ body{
 }
 .resize{
     height: 250px;
+    width: 100%;
 }
 
 .event-time li {
