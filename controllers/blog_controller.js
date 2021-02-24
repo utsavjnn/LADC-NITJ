@@ -1,5 +1,5 @@
 module.exports.home = function(req,res){
     return res.render('blog',{
-        title:"blog"
+        title:"Blog"
     });
 }
