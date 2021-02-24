@@ -8,7 +8,7 @@
   padding: 45px 0 20px;
   font-size: 15px;
   line-height: 24px;
-  color: #737373;
+  color: #bbb;
   margin-bottom: 0%;
 }
 .site-footer hr {
@@ -110,6 +110,28 @@
   margin-top: 30%;
 }
 
-.btn-width{
-  display:inline-block;
+
+.footerbtn {
+  margin: auto;
+  margin-top: 7%;
+  margin-bottom: 10%;
+  margin-left: 1rem;
+  text-align: center;
+  height: 6vh;
+  width: 27vh;
+  letter-spacing: 3px;
+  background-color: transparent;
+  color: white;
+  font-family: futura-pt;
+  font-size: 1rem;
+  font-weight: bold;
+  border-color: white;
+  border-radius: 3px;
+}
+
+
+.footerbtn:hover {
+  background-color: white;
+  color: black;
+  cursor: pointer;
 }

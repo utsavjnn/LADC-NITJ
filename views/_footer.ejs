@@ -7,8 +7,8 @@
 <footer class="site-footer">
   <div class="container ">
     <div class="row">
-      <div class="col-sm-12 col-md-6">
-        <h6>Admin</h6>
+      <div class="col-12 col-sm-12 col-md-6">
+        <h6 class="ml-3">Admin</h6>
         <% if(!locals.user) {%>
         <form action="/admin/sign-in" method="POST">
           <div class="form-group col-md-6">
@@ -21,24 +21,24 @@
             <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
             
           </div>
-                <button type="submit" class="btn btn-primary ml-4 btn-width">Submit</button>
+                <button type="submit" class="footerbtn ">Submit</button>
         </form>
         
         <%} else {%>
           <form action="/admin" method="GET">
             
-                  <button type="submit" class="btn btn-primary ml-4 btn-width">Go To Dashboard</button>
+                  <button type="submit" class="footerbtn">Go To Dashboard</button>
           </form>
           
           <form action="/admin/sign-out" method="GET">
             
-            <button type="submit" class="btn btn-danger ml-4 btn-width">Sign Out</button>
+            <button type="submit" class="footerbtn">Sign Out</button>
             </form>
 
           <% }%>
       </div>
 
-      <div class="col-xs-3 col-sm-3 col-md-3 footer-col">
+      <div class="col-xs-3 col-sm-6 col-md-3 footer-col">
         <h6>Quick Links</h6>
         <ul class="footer-links">
           <li><a href="/about">About Us</a></li>
@@ -47,11 +47,11 @@
         </ul>
       </div>
 
-      <div class=" footer-col col-xs-3 col-sm-3 col-md-3">
+      <div class=" footer-col col-xs-3 col-sm-6 col-md-3">
         <h6>Contact Us</h6>
         <ul class="footer-links">
-          <li>Drop your mail at:</li>
-          <li>Ladc@nitj.ac.in</li>
+          <li>Mail us at:</li>
+          <li> <a href="mailto:ladc@nitj.ac.in">ladc@nitj.ac.in</a></li>
         </ul>
       </div>
     </div>
