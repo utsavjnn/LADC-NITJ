@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 const passportLocalMongoose = require("passport-local-mongoose");
 
 const db = require("./config/mongoose");
-// const bodyParser=require('body-parser');
+
 const app = express();
 const dotenv = require('dotenv');
 dotenv.config();
@@ -56,7 +56,7 @@ app.use("/", require("./routes"));
 app.set("view engine", "ejs");
 app.set("views", "./views");
 
-app.listen(port, function (err) {
+app.listen(port || 8000, function (err) {
   if (err) {
     return console.log(`Error in running the server: ${err}`);
   }

@@ -115,3 +115,20 @@ body{
 .margin-10px-right {
     margin-right: 10px;
 }
+
+.rmbtn{
+    background-color: #df980c;
+  letter-spacing: 3px;
+  color: white;
+  font-family: futura-pt;
+  font-size: 1rem;
+  font-weight: bold;
+  border-color: #df980c;
+  border-radius: 3px;
+}
+
+.rmbtn:hover{
+    
+  border-color: #df980c;
+  background-color: #d49f34
+}
