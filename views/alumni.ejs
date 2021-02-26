@@ -1,1 +1,66 @@
-<h1> <%= title %> Home Page</h1>
+
+<link rel="stylesheet" href="css/alumni.css">
+
+
+<div class="container min-ht">
+
+<div>
+    <h3 class="heading">Add new alumni</h3>
+</div>
+<div class="form-container">
+ <form action="/alumni/add-alumni" method="POST">
+    <div class="form-group col-md-6">
+      <label for="name">Name</label>
+      <input type="text" name="name" class="form-control"   placeholder="Enter Name">
+
+    </div>
+    <div class="form-group col-md-6">
+      <label for="email">Email</label>
+      <input type="email" name="email" class="form-control"  placeholder="Email">
+      
+    </div>
+    <div class="form-group col-md-6">
+        <label for="batch">Linkedin</label>
+        <input type="text" name="linkedin" class="form-control"  placeholder="Linkedin Profile">
+        
+      </div>
+      <div class="form-group col-md-6">
+        <label for="email">Batch</label>
+        <input type="text" name="batch" class="form-control"  placeholder="Batch">
+        
+      </div>
+          <button type="submit" class="btn btn-primary ml-4">Submit</button>
+  </form>
+</div>
+
+<div class="form-container">
+    <form >
+        <label for="Batch">Choose a batch:</label>
+        <select name="batch" id="batch" onchange='this.form.submit()'>
+            <option value="all" >All</option>
+            <option value="2013">2013</option>
+            <option value="2014">2014</option>
+            <option value="2015">2015</option>
+          <option value="2016">2016</option>
+          <option value="2017">2017</option>
+          <option value="2018">2018</option>
+          <option value="2019">2019</option>
+          <option value="2020">2020</option>
+        </select>
+        <br><br>
+        <!-- <input type="submit" value="Submit" id="submitbtn"> -->
+        <!-- <noscript><input type="submit" value="Submit" id="submitbtn"></noscript> -->
+      </form>
+
+      <ul id="all-alumnis">
+
+      </ul>
+</div>
+ 
+</div>
+
+
+<script defer src="scripts\alumni.js"></script>
+
+
+

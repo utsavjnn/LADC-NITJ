@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');//require
 
-mongoose.connect('mongodb://localhost:27017/ladc_db');//connected to db
+mongoose.connect('mongodb://localhost:27017/ladc_db',{useFindAndModify: false});//connected to db
 
 const db = mongoose.connection;//this db is now our connection
 

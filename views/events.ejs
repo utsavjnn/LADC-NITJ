@@ -23,6 +23,7 @@
           Read More
         </button>
 
+
         <!-- Modal -->
         <div class="modal fade" id="<%= allEvents[i].id %>" tabindex="-1" role="dialog"
           aria-labelledby="exampleModalLongTitle" aria-hidden="true">
@@ -52,6 +53,7 @@
         <% } else { %>
           <img src="https://i.pinimg.com/736x/6d/e9/1c/6de91c11a6c674a79cf315fe1929c135.jpg" alt="eventimage" class="resize">
          <% } %>
+
 
         <div class="events-date">
           <div class="font-size28"><%= allEvents[i].day %></div>
@@ -120,6 +122,5 @@
   <% if(locals.user) {%>
   <a href="/addevent" style="text-decoration: none;"><button type="button" class="addeventbtn josefine-sans">ADD EVENT</button></a>
   <% } %>
-
 
 </div>
