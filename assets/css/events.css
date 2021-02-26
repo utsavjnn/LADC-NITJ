@@ -11,17 +11,21 @@ body{
 .events-date {
     text-align: center;
     position: absolute;
-    right: 30px;
-    top: 30px;
+    right: 0px;
+    top: 0px;
     background-color: rgba(25, 47, 89, 0.9);
     color: #fff;
     padding: 12px 20px 8px 20px;
     text-transform: uppercase
 }
+.resize{
+    height: 250px;
+    width: 100%;
+}
 
 .event-time li {
     display: inline-block;
-    margin-right: 20px
+    margin-right: 20px;
 }
 
 .event-time li:last-child {
@@ -117,6 +121,7 @@ body{
 }
 
 .rmbtn{
+    height: 40px;
     background-color: #df980c;
   letter-spacing: 3px;
   color: white;
@@ -131,4 +136,28 @@ body{
     
   border-color: #df980c;
   background-color: #d49f34
+
 }
+
+.addeventbtn{
+    display: block;
+    margin: auto;
+    background-color: #df980c;
+  letter-spacing: 3px;
+  color: white;
+  font-family: futura-pt;
+  font-size: 1rem;
+  font-weight: bold;
+  border-color: #df980c;
+  border-radius: 3px;
+  height: 40px;
+}
+
+
+.addeventbtn:hover{
+    border-color: #df980c;
+    background-color: #d49f34
+  }
+
+
+

@@ -7,13 +7,13 @@ home = function(req,res){
     if(req.query.msg)
     {
     return res.render('newsletter',{
-        title:"newsletter",errormsg:req.query.msg
+        title:"Newsletter",errormsg:req.query.msg
     });
 }
 else
 {
      return res.render('newsletter',{
-        title:"newsletter",errormsg:""
+        title:"Newsletter",errormsg:""
     });
 }
 }
