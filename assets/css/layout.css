@@ -8,6 +8,10 @@ body{
     
 }
 
+::selection {
+    background: rgba(0, 0, 0, 0.99);
+    color: #FFF;
+ }
 .josefine-sans {
     font-family: Josefin Sans;
   }

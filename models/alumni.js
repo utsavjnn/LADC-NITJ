@@ -17,8 +17,11 @@ const alumniSchema=new mongoose.Schema({
     batch:{
         type:String,
         required:true
+    },
+    approve:{
+        type:Boolean,
+        default:false
     }
-
 });
 
 const Alumni=mongoose.model('Alumni',alumniSchema);
