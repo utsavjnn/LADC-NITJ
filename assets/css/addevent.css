@@ -24,20 +24,12 @@
 }
 
 .field{
-<<<<<<< HEAD
-=======
-    display: inline-block;
->>>>>>> 89a10b4 (Added the events backend functionality)
     width: 52%;
     text-align: left;
     float: right;
 }
 
 .fieldlabel{
-<<<<<<< HEAD
-=======
-    display: inline-block;
->>>>>>> 89a10b4 (Added the events backend functionality)
     width: 45%;
     text-align: right;
     float: left;
