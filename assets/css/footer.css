@@ -115,6 +115,7 @@
   margin: auto;
   margin-top: 7%;
   margin-bottom: 10%;
+  margin-left: 6%;
   text-align: center;
   height: 6vh;
   width: 27vh;
@@ -132,5 +133,4 @@
 .footerbtn:hover {
   background-color: white;
   color: black;
-
 }
