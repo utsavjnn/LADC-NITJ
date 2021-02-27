@@ -6,10 +6,6 @@ const mongoose = require("mongoose");
 const passportLocalMongoose = require("passport-local-mongoose");
 
 const db = require("./config/mongoose");
-<<<<<<< HEAD
-=======
-
->>>>>>> f8dd10b69daf259a3a07cdb9124e35236b84813a
 const app = express();
 const dotenv = require('dotenv');
 dotenv.config();
