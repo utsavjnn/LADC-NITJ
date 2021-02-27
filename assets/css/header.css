@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
   
 .navbar {
@@ -12,15 +11,6 @@
 
 .navcolor {
     background-color: #5d0e0e;
-=======
-.navbar {
-    background-color: aqua;
-
-}
-
-.navcolor {
-    background-color: rgb(148, 34, 34);
->>>>>>> 2545140 (Formatting of files done, removed extra spaces and used beautify vscode extension to increase code readability)
     text-align: left;
     z-index: 1;
 }
@@ -32,6 +22,7 @@
     font-family: Josefin Sans;
 }
 
+<<<<<<< HEAD
 .nav-link:hover {
     color: yellow !important;
     font-weight: bold;
@@ -63,10 +54,16 @@
     color: black !important;
     font-weight: bold;
     font-family: Josefin Sans;
+=======
+.nav-link{
+   margin-left: 5px;
+   color: black !important;
+   font-weight: bold;
+   font-family: Josefin Sans;
+>>>>>>> 4a01a76 (Adding a little style)
 }
 
 .nav-link:hover {
     color: white !important;
     font-weight: bold;
 }
->>>>>>> 2545140 (Formatting of files done, removed extra spaces and used beautify vscode extension to increase code readability)

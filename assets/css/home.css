@@ -44,7 +44,7 @@ p {
     font-weight: 900;
     transition: all 1s;
     font-size: 4rem;
-<<<<<<< HEAD
+
 }
 
 .maintext:hover {
@@ -52,7 +52,10 @@ p {
     font-size: 4.5rem;
 }
 
-=======
+
+.maintext:hover{
+    transition: all 1s;
+    font-size: 4.5rem;
 }
 
 .maintext:hover {
@@ -60,7 +63,6 @@ p {
     font-size: 4.5rem;
 }
 
->>>>>>> 2545140 (Formatting of files done, removed extra spaces and used beautify vscode extension to increase code readability)
 .section-2 {
     text-align: center;
 }
@@ -90,7 +92,6 @@ p {
 
 
 .aboutimage {
-<<<<<<< HEAD
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 20px;
@@ -118,8 +119,6 @@ p {
 
 
 .aboutimage{
-=======
->>>>>>> 2545140 (Formatting of files done, removed extra spaces and used beautify vscode extension to increase code readability)
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 20px;
