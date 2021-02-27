@@ -7,9 +7,12 @@ const passportLocalMongoose = require("passport-local-mongoose");
 
 const db = require("./config/mongoose");
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> cdec7fe (Corrected the header css file)
+=======
+>>>>>>> 59ef3de (Updating changes)
 const app = express();
 const dotenv = require('dotenv');
 dotenv.config();
