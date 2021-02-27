@@ -29,7 +29,6 @@
 
 
 
-
 .headerladclogo{
     position: absolute;
     top: 5px;
@@ -47,8 +46,3 @@
 .logodisappear{
     display: none;
 }
-
-.active{
-    color:yellow !important;
-}
-
