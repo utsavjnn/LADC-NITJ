@@ -11,6 +11,7 @@
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         <a class="nav-link <%= title == "LADC-NITJ" ? "active" : "" %>" href="/">HOME</a>
       </li>
@@ -22,6 +23,12 @@
       <li class="nav-item">
         <a class="nav-link" href="/about">ABOUT</a>
 >>>>>>> 2511c5c (Made frontend of all pages uniform to homepage i.e. button styles and updated navbar style)
+=======
+        <a class="nav-link <%= title == "LADC-NITJ" ? "active" : "" %>" href="/">HOME</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link <%= title == "About" ? "active" : "" %>" href="/about">ABOUT</a>
+>>>>>>> 8676f2f (Added navbar active link functionality)
       </li>
       <li class="nav-item">
         <a class="nav-link <%= title == "Events" ? "active" : "" %>" href="/events">EVENTS</a>
@@ -39,6 +46,7 @@
       </li> -->
       <li class="nav-item">
         <a class="nav-link <%= title == "Membership" ? "active" : "" %>" href="/membership">MEMBERSHIP</a>
+<<<<<<< HEAD
       </li>
       <li class="nav-item">
         <a class="nav-link <%= title == "Alumni" ? "active" : "" %>" href="/alumni">ALUMNI</a>
@@ -48,10 +56,22 @@
       </li>
       <li class="nav-item">
         <a class="nav-link <%= title == "Contact" ? "active" : "" %>" href="/contact">CONTACT</a>
+=======
+      </li>
+      <li class="nav-item">
+        <a class="nav-link <%= title == "Alumni" ? "active" : "" %>" href="/alumni">ALUMNI</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link <%= title == "Newsletter" ? "active" : "" %>" href="/newsletter">NEWSLETTER</a>
+>>>>>>> 8676f2f (Added navbar active link functionality)
       </li>
       <% if(locals.user) {%>
       <li class="nav-item">
+<<<<<<< HEAD
         <a class="nav-link " href="/admin/alumni">Alumni Approve</a>
+=======
+        <a class="nav-link <%= title == "Contact" ? "active" : "" %>" href="/contact">CONTACT</a>
+>>>>>>> 8676f2f (Added navbar active link functionality)
       </li>
       <%} %>
     </ul>
