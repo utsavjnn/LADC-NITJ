@@ -19,7 +19,6 @@
           <%= allEvents[i].desc %>
         </p>
         <!-- <a class="butn small margin-10px-top md-no-margin-top" href="event-details.html">Read More <i class="fas fa-long-arrow-alt-right margin-10px-left"></i></a> -->
-
         <button type="button" class="rmbtn" data-toggle="modal" data-target="#<%= allEvents[i].id %>">
           Read More
         </button>
@@ -44,21 +43,24 @@
               </div>
             </div>
           </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
     <div class="col-lg-5 order-1 order-lg-2">
       <div class="position-relative right-align-img">
-        <img src="https://via.placeholder.com/450x280/87CEFA/000000" alt="" class="resize">
+        <% if(allEvents[i].imageLink!=""){  %>
+          <img src="<%= allEvents[i].imageLink%>" alt="eventimage" class="resize">
+        <% } else { %>
+          <img src="https://i.pinimg.com/736x/6d/e9/1c/6de91c11a6c674a79cf315fe1929c135.jpg" alt="eventimage" class="resize">
+         <% } %>
+
+
         <div class="events-date">
           <div class="font-size28"><%= allEvents[i].day %></div>
           <div class="font-size14"><%= allEvents[i].month %></div></div>
       </div>
     </div>
   </div>
-  
   <% } else { %>
   <!-- start event block -->
   <div class="row align-items-center event-block no-gutters margin-40px-bottom">

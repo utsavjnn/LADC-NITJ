@@ -1,5 +1,4 @@
 
-
 function hamburgerexpandtoggler() 
 {
   var logoimage=document.getElementById("logoimage");

@@ -44,18 +44,6 @@ p {
     font-weight: 900;
     transition: all 1s;
     font-size: 4rem;
-
-}
-
-.maintext:hover {
-    transition: all 1s;
-    font-size: 4.5rem;
-}
-
-
-.maintext:hover{
-    transition: all 1s;
-    font-size: 4.5rem;
 }
 
 .maintext:hover {
@@ -110,38 +98,7 @@ p {
     letter-spacing: 3px;
     color: white;
     font-family: futura-pt;
-<<<<<<< HEAD
-
     font-size: 1rem;
-    font-weight: bold;
-    border-color: #df980c;
-    border-radius: 3px;
-}
-
-
-.aboutimage{
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 20px;
-    height: 30vh;
-    width: 30vh;
-}
-
-.section-2btn {
-    margin: auto;
-    margin-top: 7%;
-    margin-bottom: 10%;
-    text-align: center;
-    height: 6vh;
-    width: 27vh;
-    background-color: #df980c;
-    letter-spacing: 3px;
-    color: white;
-    font-family: futura-pt;
-    font-size: 0.5rem;
-=======
-    font-size: 1rem;
->>>>>>> 2511c5c (Made frontend of all pages uniform to homepage i.e. button styles and updated navbar style)
     font-weight: bold;
     border-color: #df980c;
     border-radius: 3px;
@@ -149,9 +106,5 @@ p {
 
 
 .section-2btn:hover {
-    font-size: 1rem;
-    font-weight: bold;
-    border-color: #df980c;
-    border-radius: 3px;
+    background-color: #d49f34;
 }
-
