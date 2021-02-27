@@ -18,22 +18,10 @@
 .marb-40 {
   margin-bottom: 40px;
 }
-.btn {
-  font-weight: bolder;
-  font-size: medium;
-  color: antiquewhite;
-  width: 100%;
-}
-.btn:hover {
-  color: antiquewhite;
-}
 
 @media (max-width: 575px) {
   .cimg {
     height: 250px;
-  }
-  .btn {
-    width: 70%;
   }
 }
 @media (min-width: 576px) {
@@ -48,6 +36,11 @@
     max-width: 20%;
 }
 }
+
+a:hover{
+  text-decoration: none ;
+  color: white;
+}
 .card-text {
   font-family: europa;
   font-weight: 300;
@@ -56,6 +49,7 @@
 }
 .card-btn{
   position:absolute;
+  height: 40px;
   width:80%;
   text-align:center;
   bottom:20px;
@@ -64,11 +58,11 @@
   letter-spacing: 3px;
   color: white;
   font-family: futura-pt;
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-weight: bold;
   border-color: #df980c;
   border-radius: 3px;
-  
+  text-decoration: none;
 }
 .card-btn:hover{
   background-color: #d49f34;
@@ -153,7 +147,7 @@
   transition: background-color 0.6s ease;
 }
 
-.active, .dot:hover {
+.dot:hover {
   background-color: #717171;
 }
 
