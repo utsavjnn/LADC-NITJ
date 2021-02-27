@@ -48,27 +48,21 @@ p {
 }
 
 .maintext:hover {
-<<<<<<< HEAD
     transition: all 1s;
     font-size: 4.5rem;
 }
 
 
 .maintext:hover{
-=======
->>>>>>> c46653e (Updated UI of homepage, corrected margins of sections)
     transition: all 1s;
     font-size: 4.5rem;
 }
 
-<<<<<<< HEAD
 .maintext:hover {
     transition: all 1s;
     font-size: 4.5rem;
 }
 
-=======
->>>>>>> c46653e (Updated UI of homepage, corrected margins of sections)
 .section-2 {
     text-align: center;
 }
@@ -98,7 +92,6 @@ p {
 
 
 .aboutimage {
-<<<<<<< HEAD
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 20px;
@@ -126,8 +119,6 @@ p {
 
 
 .aboutimage{
-=======
->>>>>>> c46653e (Updated UI of homepage, corrected margins of sections)
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 20px;
@@ -154,14 +145,9 @@ p {
 
 
 .section-2btn:hover {
-<<<<<<< HEAD
     font-size: 1rem;
     font-weight: bold;
     border-color: #df980c;
     border-radius: 3px;
 }
 
-=======
-    background-color: #d49f34;
-}
->>>>>>> c46653e (Updated UI of homepage, corrected margins of sections)
