@@ -121,10 +121,7 @@ body{
 }
 
 .rmbtn{
-<<<<<<< HEAD
     height: 40px;
-=======
->>>>>>> 2511c5c (Made frontend of all pages uniform to homepage i.e. button styles and updated navbar style)
     background-color: #df980c;
   letter-spacing: 3px;
   color: white;
@@ -139,7 +136,6 @@ body{
     
   border-color: #df980c;
   background-color: #d49f34
-<<<<<<< HEAD
 
 }
 
@@ -165,6 +161,3 @@ body{
 
 
 
-=======
-}
->>>>>>> 2511c5c (Made frontend of all pages uniform to homepage i.e. button styles and updated navbar style)

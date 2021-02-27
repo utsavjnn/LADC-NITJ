@@ -10,8 +10,13 @@
       <div class="padding-60px-lr md-padding-50px-lr sm-padding-30px-all xs-padding-25px-all">
         <h5
           class="margin-15px-bottom md-margin-10px-bottom font-size22 md-font-size20 xs-font-size18 font-weight-500 title-mg-phone">
+<<<<<<< HEAD
           <a href="<%= allEvents[i].registerationLink%>" class="text-theme-color"><%= allEvents[i].title %></a></h5>
         <ul class="event-time margin-10px-bottom md-margin-5px-bottom" style="padding-left: 0px;">
+=======
+          <a href="event-details.html" class="text-theme-color"><%= allEvents[i].title %></a></h5>
+        <ul class="event-time margin-10px-bottom md-margin-5px-bottom">
+>>>>>>> 89a10b4 (Added the events backend functionality)
           <li><i class="far fa-clock margin-10px-right"></i> <%= allEvents[i].startTime %> - <%= allEvents[i].endTime%></li>
           <li><i class="fas fa-map-marker-alt margin-5px-right"></i> Location: <%= allEvents[i].location%></li>
         </ul>
@@ -19,6 +24,7 @@
           <%= allEvents[i].desc %>
         </p>
         <!-- <a class="butn small margin-10px-top md-no-margin-top" href="event-details.html">Read More <i class="fas fa-long-arrow-alt-right margin-10px-left"></i></a> -->
+<<<<<<< HEAD
         <button type="button" class="rmbtn" data-toggle="modal" data-target="#<%= allEvents[i].id %>">
           Read More
         </button>
@@ -27,6 +33,14 @@
 <<<<<<< HEAD
         <!-- Modal -->
         <div class="modal fade" id="<%= allEvents[i].id %>" tabindex="-1" role="dialog"
+=======
+        <button type="button" class="rmbtn btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+          Read More
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog"
+>>>>>>> 89a10b4 (Added the events backend functionality)
           aria-labelledby="exampleModalLongTitle" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -42,6 +56,7 @@
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
               </div>
+<<<<<<< HEAD
             </div>
           </div>
 =======
@@ -82,30 +97,69 @@
                       </div>
                     </div>
                   </div>
+=======
+>>>>>>> 89a10b4 (Added the events backend functionality)
             </div>
+          </div>
         </div>
-        <div class="col-lg-5 order-1 order-lg-2">
-            <div class="position-relative right-align-img">
-                <img src="https://via.placeholder.com/450x280/87CEFA/000000" alt="" class="resize">
-                <div class="events-date">
-                    <div class="font-size28">25</div>
-                    <div class="font-size14">Feb</div>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
-    <!-- end event block -->
+    <div class="col-lg-5 order-1 order-lg-2">
+      <div class="position-relative right-align-img">
+        <img src="https://via.placeholder.com/450x280/87CEFA/000000" alt="" class="resize">
+        <div class="events-date">
+          <div class="font-size28"><%= allEvents[i].day %></div>
+          <div class="font-size14"><%= allEvents[i].month %></div></div>
+      </div>
+    </div>
+  </div>
+  <% } else { %>
+  <!-- start event block -->
+  <div class="row align-items-center event-block no-gutters margin-40px-bottom">
+    <div class="col-lg-5 col-sm-12">
+      <div class="position-relative left-align-img">
+        <img src="https://via.placeholder.com/450x280/B0C4DE/000000" alt="" class="resize">
+        <div class="events-date">
+          <div class="font-size28"><%= allEvents[i].day %></div>
+          <div class="font-size14"><%= allEvents[i].month %></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-7 col-sm-12">
+      <div class="padding-60px-lr md-padding-50px-lr sm-padding-30px-all xs-padding-25px-all">
+        <h5
+          class="margin-15px-bottom md-margin-10px-bottom font-size22 md-font-size20 xs-font-size18 font-weight-500 title-mg-phone">
+          <a href="event-details.html" class="text-theme-color"><%= allEvents[i].title%></a></h5>
+        <ul class="event-time margin-10px-bottom md-margin-5px-bottom">
+          <li><i class="far fa-clock margin-10px-right"></i> <%= allEvents[i].startTime %> - <%= allEvents[i].endTime %></li>
+          <li><i class="fas fa-map-marker-alt margin-5px-right"></i> Location : <%= allEvents[i].location %></li>
+        </ul>
+        <p><%= allEvents[i].desc %></p>
+        <!-- <a class="butn small margin-10px-top md-no-margin-top" href="event-details.html">Read More <i class="fas fa-long-arrow-alt-right margin-10px-left"></i></a> -->
+        <!-- Button trigger modal -->
+        <button type="button" class="rmbtn btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+          Read More
+        </button>
 
-    <!-- start event block -->
-    <div class="row align-items-center event-block no-gutters margin-40px-bottom">
-        <div class="col-lg-5 col-sm-12">
-            <div class="position-relative left-align-img">
-                <img src="https://via.placeholder.com/450x280/B0C4DE/000000" alt="" class="resize">
-                <div class="events-date">
-                    <div class="font-size28">20</div>
-                    <div class="font-size14">Feb</div>
-                </div>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog"
+          aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle"><%= allEvents[i].mtitle %></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <p><%= allEvents[i].mdesc %></p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
             </div>
+<<<<<<< HEAD
         </div>
         <div class="col-lg-7 col-sm-12">
             <div class="padding-60px-lr md-padding-50px-lr sm-padding-30px-all xs-padding-25px-all">
@@ -137,6 +191,9 @@
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 >>>>>>> 2511c5c (Made frontend of all pages uniform to homepage i.e. button styles and updated navbar style)
+=======
+          </div>
+>>>>>>> 89a10b4 (Added the events backend functionality)
         </div>
       </div>
     </div>
@@ -156,6 +213,7 @@
       </div>
     </div>
   </div>
+<<<<<<< HEAD
   <% } else { %>
   <!-- start event block -->
   <div class="row align-items-center event-block no-gutters margin-40px-bottom">
@@ -219,6 +277,14 @@
   <% } %>
 =======
 </div>
+=======
+  <% } %>
+  <% } %>
+  <!-- end event block -->
+  <% if(!locals.user) {%>
+  <a href="/addevent"><button type="button" class="addeventbtn josefine-sans">ADD EVENT</button></a>
+  <% } %>
+>>>>>>> 89a10b4 (Added the events backend functionality)
 
 >>>>>>> 2511c5c (Made frontend of all pages uniform to homepage i.e. button styles and updated navbar style)
 
