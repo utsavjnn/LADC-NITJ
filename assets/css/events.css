@@ -121,7 +121,6 @@ body{
 }
 
 .rmbtn{
-    height: 40px;
     background-color: #df980c;
   letter-spacing: 3px;
   color: white;
@@ -136,28 +135,4 @@ body{
     
   border-color: #df980c;
   background-color: #d49f34
-
 }
-
-.addeventbtn{
-    display: block;
-    margin: auto;
-    background-color: #df980c;
-  letter-spacing: 3px;
-  color: white;
-  font-family: futura-pt;
-  font-size: 1rem;
-  font-weight: bold;
-  border-color: #df980c;
-  border-radius: 3px;
-  height: 40px;
-}
-
-
-.addeventbtn:hover{
-    border-color: #df980c;
-    background-color: #d49f34
-  }
-
-
-

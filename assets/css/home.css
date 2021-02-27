@@ -1,12 +1,18 @@
+<<<<<<< HEAD
 .josefine-sans {
     font-family: Josefin Sans;
 }
 
 p {
+=======
+
+p{
+>>>>>>> c584dfe (Created Homepage and navbar)
     font-size: 1rem;
     font-family: europa;
 }
 
+<<<<<<< HEAD
 .section-1 {
     z-index: -1;
     width: 100%;
@@ -25,10 +31,34 @@ p {
 
 
 .homeimage {
+=======
+.section-1
+{
+    z-index: -1;
+    width: 100%;
+    height: 80vh;
+    
+}
+
+.navbar
+{
+    background-color: transparent !important;
+}
+
+
+.maintexterase{
+    display: none;
+ }
+
+
+.homeimage
+{
+>>>>>>> c584dfe (Created Homepage and navbar)
     position: absolute;
     top: 0px;
     z-index: -2;
     height: 80vh;
+<<<<<<< HEAD
     width: 100%;
     filter: blur(3px);
     -webkit-filter: blur(3px);
@@ -98,13 +128,90 @@ p {
     letter-spacing: 3px;
     color: white;
     font-family: futura-pt;
+
+    font-size: 1rem;
+    font-weight: bold;
+    border-color: #df980c;
+    border-radius: 3px;
+=======
+    width: 100vw;
+    filter: blur(3px);
+    -webkit-filter: blur(3px);
+}
+
+
+.maintext{
+    color: black;
+    text-align: center;
+    font-weight: bolder;
+    padding-top: 18%;
+}
+
+.section-2{
+    text-align: center;
+}
+
+.container{ 
+    margin: auto;
+    width: 100%;
+}
+
+.row{
+    margin: auto;
+}
+
+.col-md-4{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+.section-2headings{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    font-size: 1rem;
+>>>>>>> c584dfe (Created Homepage and navbar)
+}
+
+
+.aboutimage{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    height: 30vh;
+    width: 30vh;
+}
+
+.section-2btn{
+    margin: auto;
+    margin-top: 7%;
+    margin-bottom: 10%;
+    text-align: center;
+     height: 6vh;
+     width: 27vh;
+     background-color: #df980c;
+     letter-spacing: 3px;
+     color: white;
+     font-family: futura-pt;
+     font-size: 0.5rem;
+     font-weight: bold;
+     border-color: #df980c;
+     border-radius: 3px;
+}
+
+
+<<<<<<< HEAD
+.section-2btn:hover {
     font-size: 1rem;
     font-weight: bold;
     border-color: #df980c;
     border-radius: 3px;
 }
 
-
-.section-2btn:hover {
+=======
+.section-2btn:hover{
     background-color: #d49f34;
 }
+>>>>>>> c584dfe (Created Homepage and navbar)

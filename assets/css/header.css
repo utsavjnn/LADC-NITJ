@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
   
 .navbar {
@@ -29,7 +30,6 @@
 
 
 
-
 .headerladclogo{
     position: absolute;
     top: 5px;
@@ -46,9 +46,31 @@
 
 .logodisappear{
     display: none;
+=======
+.navbar{
+    background-color: aqua;
+    
 }
+
+.navcolor{
+    background-color: rgb(148, 34, 34);
+    text-align: left;
+}
+
+.nav-link{
+   margin-left: 5px;
+   color: black !important;
+   font-weight: bold;
+   font-family: helvetica futura-pt;
+}
+
+.nav-link:hover{
+   color: white !important;
+   font-weight: bold;
+>>>>>>> c584dfe (Created Homepage and navbar)
+}
+
 
 .active{
     color:yellow !important;
 }
-
