@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
   
 .navbar {
@@ -11,6 +12,15 @@
 
 .navcolor {
     background-color: #5d0e0e;
+=======
+.navbar {
+    background-color: aqua;
+
+}
+
+.navcolor {
+    background-color: rgb(148, 34, 34);
+>>>>>>> 2545140 (Formatting of files done, removed extra spaces and used beautify vscode extension to increase code readability)
     text-align: left;
     z-index: 1;
 }
@@ -38,6 +48,7 @@
     transition: 1s;
 }
 
+<<<<<<< HEAD
 .headerladclogo:hover{
     height: 25vh;
     width: 25vh;
@@ -46,3 +57,16 @@
 .logodisappear{
     display: none;
 }
+=======
+.nav-link {
+    margin-left: 5px;
+    color: black !important;
+    font-weight: bold;
+    font-family: Josefin Sans;
+}
+
+.nav-link:hover {
+    color: white !important;
+    font-weight: bold;
+}
+>>>>>>> 2545140 (Formatting of files done, removed extra spaces and used beautify vscode extension to increase code readability)

@@ -44,6 +44,7 @@ p {
     font-weight: 900;
     transition: all 1s;
     font-size: 4rem;
+<<<<<<< HEAD
 }
 
 .maintext:hover {
@@ -51,6 +52,15 @@ p {
     font-size: 4.5rem;
 }
 
+=======
+}
+
+.maintext:hover {
+    transition: all 1s;
+    font-size: 4.5rem;
+}
+
+>>>>>>> 2545140 (Formatting of files done, removed extra spaces and used beautify vscode extension to increase code readability)
 .section-2 {
     text-align: center;
 }
@@ -80,6 +90,7 @@ p {
 
 
 .aboutimage {
+<<<<<<< HEAD
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 20px;
@@ -107,6 +118,8 @@ p {
 
 
 .aboutimage{
+=======
+>>>>>>> 2545140 (Formatting of files done, removed extra spaces and used beautify vscode extension to increase code readability)
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 20px;
@@ -114,21 +127,21 @@ p {
     width: 30vh;
 }
 
-.section-2btn{
+.section-2btn {
     margin: auto;
     margin-top: 7%;
     margin-bottom: 10%;
     text-align: center;
-     height: 6vh;
-     width: 27vh;
-     background-color: #df980c;
-     letter-spacing: 3px;
-     color: white;
-     font-family: futura-pt;
-     font-size: 0.5rem;
-     font-weight: bold;
-     border-color: #df980c;
-     border-radius: 3px;
+    height: 6vh;
+    width: 27vh;
+    background-color: #df980c;
+    letter-spacing: 3px;
+    color: white;
+    font-family: futura-pt;
+    font-size: 0.5rem;
+    font-weight: bold;
+    border-color: #df980c;
+    border-radius: 3px;
 }
 
 
