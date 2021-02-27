@@ -22,12 +22,24 @@
     font-family: Josefin Sans;
 }
 
-<<<<<<< HEAD
 .nav-link:hover {
     color: yellow !important;
     font-weight: bold;
 }
 
+.headerladclogo{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    height: 20vh;
+    width: 20vh;
+    transition: 1s;
+}
+
+.headerladclogo:hover{
+    height: 25vh;
+    width: 25vh;
+}
 
 
 .headerladclogo{
@@ -39,7 +51,6 @@
     transition: 1s;
 }
 
-<<<<<<< HEAD
 .headerladclogo:hover{
     height: 25vh;
     width: 25vh;
@@ -48,22 +59,18 @@
 .logodisappear{
     display: none;
 }
-=======
 .nav-link {
     margin-left: 5px;
     color: black !important;
     font-weight: bold;
     font-family: Josefin Sans;
-=======
-.nav-link{
-   margin-left: 5px;
-   color: black !important;
-   font-weight: bold;
-   font-family: Josefin Sans;
->>>>>>> 4a01a76 (Adding a little style)
+
 }
 
 .nav-link:hover {
     color: white !important;
     font-weight: bold;
+}
+.logodisappear{
+    display: none;
 }
