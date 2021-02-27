@@ -1,1 +1,140 @@
-<h1> <%= title %> Home Page</h1>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+  integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="/css/blog.css">
+
+
+
+
+  <form action="/blog" method="POST">
+    <div class="formmain">
+        <div class="formtitle">
+          <h4>Add your own blog!!</h4>
+        </div>
+        <div class="forminput">
+         <input type="text" class="form-control forminp" id="title" placeholder="Title" name="title" required>
+           <input type="text" class="form-control forminp" id="desc" placeholder="Short Description" name="desc" required>
+           <input type="text" class="form-control forminp" id="imgurl" placeholder="Image Url(optinal)" name="imgurl">
+          <textarea class="form-control" name="explanation" id="explanation" cols="30" rows="5" placeholder="Explanation"></textarea>
+           <button type="submit" class="btn btn-warning formbtn">Post</button>
+       
+           
+        </div>
+    </div>
+    </form>
+
+
+
+
+<div class="container top-mg">
+  <% for(let i=0;i<allblogs.length;i++) { %>
+  <!-- start event block -->
+  <% if(i%2==0) {%>
+  <div class="row align-items-center event-block no-gutters margin-40px-bottom">
+    <div class="col-lg-7 order-2 order-lg-1">
+      <div class="padding-60px-lr md-padding-50px-lr sm-padding-30px-all xs-padding-25px-all">
+        <h5
+          class="margin-15px-bottom md-margin-10px-bottom font-size22 md-font-size20 xs-font-size18 font-weight-500 title-mg-phone">
+          <%= allblogs[i].title %></h5>
+        <p>
+          <%= allblogs[i].desc %>
+        </p>
+        <!-- <a class="butn small margin-10px-top md-no-margin-top" href="event-details.html">Read More <i class="fas fa-long-arrow-alt-right margin-10px-left"></i></a> -->
+        <button type="button" class="rmbtn" data-toggle="modal" data-target="#<%= allblogs[i].id %>">
+          Read More
+        </button>
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="<%= allblogs[i].id %>" tabindex="-1" role="dialog"
+          aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle"><%= allblogs[i].modaltitle %></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <%= allblogs[i].modalDesc %>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-5 order-1 order-lg-2">
+      <div class="position-relative right-align-img">
+        <% if(allblogs[i].imageLink!=""){  %>
+          <img src="<%= allblogs[i].imageLink%>" alt="eventimage" class="resize">
+        <% } else { %>
+          <img src="https://i.pinimg.com/736x/6d/e9/1c/6de91c11a6c674a79cf315fe1929c135.jpg" alt="eventimage" class="resize">
+         <% } %>
+
+
+        <div class="events-date">
+          <div class="font-size28"><%= allblogs[i].day %></div>
+          <div class="font-size14"><%= allblogs[i].month %> , <%=allblogs[i].year%></div></div>
+      </div>
+    </div>
+  </div>
+  <% } else { %>
+  <!-- start event block -->
+  <div class="row align-items-center event-block no-gutters margin-40px-bottom">
+    <div class="col-lg-5 col-sm-12">
+      <div class="position-relative left-align-img">
+        <% if(allblogs[i].imageLink!=""){  %>
+        <img src="<%= allblogs[i].imageLink%>" alt="eventimage" class="resize">
+      <% } else { %>
+        <img src="https://i.pinimg.com/736x/6d/e9/1c/6de91c11a6c674a79cf315fe1929c135.jpg" alt="eventimage" class="resize">
+       <% } %>
+        <div class="events-date">
+          <div class="font-size28"><%= allblogs[i].day %></div>
+          <div class="font-size14"><%= allblogs[i].month %> , <%=allblogs[i].year%></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-7 col-sm-12">
+      <div class="padding-60px-lr md-padding-50px-lr sm-padding-30px-all xs-padding-25px-all">
+        <h5
+          class="margin-15px-bottom md-margin-10px-bottom font-size22 md-font-size20 xs-font-size18 font-weight-500 title-mg-phone">
+        <%= allblogs[i].title%></h5>
+    
+        <p><%= allblogs[i].desc %></p>
+        <!-- <a class="butn small margin-10px-top md-no-margin-top" href="event-details.html">Read More <i class="fas fa-long-arrow-alt-right margin-10px-left"></i></a> -->
+        <!-- Button trigger modal -->
+        <button type="button" class="rmbtn " data-toggle="modal" data-target="#<%= allblogs[i].id %>" style="outline: none;">
+          Read More
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="<%= allblogs[i].id %>" tabindex="-1" role="dialog"
+          aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle"><%= allblogs[i].modaltitle %></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <p><%= allblogs[i].modalDesc %></p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% } %>
+  <% } %>
+  <!-- end event block -->
+</div>
