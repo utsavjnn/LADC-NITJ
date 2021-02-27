@@ -110,6 +110,7 @@ p {
     letter-spacing: 3px;
     color: white;
     font-family: futura-pt;
+<<<<<<< HEAD
 
     font-size: 1rem;
     font-weight: bold;
@@ -138,6 +139,9 @@ p {
     color: white;
     font-family: futura-pt;
     font-size: 0.5rem;
+=======
+    font-size: 1rem;
+>>>>>>> 2511c5c (Made frontend of all pages uniform to homepage i.e. button styles and updated navbar style)
     font-weight: bold;
     border-color: #df980c;
     border-radius: 3px;

@@ -31,6 +31,7 @@
     font-weight: bold;
 }
 
+<<<<<<< HEAD
 .headerladclogo{
     position: absolute;
     top: 5px;
@@ -44,6 +45,9 @@
     height: 25vh;
     width: 25vh;
 }
+=======
+
+>>>>>>> 2511c5c (Made frontend of all pages uniform to homepage i.e. button styles and updated navbar style)
 
 
 .headerladclogo{

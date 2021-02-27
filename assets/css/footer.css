@@ -118,19 +118,32 @@
   text-align: center;
   height: 6vh;
   width: 27vh;
+<<<<<<< HEAD
   letter-spacing: 3px;
   background-color: transparent;
+=======
+  background-color: #df980c;
+  letter-spacing: 3px;
+>>>>>>> 2511c5c (Made frontend of all pages uniform to homepage i.e. button styles and updated navbar style)
   color: white;
   font-family: futura-pt;
   font-size: 1rem;
   font-weight: bold;
+<<<<<<< HEAD
   border-color: white;
+=======
+  border-color: #df980c;
+>>>>>>> 2511c5c (Made frontend of all pages uniform to homepage i.e. button styles and updated navbar style)
   border-radius: 3px;
 }
 
 
 .footerbtn:hover {
+<<<<<<< HEAD
   background-color: white;
   color: black;
 
+=======
+  background-color: #d49f34;
+>>>>>>> 2511c5c (Made frontend of all pages uniform to homepage i.e. button styles and updated navbar style)
 }
