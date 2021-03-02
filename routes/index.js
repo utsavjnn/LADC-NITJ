@@ -12,5 +12,6 @@ router.use('/blog',require('./blog'));
 router.use('/contact',require('./contact'));
 router.use(require('./newsletter'));
 router.use(require('./addevent'));
+router.use(require('./editevent'));
 
 module.exports = router;

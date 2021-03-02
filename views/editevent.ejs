@@ -1,0 +1,87 @@
+<link rel="stylesheet" href="/css/addevent.css">
+<h1 id="mheading">Edit Event!</h1>
+<form action="/editevent" method="POST" autocomplete="off">
+   <div id="formdiv">
+   <div class="fieldcontainer">
+    <div class="fieldlabel"> 
+        <label  for="title">Event Title</label>
+    </div>
+    <div class="field">
+        <input  type="text" name="title" value="<%=event.title %>">
+    </div>
+   </div> 
+   <div class="fieldcontainer">
+    <div class="fieldlabel"> 
+        <label  for="location">Location</label>
+    </div>
+    <div class="field">
+        <input  type="text" name="location" value="<%=event.location%>">
+    </div>
+   </div>   
+   
+   <div class="fieldcontainer">
+    <div class="fieldlabel"> 
+        <label for="date">Date</label>
+    </div>
+    <div class="field">
+        <input  type="date" name="date" value="<%=date%>">
+    </div>
+   </div> 
+   
+   <div class="fieldcontainer">
+    <div class="fieldlabel"> 
+        <label  for="starttime">Start Time</label>
+    </div>
+    <div class="field">
+        <input type="time" name="starttime" value="<%=event.startTime%>">
+    </div>
+  </div> 
+  
+  <div class="fieldcontainer">
+    <div class="fieldlabel"> 
+        <label  for="endtime"> End Time</label>
+    </div>
+    <div class="field">
+        <input type="time" name="endtime" value="<%=event.endTime%>">
+    </div>
+</div>
+
+<div class="fieldcontainer1">
+    <div class="fieldlabel"> 
+        <label  for="eventdesc">Event Description</label>
+    </div>
+    <div class="field">
+        <textarea name="eventdesc" id="" cols="50" rows="5"><%=event.desc%></textarea>
+    </div>
+</div>
+
+
+<div class="fieldcontainer1">
+    <div class="fieldlabel"> 
+        <label  for="modaldesc">Modal Description</label>
+    </div>
+    <div class="field">
+        <textarea name="modaldesc" id="" cols="50" rows="5" ><%=event.modalDesc%></textarea>
+    </div>
+    </div>
+    <div class="fieldcontainer">
+        <div class="fieldlabel"> 
+            <label  for="reglink">Registration Link</label>
+        </div>
+        <div class="field">
+            <input  type="text" name="reglink" value="<%= event.registerationLink%>">
+        </div>
+       </div>  
+       <div class="fieldcontainer">
+        <div class="fieldlabel"> 
+            <label  for="imglink">Image Link</label>
+        </div>
+        <div class="field">
+            <input  type="text" name="imglink" value="<%= event.imageLink %>">
+        </div>
+       </div>  
+       <input type="hidden" name="eventid" value="<%= event.id %>">
+    <button class="submitbtn" type="submit">Edit</button>
+</div> 
+    
+</form>
