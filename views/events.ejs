@@ -2,6 +2,12 @@
   integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
 <link href="/css/events.css" rel="stylesheet">
 <div class="container top-mg">
+  <% if(allEvents.length==0 && !locals.user) { %>
+       <h1 id="comingsoonheading">Exciting Events Coming Soon!</h1>
+  <% } %>
+  <% if(allEvents.length==0 && locals.user) {%>
+    <h1 id="comingsoonheading">Add an event!</h1>
+  <% } %>  
   <% for(let i=0;i<allEvents.length;i++) { %>
   <!-- start event block -->
   <% if(i%2==0) {%>
@@ -24,7 +30,10 @@
         </button>
         <% if(locals.user) {%>
           <a class="submitform" href="/editevent/<%=allEvents[i].id %>" style="text-decoration: none;"><button type="button" class="rmbtn">Edit Event</button></a>
-          <button id="deleteeventbutton" class="rmbtn submitform" >Delete Event</button>
+          <form class="submitform" action="/deleteevent" method="POST"> 
+            <input type="hidden" name="eventid" value="<%=allEvents[i].id %>">
+           <button class="rmbtn" type="submit">Delete Event</button>
+          </form>
         <% } %>
 
         <!-- Modal -->
@@ -97,7 +106,10 @@
         </button>
         <% if(locals.user) {%>
           <a class="submitform" href="/editevent/<%=allEvents[i].id %>" style="text-decoration: none;"><button type="button" class="rmbtn">Edit Event</button></a>
-          <button id="deleteeventbutton" class="rmbtn submitform" >Delete Event</button>
+          <form class="submitform" action="/deleteevent"  method="POST"> 
+            <input type="hidden" name="eventid" value="<%=allEvents[i].id %>">
+            <button type="button" class="rmbtn" type="submit" >Delete Event</button>
+           </form>
         <% } %>
         <!-- Modal -->
         <div class="modal fade" id="<%= allEvents[i].id %>" tabindex="-1" role="dialog"
@@ -114,7 +126,7 @@
                 <p><%= allEvents[i].modalDesc %></p>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button  class="btn btn-secondary" data-dismiss="modal">Close</button>
               </div>
             </div>
           </div>

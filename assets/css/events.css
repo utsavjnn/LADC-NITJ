@@ -183,4 +183,11 @@ body{
     margin-left: 15px;
 }
 
+#comingsoonheading{
+    text-align: center;
+    font-size: 5vw;
+    font-family: josefine-sans;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
 
