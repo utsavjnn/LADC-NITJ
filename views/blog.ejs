@@ -12,6 +12,9 @@
           <h4>Add your own blog!!</h4>
         </div>
         <div class="forminput">
+          <input type="text" class="form-control forminp" id="name" placeholder="Name" name="name" >
+          <input type="text" class="form-control forminp" id="branch" placeholder="Branch" name="branch" >
+          <input type="text" class="form-control forminp" id="year" placeholder="Year" name="year" >
          <input type="text" class="form-control forminp" id="title" placeholder="Title" name="title" required>
            <input type="text" class="form-control forminp" id="desc" placeholder="Short Description" name="desc" required>
            <input type="text" class="form-control forminp" id="imgurl" placeholder="Image Url(optinal)" name="imgurl">
@@ -39,14 +42,16 @@
         <p>
           <%= allblogs[i].desc %>
         </p>
+       
         <!-- <a class="butn small margin-10px-top md-no-margin-top" href="event-details.html">Read More <i class="fas fa-long-arrow-alt-right margin-10px-left"></i></a> -->
+        
         <button type="button" class="rmbtn" data-toggle="modal" data-target="#<%= allblogs[i].id %>">
           Read More
         </button>
 
 
         <!-- Modal -->
-        <div class="modal fade" id="<%= allblogs[i].id %>" tabindex="-1" role="dialog"
+        <div class="modal fade" style="word-wrap: break-word;"  id="<%= allblogs[i].id %>" tabindex="-1" role="dialog"
           aria-labelledby="exampleModalLongTitle" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -57,7 +62,22 @@
                 </button>
               </div>
               <div class="modal-body">
-                <%= allblogs[i].modalDesc %>
+              <p>  <%= allblogs[i].modalDesc %></p>
+              
+                <i>By 
+
+                  <% if(allblogs[i].name!=""){  %>
+                    <%=  allblogs[i].name  %>
+                    <p><%=  allblogs[i].branch  %></p>
+                    <!-- <p><%  allblogs[i].year  %> Year </p> -->
+                  <% } else { %>
+                    Anonymous
+                   <% } %>
+
+                  
+                </i>
+              
+
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -77,8 +97,10 @@
 
 
         <div class="events-date">
-          <div class="font-size28"><%= allblogs[i].day %></div>
-          <div class="font-size14"><%= allblogs[i].month %> , <%=allblogs[i].year%></div></div>
+          <!-- <div class="font-size28"><%= allblogs[i].day %></div>
+          <div class="font-size14"><%= allblogs[i].month %> , <%=allblogs[i].year%></div> -->
+          <div class="font-size28"><%= allblogs[i].date %></div>
+        </div>
       </div>
     </div>
   </div>
@@ -93,8 +115,9 @@
         <img src="https://i.pinimg.com/736x/6d/e9/1c/6de91c11a6c674a79cf315fe1929c135.jpg" alt="eventimage" class="resize">
        <% } %>
         <div class="events-date">
-          <div class="font-size28"><%= allblogs[i].day %></div>
-          <div class="font-size14"><%= allblogs[i].month %> , <%=allblogs[i].year%></div>
+          <!-- <div class="font-size28"><%= allblogs[i].day %></div>
+          <div class="font-size14"><%= allblogs[i].month %> , <%=allblogs[i].year%></div> -->
+          <div class="font-size28"><%= allblogs[i].date %></div>
         </div>
       </div>
     </div>
@@ -112,7 +135,7 @@
         </button>
 
         <!-- Modal -->
-        <div class="modal fade" id="<%= allblogs[i].id %>" tabindex="-1" role="dialog"
+        <div class="modal fade" style="word-wrap: break-word;" id="<%= allblogs[i].id %>" tabindex="-1" role="dialog"
           aria-labelledby="exampleModalLongTitle" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -124,6 +147,20 @@
               </div>
               <div class="modal-body">
                 <p><%= allblogs[i].modalDesc %></p>
+              
+                <i>By 
+                  <% if(allblogs[i].name!=""){  %>
+                    <%=  allblogs[i].name  %>
+                    <p><%=  allblogs[i].branch  %></p>
+                    <!-- <p><%  allblogs[i].year  %> Year</p>  -->
+                  <% } else { %>
+                    Anonymous
+                   <% } %>
+
+                 
+                    
+                </i>
+            </p>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

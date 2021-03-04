@@ -5,11 +5,11 @@ const Alumni = require('../models/alumni');
 const blog=require('../models/blog');
 
 module.exports.home = (req, res) => {
-  // if (req.isAuthenticated()) res.render("admin", { title: "admin" });
-  // else {
-  //   res.redirect("/");
-  // }
-  res.render("admin", { title: "admin" });
+  if (req.isAuthenticated()) res.render("admin", { title: "admin" });
+  else {
+    res.redirect("/");
+  }
+  // res.render("admin", { title: "admin" });
 };
 module.exports.alumniHome=(req,res)=>{
   if (req.isAuthenticated())

@@ -1,11 +1,15 @@
 const mongoose= require('mongoose');
 const bodyParser= require('body-parser');
 const blogSchema= new mongoose.Schema({
+    name:{type:String,required:false},
+    year:{type:String,required:false},
+    branch:{type:String,required:false},
     title: { type: String, required: true},
     desc: { type: String, required: true},
-    day: { type: String, required: true},
-    month: { type: String, required: true} ,
-    year:{type:String,required:true},
+    // day: { type: String, required: true},
+    // month: { type: String, required: true} ,
+    // year:{type:String,required:true},
+    date:{type:String,required:false},
     imageLink: String,
     modaltitle: {type:String, required:true},
     modalDesc: { type: String, required: true},

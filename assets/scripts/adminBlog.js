@@ -22,7 +22,7 @@ function Approve(blog_id){
 
 function getBlogList()
 {
-    console.log("Hi");
+    // console.log("Hi");
   $.ajax({
     url:`http://localhost:8000/admin/blog-admin`,
     type:"GET",
@@ -31,6 +31,7 @@ function getBlogList()
     const container = document.getElementById("list");
     let i=0;
       blogs.forEach(blog => {
+        console.log('blogs are ',blog)
       let imgl;
       if(blog.imageLink!="")
       imgl=blog.imageLink;
@@ -56,7 +57,7 @@ function getBlogList()
                 ${blog.desc}
               </p>
               <!-- <a class="butn small margin-10px-top md-no-margin-top" href="event-details.html">Read More <i class="fas fa-long-arrow-alt-right margin-10px-left"></i></a> -->
-              <button type="button" class="rmbtn" data-toggle="modal" data-target="#${blog.id}">
+              <button type="button" class="rmbtn" data-toggle="modal" data-target="#${blog._id}">
                 Read More
               </button>
               <button class="rmbtn" onclick="Approve('${blog._id}')">
@@ -65,7 +66,7 @@ function getBlogList()
       
       
               <!-- Modal -->
-              <div class="modal fade" id="${blog.id}" tabindex="-1" role="dialog"
+              <div class="modal fade" style="word-wrap: break-word;" id="${blog._id}" tabindex="-1" role="dialog"
                 aria-labelledby="exampleModalLongTitle" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                   <div class="modal-content">
@@ -75,8 +76,12 @@ function getBlogList()
                         <span aria-hidden="true">&times;</span>
                       </button>
                     </div>
-                    <div class="modal-body">
-                      ${blog.modalDesc}
+                    <div class="modal-body" style="word-wrap: break-word;">
+                    <p>  ${blog.modalDesc}<p>
+                      <i>By 
+                        ${blog.name}
+                        <p>${blog.branch}</p>
+                    </i>
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -90,23 +95,14 @@ function getBlogList()
             <div class="position-relative right-align-img">
              
                 <img src="${imgl}" alt="eventimage" class="resize">
-              
-      
-      
+
               <div class="events-date">
-                <div class="font-size28">${blog.day}</div>
-                <div class="font-size14">${blog.month} ,${blog.year}</div></div>
+                <div class="font-size28">${blog.date}</div>
+                </div>
             </div>
           </div>
             `;
-          
                   container.innerHTML += content;
-
-
-
-
-
-
         }
         else
         {
@@ -123,8 +119,8 @@ function getBlogList()
              
               <img src="${imgl}" alt="eventimage" class="resize">
               <div class="events-date">
-                <div class="font-size28">${blog.day}</div>
-                <div class="font-size14">${blog.month} ,${blog.year}</div>
+                <div class="font-size28">${blog.date}</div>
+               
               </div>
             </div>
           </div>
@@ -137,7 +133,7 @@ function getBlogList()
               <p>${blog.desc}</p>
               <!-- <a class="butn small margin-10px-top md-no-margin-top" href="event-details.html">Read More <i class="fas fa-long-arrow-alt-right margin-10px-left"></i></a> -->
               <!-- Button trigger modal -->
-              <button type="button" class="rmbtn " data-toggle="modal" data-target="#${blog.id}" style="outline: none;">
+              <button type="button" class="rmbtn " data-toggle="modal" data-target="#${blog._id}" style="outline: none;">
                 Read More
               </button>
               <button class="rmbtn" onclick="Approve('${blog._id}')">
@@ -145,7 +141,7 @@ function getBlogList()
             </button>
       
               <!-- Modal -->
-              <div class="modal fade" id="${blog.id}" tabindex="-1" role="dialog"
+              <div class="modal fade" style="word-wrap: break-word;" id="${blog._id}" tabindex="-1" role="dialog"
                 aria-labelledby="exampleModalLongTitle" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                   <div class="modal-content">
@@ -157,6 +153,10 @@ function getBlogList()
                     </div>
                     <div class="modal-body">
                       <p>${blog.modalDesc}</p>
+                      <i>By 
+                      ${blog.name}
+                      <p>${blog.branch}</p>
+                  </i>
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -169,25 +169,9 @@ function getBlogList()
             `;
           
                   container.innerHTML += content;
-
-
-
-
-
-
-
         }
 
 i++;
-
-
-
-
-
-
-
-         
-
       });
     },
     error:function(err){
