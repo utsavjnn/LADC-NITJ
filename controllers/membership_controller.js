@@ -27,7 +27,7 @@ async function addMember(req,res){
 async function getAllMembers(req,res){
     try {
         let members = await Member.find({approve:true});
-        res.status(200).send(members)
+        res.status(200).send(members);
    
     } catch (err) {
         console.log("Error occurred in getAllMembers ", err);
