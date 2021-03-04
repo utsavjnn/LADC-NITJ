@@ -2,6 +2,7 @@ const Admin = require("../models/admin");
 const passport = require("passport");
 const passportLocalMongoose = require("passport-local-mongoose");
 const Alumni = require('../models/alumni');
+const Member = require('../models/member');
 const blog=require('../models/blog');
 
 module.exports.home = (req, res) => {
@@ -124,6 +125,45 @@ module.exports.approveBlog=async function(req,res)
     catch(err)
     {
         console.log("Error occurred in approveBlog ", err);
+        res.status(500).send("something went wrong");
+    }
+}
+
+module.exports.memberHome=(req,res)=>{
+  if (req.isAuthenticated())
+  {
+    res.render("adminMember", { title: "Admin Member" });
+  }
+  else {
+    res.redirect("/");
+  }
+}
+
+module.exports.getMemberAdmin=async function(req,res)
+{
+    try{
+      // console.log('ehiiiiii')
+            let members = await Member.find({approve:false});
+            res.status(200).send(members);
+    }
+    catch(err)
+    {
+        console.log("Error occurred in getAlumniAdmin ", err);
+        res.status(500).send("something went wrong");
+    }
+}
+
+module.exports.approveMember=async function(req,res)
+{
+    try{
+          // console.log('id is ',req.body._id);
+            let approved = await Member.findOneAndUpdate({_id:req.body._id},{approve:true});
+            
+            res.status(200).send('Alumni approved');
+    }
+    catch(err)
+    {
+        console.log("Error occurred in approveMember ", err);
         res.status(500).send("something went wrong");
     }
 }
