@@ -2,7 +2,7 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
   integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
-  <link rel="stylesheet" href="/css/blog.css">
+  <link rel="stylesheet" href="/css/membership.css">
 
 
 
@@ -21,11 +21,30 @@
            
         </div>
 
-        <ul id="all-members">
-
-        </ul>
+       
     </div>
     </form>
+    <div class="form-container">
+      <form >
+          <label for="Batch">Choose a batch:</label>
+          <select name="batch" id="batch" onchange='this.form.submit()'>
+            
+            <option value="2018">2018</option>
+            <option value="2019">2019</option>
+            <option value="2020">2020</option>
+            <option value="2020">2021</option>
+          </select>
+          <br><br>
+          <!-- <input type="submit" value="Submit" id="submitbtn"> -->
+          <!-- <noscript><input type="submit" value="Submit" id="submitbtn"></noscript> -->
+        </form>
+  
+        <ul id="all-members">
+  
+        </ul>
+  </div>
+
+    <script defer src="scripts\membership.js"></script>
  
 
 
