@@ -7,5 +7,10 @@ router.get('/',blogController.home);
 
 router.post('/',blogController.addblog);
 
+router.get('/blogs', blogController.getBlogs);
+
+router.get('/checkAuth',blogController.checkAuth);
+
+router.delete('/deleteBlog',blogController.deleteBlog)
 
 module.exports = router;

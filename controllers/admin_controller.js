@@ -2,23 +2,14 @@ const Admin = require('../models/admin');
 const passport = require('passport');
 const passportLocalMongoose = require('passport-local-mongoose');
 const Alumni = require('../models/alumni');
-const blog=require('../models/blog');
+const blog = require('../models/blog');
 
 module.exports.home = (req, res) => {
-<<<<<<< HEAD
-  if (req.isAuthenticated()) res.render("admin", { title: "admin" });
-  else {
-    res.redirect("/");
-  }
-  // res.render("admin", { title: "admin" });
-=======
-	if (req.isAuthenticated()) {
-		console.log('no redirec...');
-		res.render('admin', { title: 'admin' });
-	} else {
-		console.log('redirec...');
+	if (req.isAuthenticated()) res.render('admin', { title: 'admin' });
+	else {
 		res.redirect('/');
 	}
+	// res.render("admin", { title: "admin" });
 };
 module.exports.alumniHome = (req, res) => {
 	if (req.isAuthenticated()) {
@@ -26,7 +17,6 @@ module.exports.alumniHome = (req, res) => {
 	} else {
 		res.redirect('/');
 	}
->>>>>>> f804da5... added alumni modal and image
 };
 module.exports.signUp = function (req, res) {
 	Admin.register({ username: req.body.username }, req.body.password, function (err, user) {
@@ -73,48 +63,37 @@ module.exports.getAlumniAdmin = async function (req, res) {
 	}
 };
 
-<<<<<<< HEAD
+module.exports.blogHome = (req, res) => {
+	if (req.isAuthenticated()) {
+		res.render('adminBlog', { title: 'Admin Blog' });
+	} else {
+		res.redirect('/');
+	}
+};
 
-module.exports.blogHome=(req,res)=>{
-  if (req.isAuthenticated())
-  {
-    res.render("adminBlog", { title: "Admin Blog" });
-  }
-  else {
-    res.redirect("/");
-  }
-}
+module.exports.getBlogAdmin = async function (req, res) {
+	try {
+		// console.log('ehiiiiii')
+		let blogs = await blog.find({ approve: false });
+		res.status(200).send(blogs);
+	} catch (err) {
+		console.log('Error occurred in getBlogAdmin ', err);
+		res.status(500).send('something went wrong');
+	}
+};
 
-module.exports.getBlogAdmin=async function(req,res)
-{
-    try{
-      // console.log('ehiiiiii')
-            let blogs = await blog.find({approve:false});
-            res.status(200).send(blogs);
-    }
-    catch(err)
-    {
-        console.log("Error occurred in getBlogAdmin ", err);
-        res.status(500).send("something went wrong");
-    }
-}
+module.exports.approveBlog = async function (req, res) {
+	try {
+		// console.log('id is ',req.body._id);
+		let approved = await blog.findOneAndUpdate({ _id: req.body._id }, { approve: true });
+		// console.log('alumni approved',approved)
+		res.status(200).send('Blog approved');
+	} catch (err) {
+		console.log('Error occurred in approveBlog ', err);
+		res.status(500).send('something went wrong');
+	}
+};
 
-
-module.exports.approveBlog=async function(req,res)
-{
-    try{
-          // console.log('id is ',req.body._id);
-            let approved = await blog.findOneAndUpdate({_id:req.body._id},{approve:true});
-            // console.log('alumni approved',approved)
-            res.status(200).send('Blog approved');
-    }
-    catch(err)
-    {
-        console.log("Error occurred in approveBlog ", err);
-        res.status(500).send("something went wrong");
-    }
-}
-=======
 module.exports.approveAlumni = async function (req, res) {
 	try {
 		// console.log('id is ',req.body._id);
@@ -126,4 +105,3 @@ module.exports.approveAlumni = async function (req, res) {
 		res.status(500).send('something went wrong');
 	}
 };
->>>>>>> f804da5... added alumni modal and image
