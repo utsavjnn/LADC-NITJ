@@ -2,39 +2,10 @@
 <link rel="stylesheet" href="css/alumni.css">
 
 
-<div class="container min-ht">
+<div style='position: relative;' class="container min-ht">
 
-<div>
-    <h3 class="heading">Add new alumni</h3>
-</div>
-<div class="form-container">
- <form action="/alumni/add-alumni" method="POST">
-    <div class="form-group col-md-6">
-      <label for="name">Name</label>
-      <input type="text" name="name" class="form-control"   placeholder="Enter Name">
-
-    </div>
-    <div class="form-group col-md-6">
-      <label for="email">Email</label>
-      <input type="email" name="email" class="form-control"  placeholder="Email">
-      
-    </div>
-    <div class="form-group col-md-6">
-        <label for="batch">Linkedin</label>
-        <input type="text" name="linkedin" class="form-control"  placeholder="Linkedin Profile">
-        
-      </div>
-      <div class="form-group col-md-6">
-        <label for="email">Batch</label>
-        <input type="text" name="batch" class="form-control"  placeholder="Batch">
-        
-      </div>
-          <button type="submit" class="btn btn-primary ml-4">Submit</button>
-  </form>
-</div>
-
-<div class="form-container">
-    <form >
+  <div class='alum-nav'>
+      <span>
         <label for="Batch">Choose a batch:</label>
         <select name="batch" id="batch" onchange='this.form.submit()'>
             <option value="all" >All</option>
@@ -47,17 +18,67 @@
           <option value="2019">2019</option>
           <option value="2020">2020</option>
         </select>
-        <br><br>
-        <!-- <input type="submit" value="Submit" id="submitbtn"> -->
-        <!-- <noscript><input type="submit" value="Submit" id="submitbtn"></noscript> -->
-      </form>
+      </span>
+      <button onclick='showModal(event)' class="btn btn-info">Register</button>
+  </div>
 
-      <ul id="all-alumnis">
+  <div onclick='hideModal.call(this,event);' class='cancel-button'>
+    <i class="fa fa-times"></i>
+  </div>
+  
+  <div class='alumni-submit'>
+    
+    <div>
+        <h3 style='display: inline;' class="heading">Register as an Alumnus</h3>
+    </div>
+  
+      <div  class="form-container">
+        <form action="/alumni/add-alumni" method="POST">
+          <div class='row align-items-center justify-content-center'>
+              <div class="form-group col-8">
+                <label for="name">Name</label>
+                <input type="text" name="name" class="form-control" placeholder="Enter Name">
+              </div>
+          </div>
+          <div class='row align-items-center justify-content-center'>
+            <div class="form-group col-8">
+              <label for="email">Email</label>
+              <input type="email" name="email" class="form-control"  placeholder="Email">            
+            </div>
+          </div>
+          <div class='row align-items-center justify-content-center'>
+            <div class="form-group col-8">
+                <label for="linkedin">Linkedin</label>
+                <input type="text" name="linkedin" class="form-control"  placeholder="Linkedin Profile">              
+              </div>
+          </div>
+          <div class='row align-items-center justify-content-center'>
+            <div class="form-group col-8"> 
+              <label for="batch">Batch</label>
+              <input type="text" name="batch" class="form-control"  placeholder="Batch">
+            </div>
+          </div>
+           <div class='row align-items-center justify-content-center'>
+            <div class="form-group col-8"> 
+              <label for="imageURL">Image URL</label>
+              <input type="text" name="imageURL" class="form-control"  placeholder="Image URL">
+            </div>
+          </div>
+          <div class='row align-items-center justify-content-center'>
+            <button type="submit" class="btn btn-primary ml-4">Submit</button>
+          </div>
+          </form>
+      </div>
 
-      </ul>
-</div>
- 
-</div>
+    </div>
+
+
+    
+    
+    <ul id="all-alumnis">
+  
+    </ul>
+  </div>
 
 
 <script defer src="scripts\alumni.js"></script>
