@@ -9,7 +9,8 @@ router.get("/sign-out", adminController.signOut);
 router.get('/alumni-admin',adminController.getAlumniAdmin);
 router.put('/approve-alumni',adminController.approveAlumni);
 router.get("/alumni", adminController.alumniHome);
-// router.get("/events", adminController.eventshome);
-// router.get("/admin-events", adminController.getAdminEvents);
-// router.put("/delete-event",adminController.deleteevent);
+router.put('/approve-blog',adminController.approveBlog);
+router.get('/blog-admin',adminController.getBlogAdmin);
+router.get('/blog',adminController.blogHome);
+
 module.exports = router;
