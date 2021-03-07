@@ -1,9 +1,6 @@
 const event=require('../models/event');
-const passport = require("passport");
-const passportLocalMongoose = require("passport-local-mongoose");
 
-
-exports.home = function(req,res){
+module.exports.home = function(req,res){
     event.find()
     .then(events=>{
      res.render('events',{
@@ -13,39 +10,17 @@ exports.home = function(req,res){
     .catch(err=> {console.log(err)});
 }
 
-exports.getaddeventshome = (req,res,next) =>{
-    return res.render('addevent',{
-        title:"Add Event"
-    });
+exports.delete = (req,res,next) =>{
+    const Eventid=req.body.eventid;
+    event.findByIdAndRemove(Eventid)
+    .then(()=>{
+          console.log("Eventdeleted");
+          res.redirect('/events');
+    })
+    .catch(err => console.log(err));
 };
 
-exports.addEvent= (req,res,next) =>{
-    let date=req.body.date;
-   const Day=date.substr(8,2);
-   let Month=date.substr(5,2);
-   let mlist = [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sepr", "Oct", "Nov", "Dec" ];
-   const Year= date.substr(0,4);
-   Month=mlist[parseInt(Month) - 1 ];
-    const newEvent= new event({
-        title: req.body.title,
-        registerationLink: req.body.reglink,
-        location: req.body.location,
-        desc: req.body.eventdesc,
-        day: Day,
-        month: Month,
-        year: Year,
-        startTime: req.body.starttime,
-        endTime: req.body.endtime,
-        imageLink: req.body.imglink,
-        modaltitle: req.body.title,
-        modalDesc: req.body.modaldesc
-    });
-    newEvent.save()
-    .then(res.redirect('/events'));
-};
-
-
-exports.getediteventshome = (req,res,next) =>{
+exports.editEventhome = (req,res,next) =>{
     const Eventid=req.params.eventid;
     event.findById(Eventid)
     .then(Event =>{
@@ -72,7 +47,7 @@ exports.getediteventshome = (req,res,next) =>{
     .catch(err => console.log(err));
 };
 
-exports.editevent = (req,res,next) =>{
+exports.edit = (req,res,next) =>{
     const eventId=req.body.eventid;
     const Year= req.body.date.substr(0,4);
     let Month=req.body.date.substr(5,2);
@@ -100,4 +75,35 @@ exports.editevent = (req,res,next) =>{
     })
     .catch(err => console.log(err));
        
+};
+
+exports.addEventhome = (req,res,next) =>{
+    return res.render('addevent',{
+        title:"Add Event"
+    });
+};
+
+exports.addEvent= (req,res,next) =>{
+    let date=req.body.date;
+   const Day=date.substr(8,2);
+   let Month=date.substr(5,2);
+   let mlist = [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sepr", "Oct", "Nov", "Dec" ];
+   const Year= date.substr(0,4);
+   Month=mlist[parseInt(Month) - 1 ];
+    const newEvent= new event({
+        title: req.body.title,
+        registerationLink: req.body.reglink,
+        location: req.body.location,
+        desc: req.body.eventdesc,
+        day: Day,
+        month: Month,
+        year: Year,
+        startTime: req.body.starttime,
+        endTime: req.body.endtime,
+        imageLink: req.body.imglink,
+        modaltitle: req.body.title,
+        modalDesc: req.body.modaldesc
+    });
+    newEvent.save();
+    res.redirect('/events');
 };

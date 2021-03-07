@@ -30,9 +30,9 @@
         </button>
         <% if(locals.user) {%>
           <a class="submitform" href="/events/editevent/<%=allEvents[i].id %>" style="text-decoration: none;"><button type="button" class="rmbtn">Edit Event</button></a>
-          <form class="submitform" action="/deleteevent" method="POST"> 
+          <form class="submitform" action="/events/deleteevent" method="POST"> 
             <input type="hidden" name="eventid" value="<%=allEvents[i].id %>">
-           <button class="rmbtn" type="button">Delete Event</button>
+           <button class="rmbtn" type="submit">Delete Event</button>
           </form>
         <% } %>
 
@@ -106,9 +106,9 @@
         </button>
         <% if(locals.user) {%>
           <a class="submitform" href="/events/editevent/<%=allEvents[i].id %>" style="text-decoration: none;"><button type="button" class="rmbtn">Edit Event</button></a>
-          <form class="submitform" action="/deleteevent"  method="POST"> 
+          <form class="submitform" action="/events/deleteevent"  method="POST"> 
             <input type="hidden" name="eventid" value="<%=allEvents[i].id %>">
-            <button type="button" class="rmbtn" >Delete Event</button>
+            <button type="submit" class="rmbtn" >Delete Event</button>
            </form>
         <% } %>
         <!-- Modal -->
@@ -143,4 +143,4 @@
 
 </div>
 
-<script defer src="scripts\deleteevent.js"></script>
+<!-- <script defer src="scripts\deleteevent.js"></script> -->
