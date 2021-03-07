@@ -43,13 +43,16 @@ p {
     font-family: Josefin Sans;
     font-weight: 900;
     transition: all 1s;
-    font-size: 4rem;
+    font-size: 4vw;
+
 }
 
 .maintext:hover {
     transition: all 1s;
-    font-size: 4.5rem;
+    font-size: 5vw;
 }
+
+
 
 .section-2 {
     text-align: center;
@@ -87,6 +90,8 @@ p {
     width: 30vh;
 }
 
+
+
 .section-2btn {
     margin: auto;
     margin-top: 7%;
@@ -106,5 +111,7 @@ p {
 
 
 .section-2btn:hover {
+    
     background-color: #d49f34;
 }
+

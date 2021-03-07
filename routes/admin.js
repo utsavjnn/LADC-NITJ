@@ -12,4 +12,5 @@ router.get("/alumni", adminController.alumniHome);
 router.put('/approve-blog',adminController.approveBlog);
 router.get('/blog-admin',adminController.getBlogAdmin);
 router.get('/blog',adminController.blogHome);
+
 module.exports = router;

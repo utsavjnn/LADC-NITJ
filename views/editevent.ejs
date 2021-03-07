@@ -1,13 +1,13 @@
 <link rel="stylesheet" href="/css/addevent.css">
-<h1 id="mheading">Add a new Event!</h1>
-<form action="/events/addevent" method="POST" autocomplete="off">
+<h1 id="mheading">Edit Event!</h1>
+<form action="/events/editevent" method="POST" autocomplete="off">
    <div id="formdiv">
    <div class="fieldcontainer">
     <div class="fieldlabel"> 
         <label  for="title">Event Title</label>
     </div>
     <div class="field">
-        <input  type="text" name="title" placeholder="Event Title">
+        <input  type="text" name="title" value="<%=event.title %>">
     </div>
    </div> 
    <div class="fieldcontainer">
@@ -15,7 +15,7 @@
         <label  for="location">Location</label>
     </div>
     <div class="field">
-        <input  type="text" name="location" placeholder="Location">
+        <input  type="text" name="location" value="<%=event.location%>">
     </div>
    </div>   
    
@@ -24,7 +24,7 @@
         <label for="date">Date</label>
     </div>
     <div class="field">
-        <input  type="date" name="date">
+        <input  type="date" name="date" value="<%=date%>">
     </div>
    </div> 
    
@@ -33,7 +33,7 @@
         <label  for="starttime">Start Time</label>
     </div>
     <div class="field">
-        <input type="time" name="starttime" >
+        <input type="time" name="starttime" value="<%=event.startTime%>">
     </div>
   </div> 
   
@@ -42,7 +42,7 @@
         <label  for="endtime"> End Time</label>
     </div>
     <div class="field">
-        <input type="time" name="endtime">
+        <input type="time" name="endtime" value="<%=event.endTime%>">
     </div>
 </div>
 
@@ -51,7 +51,7 @@
         <label  for="eventdesc">Event Description</label>
     </div>
     <div class="field">
-        <textarea name="eventdesc" id="" cols="50" rows="5" placeholder="Write Here!"></textarea>
+        <textarea name="eventdesc" id="" cols="50" rows="5"><%=event.desc%></textarea>
     </div>
 </div>
 
@@ -61,7 +61,7 @@
         <label  for="modaldesc">Modal Description</label>
     </div>
     <div class="field">
-        <textarea name="modaldesc" id="" cols="50" rows="5" placeholder="Write Here!"></textarea>
+        <textarea name="modaldesc" id="" cols="50" rows="5" ><%=event.modalDesc%></textarea>
     </div>
     </div>
     <div class="fieldcontainer">
@@ -69,7 +69,7 @@
             <label  for="reglink">Registration Link</label>
         </div>
         <div class="field">
-            <input  type="text" name="reglink" placeholder="Registration Link">
+            <input  type="text" name="reglink" value="<%= event.registerationLink%>">
         </div>
        </div>  
        <div class="fieldcontainer">
@@ -77,10 +77,11 @@
             <label  for="imglink">Image Link</label>
         </div>
         <div class="field">
-            <input  type="text" name="imglink" placeholder="Image Link">
+            <input  type="text" name="imglink" value="<%= event.imageLink %>">
         </div>
        </div>  
-    <button class="submitbtn" type="submit">Submit</button>
+       <input type="hidden" name="eventid" value="<%= event.id %>">
+    <button class="submitbtn" type="submit">Edit</button>
 </div> 
     
 </form>
