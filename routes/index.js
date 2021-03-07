@@ -11,7 +11,4 @@ router.use('/alumni',require('./alumni'));
 router.use('/blog',require('./blog'));
 router.use('/contact',require('./contact'));
 router.use(require('./newsletter'));
-router.use(require('./addevent'));
-router.use(require('./editevent'));
-router.use(require('./deleteevent'));
 module.exports = router;

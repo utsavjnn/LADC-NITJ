@@ -29,10 +29,10 @@
           Read More
         </button>
         <% if(locals.user) {%>
-          <a class="submitform" href="/editevent/<%=allEvents[i].id %>" style="text-decoration: none;"><button type="button" class="rmbtn">Edit Event</button></a>
+          <a class="submitform" href="/events/editevent/<%=allEvents[i].id %>" style="text-decoration: none;"><button type="button" class="rmbtn">Edit Event</button></a>
           <form class="submitform" action="/deleteevent" method="POST"> 
             <input type="hidden" name="eventid" value="<%=allEvents[i].id %>">
-           <button class="rmbtn" type="submit">Delete Event</button>
+           <button class="rmbtn" type="button">Delete Event</button>
           </form>
         <% } %>
 
@@ -105,10 +105,10 @@
           Read More
         </button>
         <% if(locals.user) {%>
-          <a class="submitform" href="/editevent/<%=allEvents[i].id %>" style="text-decoration: none;"><button type="button" class="rmbtn">Edit Event</button></a>
+          <a class="submitform" href="/events/editevent/<%=allEvents[i].id %>" style="text-decoration: none;"><button type="button" class="rmbtn">Edit Event</button></a>
           <form class="submitform" action="/deleteevent"  method="POST"> 
             <input type="hidden" name="eventid" value="<%=allEvents[i].id %>">
-            <button type="button" class="rmbtn" type="submit" >Delete Event</button>
+            <button type="button" class="rmbtn" >Delete Event</button>
            </form>
         <% } %>
         <!-- Modal -->
@@ -138,7 +138,9 @@
   <% } %>
   <!-- end event block -->
   <% if(locals.user) {%>
-  <a href="/addevent" style="text-decoration: none;"><button type="button" class="addeventbtn josefine-sans">ADD EVENT</button></a>
+  <a href="/events/addevent" style="text-decoration: none;"><button type="button" class="addeventbtn josefine-sans">ADD EVENT</button></a>
   <% } %>
 
 </div>
+
+<script defer src="scripts\deleteevent.js"></script>
