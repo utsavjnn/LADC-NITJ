@@ -104,6 +104,6 @@ exports.addEvent= (req,res,next) =>{
         modaltitle: req.body.title,
         modalDesc: req.body.modaldesc
     });
-    newEvent.save();
-    res.redirect('/events');
+    newEvent.save()
+    .then(res.redirect('/events'));
 };
