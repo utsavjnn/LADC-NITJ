@@ -25,6 +25,7 @@ const edit_blogs = async id => {
     const defaultImg = 'https://i.pinimg.com/736x/6d/e9/1c/6de91c11a6c674a79cf315fe1929c135.jpg';
     let opt = await getAuthStatus();
     let newPosts = posts.filter(ele => ele._id !== id);
+    posts = newPosts;
     let resp = '';
     const parent = $('.container')[0];
     console.log(newPosts,parent);
@@ -91,11 +92,10 @@ function getEvenTemplate(title,desc,id,name,branch,year,imageLink,date,modalDesc
     return `<div class="row align-items-center event-block no-gutters margin-40px-bottom">
     <div class="col-lg-7 order-2 order-lg-1">
       <div class="padding-60px-lr md-padding-50px-lr sm-padding-30px-all xs-padding-25px-all">
-        <h5
-          class="margin-15px-bottom md-margin-10px-bottom font-size22 md-font-size20 xs-font-size18 font-weight-500 title-mg-phone">
+        <h5 style="word-wrap: break-word;" class="margin-15px-bottom md-margin-10px-bottom font-size22 md-font-size20 xs-font-size18 font-weight-500 title-mg-phone">
           ${title}
         </h5>
-        <p>
+        <p style="word-wrap: break-word;">
           ${desc}
         </p>
 
@@ -110,7 +110,7 @@ function getEvenTemplate(title,desc,id,name,branch,year,imageLink,date,modalDesc
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">
+                <h5 style='word-wrap: break-word' class="modal-title" id="exampleModalLongTitle">
                   ${modalTitle}
                 </h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -170,10 +170,10 @@ function getOddTemplate(title,desc,id,name,branch,year,imageLink,date,modalTitle
     <div class="col-lg-7 order-2 order-lg-1">
       <div class="padding-60px-lr md-padding-50px-lr sm-padding-30px-all xs-padding-25px-all">
         <h5
-          class="margin-15px-bottom md-margin-10px-bottom font-size22 md-font-size20 xs-font-size18 font-weight-500 title-mg-phone">
+        style="word-wrap: break-word;" class="margin-15px-bottom md-margin-10px-bottom font-size22 md-font-size20 xs-font-size18 font-weight-500 title-mg-phone">
           ${title}
         </h5>
-        <p>
+        <p style="word-wrap: break-word;">
           ${desc}
         </p>
 
@@ -186,7 +186,7 @@ function getOddTemplate(title,desc,id,name,branch,year,imageLink,date,modalTitle
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">
+                <h5 style='word-wrap: break-word' class="modal-title" id="exampleModalLongTitle">
                   ${modalTitle}
                 </h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
