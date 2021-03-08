@@ -10,6 +10,9 @@ function getAlumniList(batch) {
 				const card = document.createElement('div');
 				card.classList = 'card-body';
 				// Construct card content
+				let {imageURL} = alumni;
+				if(imageURL !== null && imageURL.length === 0)
+					imageURL = null;
 				let content = `
           <div class="card col-md-8 col-12">
           <div class="card-header" id="heading-${alumni._id}">
@@ -20,7 +23,7 @@ function getAlumniList(batch) {
           <div class='card-horizontal'>
               <div class='image-square-wrapper'>
                 <img style='max-width:200px;max-height:200px;' src=${
-					alumni.imageURL === null ? '/images/user_default.png' : alumni.imageURL
+					imageURL === null ? '/images/user_default.png' : imageURL
 				} class='card-img-left' alt='User Image'/>
               </div>
               <div id="${alumni._id}" class="collapse show" >

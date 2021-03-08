@@ -7,6 +7,7 @@ const eventSchema= new mongoose.Schema({
     desc: { type: String, required: true},
     day: { type: String, required: true},
     month: { type: String, required: true} ,
+    year: { type: String, required: true} ,
     startTime: String,
     endTime: String,
     imageLink: String,

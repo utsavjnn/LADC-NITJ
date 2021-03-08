@@ -1,6 +1,7 @@
-const Admin = require('../models/admin');
-const passport = require('passport');
-const passportLocalMongoose = require('passport-local-mongoose');
+const event=require("../models/event");
+const Admin = require("../models/admin");
+const passport = require("passport");
+const passportLocalMongoose = require("passport-local-mongoose");
 const Alumni = require('../models/alumni');
 const blog = require('../models/blog');
 
@@ -63,13 +64,55 @@ module.exports.getAlumniAdmin = async function (req, res) {
 	}
 };
 
-module.exports.blogHome = (req, res) => {
-	if (req.isAuthenticated()) {
-		res.render('adminBlog', { title: 'Admin Blog' });
-	} else {
-		res.redirect('/');
-	}
-};
+// events ajax work
+
+// exports.eventshome=(req,res)=>{
+//   if (req.isAuthenticated())
+//   {
+//     res.render("adminevent", { title: "Admin Events" });
+//   }
+//   else {
+//     res.redirect("/");
+//   }
+// }
+
+// exports.getAdminEvents=async function(req,res)
+// {
+//     try{
+//       // console.log('ehiiiiii')
+//             let events = await event.find({});
+//             res.status(200).send(events);
+//     }
+//     catch(err)
+//     {
+//         console.log("Error occurred in getAdminEvents ", err);
+//         res.status(500).send("something went wrong");
+//     }
+// }
+
+
+// exports.deleteevent = async function deleteevent(req,res)
+// {
+//   try {
+//       console.log("Event Id is ",req.body._id);
+//       let result = await event.findOneAndDelete({ _id: req.body._id});
+//       res.status(200).send(`Event ID: ${result._id} deleted successfully`);
+//   } catch (err) {
+//       console.log("Error occurred in deleteResume ", err);
+//       res.status(500).send('something went wrong');
+//   }
+// };
+
+
+module.exports.blogHome=(req,res)=>{
+  if (req.isAuthenticated())
+  {
+    res.render("adminBlog", { title: "Admin Blog" });
+  }
+  else {
+    res.redirect("/");
+  }
+}
 
 module.exports.getBlogAdmin = async function (req, res) {
 	try {

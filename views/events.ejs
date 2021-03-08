@@ -2,12 +2,18 @@
   integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
 <link href="/css/events.css" rel="stylesheet">
 <div class="container top-mg">
+  <% if(allEvents.length==0 && !locals.user) { %>
+       <h1 id="comingsoonheading">Exciting Events Coming Soon!</h1>
+  <% } %>
+  <% if(allEvents.length==0 && locals.user) {%>
+    <h1 id="comingsoonheading">Add an event!</h1>
+  <% } %>  
   <% for(let i=0;i<allEvents.length;i++) { %>
   <!-- start event block -->
   <% if(i%2==0) {%>
   <div class="row align-items-center event-block no-gutters margin-40px-bottom">
     <div class="col-lg-7 order-2 order-lg-1">
-      <div class="padding-60px-lr md-padding-50px-lr sm-padding-30px-all xs-padding-25px-all">
+      <div class="padding-40px-lr md-padding-50px-lr sm-padding-30px-all xs-padding-25px-all">
         <h5
           class="margin-15px-bottom md-margin-10px-bottom font-size22 md-font-size20 xs-font-size18 font-weight-500 title-mg-phone">
           <a href="<%= allEvents[i].registerationLink%>" class="text-theme-color"><%= allEvents[i].title %></a></h5>
@@ -22,7 +28,13 @@
         <button type="button" class="rmbtn" data-toggle="modal" data-target="#<%= allEvents[i].id %>">
           Read More
         </button>
-
+        <% if(locals.user) {%>
+          <a class="submitform" href="/events/editevent/<%=allEvents[i].id %>" style="text-decoration: none;"><button type="button" class="rmbtn">Edit Event</button></a>
+          <form class="submitform" action="/events/deleteevent" method="POST"> 
+            <input type="hidden" name="eventid" value="<%=allEvents[i].id %>">
+           <button class="rmbtn" type="submit">Delete Event</button>
+          </form>
+        <% } %>
 
         <!-- Modal -->
         <div class="modal fade" id="<%= allEvents[i].id %>" tabindex="-1" role="dialog"
@@ -78,7 +90,7 @@
       </div>
     </div>
     <div class="col-lg-7 col-sm-12">
-      <div class="padding-60px-lr md-padding-50px-lr sm-padding-30px-all xs-padding-25px-all">
+      <div class="padding-40px-lr md-padding-50px-lr sm-padding-30px-all xs-padding-25px-all">
         <h5
           class="margin-15px-bottom md-margin-10px-bottom font-size22 md-font-size20 xs-font-size18 font-weight-500 title-mg-phone">
           <a href="<%= allEvents[i].registerationLink%>" class="text-theme-color"><%= allEvents[i].title%></a></h5>
@@ -92,7 +104,13 @@
         <button type="button" class="rmbtn " data-toggle="modal" data-target="#<%= allEvents[i].id %>" style="outline: none;">
           Read More
         </button>
-
+        <% if(locals.user) {%>
+          <a class="submitform" href="/events/editevent/<%=allEvents[i].id %>" style="text-decoration: none;"><button type="button" class="rmbtn">Edit Event</button></a>
+          <form class="submitform" action="/events/deleteevent"  method="POST"> 
+            <input type="hidden" name="eventid" value="<%=allEvents[i].id %>">
+            <button type="submit" class="rmbtn" >Delete Event</button>
+           </form>
+        <% } %>
         <!-- Modal -->
         <div class="modal fade" id="<%= allEvents[i].id %>" tabindex="-1" role="dialog"
           aria-labelledby="exampleModalLongTitle" aria-hidden="true">
@@ -108,7 +126,7 @@
                 <p><%= allEvents[i].modalDesc %></p>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button  class="btn btn-secondary" data-dismiss="modal">Close</button>
               </div>
             </div>
           </div>
@@ -120,7 +138,9 @@
   <% } %>
   <!-- end event block -->
   <% if(locals.user) {%>
-  <a href="/addevent" style="text-decoration: none;"><button type="button" class="addeventbtn josefine-sans">ADD EVENT</button></a>
+  <a href="/events/addevent" style="text-decoration: none;"><button type="button" class="addeventbtn josefine-sans">ADD EVENT</button></a>
   <% } %>
 
 </div>
+
+<!-- <script defer src="scripts\deleteevent.js"></script> -->

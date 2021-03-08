@@ -1,3 +1,44 @@
+/* .container{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+}
+
+.form-container{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.form-group{
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+
+.card-btn{
+    height: 40px;
+    width:40vw;
+    text-align:center;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #df980c;
+    letter-spacing: 3px;
+    color: white;
+    font-family: futura-pt;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border-color: #df980c;
+    border-radius: 3px;
+    
+  }
+
+  .card-btn:hover{
+    background-color: #d49f34;
+  }
+*/
 .card {
 	padding: 1rem;
 	border: 1px solid black;
