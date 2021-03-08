@@ -63,6 +63,13 @@
     margin-right: 0;
     font-weight: 600;
   }
+  #admincolumn{
+    text-align: center;
+  }
+
+  #admin-heading{
+    margin-left: 0px !important;
+  }
 }
 
 .social-icons {
@@ -113,12 +120,12 @@
 
 .footerbtn {
   margin: auto;
-  margin-top: 7%;
+  margin-top: 5%;
   margin-bottom: 10%;
-  margin-left: 6%;
+  margin-left: 3%;
   text-align: center;
-  height: 6vh;
-  width: 27vh;
+  height: 35px;
+  width: 150px;
   letter-spacing: 3px;
   background-color: transparent;
   color: white;
@@ -133,4 +140,8 @@
 .footerbtn:hover {
   background-color: white;
   color: black;
+}
+
+#dashboardbtn{
+  height: 60px;
 }

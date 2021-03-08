@@ -7,8 +7,8 @@
 <footer class="site-footer">
   <div class="container ">
     <div class="row">
-      <div class="col-12 col-sm-12 col-md-6">
-        <h6 class="ml-3">Admin</h6>
+      <div id="admincolumn" class="col-12 col-sm-12 col-md-6">
+        <h6 id="admin-heading" class="ml-3">Admin</h6>
         <% if(!locals.user) {%>
         <form action="/admin/sign-in" method="POST">
           <div class="form-group col-md-6">
@@ -27,7 +27,7 @@
         <%} else {%>
           <form action="/admin" method="GET">
             
-                  <button type="submit" class="footerbtn">Go To Dashboard</button>
+                  <button  id="dashboardbtn" type="submit" class="footerbtn">Go To Dashboard</button>
           </form>
           
           <form action="/admin/sign-out" method="GET">

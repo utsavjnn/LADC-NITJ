@@ -3,11 +3,10 @@ function getAlumniList(batch) {
     url: `http://localhost:8000/alumni/batch/${batch}`,
     type: 'GET',
     success: function (alumnis) {
-      // console.log(alumnis);
       document.getElementById('all-alumnis').innerHTML = '';
       const container = document.getElementById('all-alumnis');
-      let count = 0;
       let wholeContent="";
+      wholeContent += '<div class="row">';
       for(let alumni of alumnis)
       {
 
@@ -17,9 +16,7 @@ function getAlumniList(batch) {
         } = alumni;
         if (imageURL !== null && imageURL.length === 0)
           imageURL = null;
-        if (count=== 0) {
-          wholeContent += '<div class="row">';
-        }
+        
         content += `
     <div class="col-12 col-sm-6 col-md-4 col-lg-3">
       <div class="our-team">
@@ -39,19 +36,10 @@ function getAlumniList(batch) {
     </div>
 
         `;
-        count++;
-        console.log("hello");
         wholeContent+=content;
-        if ((count > 0 && count%4 == 0) || (count==alumnis.length) ) {
-          console.log(count);
-          console.log("one");
-          wholeContent += '</div>';
-        }
-        if (count%4 === 0) {
-          wholeContent += '<div class="row">';
-        }
+        
       };
-      
+      wholeContent += '</div>';
       container.innerHTML= wholeContent;
     },
     error: function (err) {

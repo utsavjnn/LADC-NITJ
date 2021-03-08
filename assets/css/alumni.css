@@ -43,11 +43,22 @@
   margin-top: 30px;
 }
 
+#registerbtn{
+  position: relative;
+  bottom: 10px;
+}
+
 .card {
 	padding: 1rem;
 	border: 1px solid black;
 	margin: 1rem;
 	width: 1000px;
+}
+
+
+.alum-nav{
+
+  margin-top: 20px;
 }
 
 .alumni-submit {
