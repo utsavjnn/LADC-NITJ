@@ -56,7 +56,7 @@ menu.onchange = function (e) {
 
 window.onload = function () {
   var currentBatch = sessionStorage.getItem('batch');
-  console.log('batch is ', currentBatch);
+  // console.log('batch is ', currentBatch);
   if (currentBatch == null) {
     currentBatch = 'all';
   }
