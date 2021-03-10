@@ -1,7 +1,7 @@
 
   
 .navbar {
-    background-color: #5d0e0e;
+    background-color: #0e585d;
     height: 20vh;
 }
 
@@ -50,5 +50,9 @@
 
 .active{
     color:yellow !important;
+}
+
+.dropdown-menu{
+    background-color: #5d0e0e  !important;
 }
 

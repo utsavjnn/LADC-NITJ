@@ -3,42 +3,37 @@ function getAlumniList(batch) {
 		url: `http://localhost:8000/alumni/batch/${batch}`,
 		type: 'GET',
 		success: function (alumnis) {
-			console.log(alumnis);
 			document.getElementById('all-alumnis').innerHTML = '';
 			const container = document.getElementById('all-alumnis');
-			alumnis.forEach(alumni => {
-				const card = document.createElement('div');
-				card.classList = 'card-body';
-				// Construct card content
-				let {imageURL} = alumni;
-				if(imageURL !== null && imageURL.length === 0)
-					imageURL = null;
-				let content = `
-          <div class="card col-md-8 col-12">
-          <div class="card-header" id="heading-${alumni._id}">
-            <h5 class="mb-0">
-                  ${alumni.name}
-            </h5>
-          </div>
-          <div class='card-horizontal'>
-              <div class='image-square-wrapper'>
-                <img style='max-width:200px;max-height:200px;' src=${
-					imageURL === null ? '/images/user_default.png' : imageURL
-				} class='card-img-left' alt='User Image'/>
-              </div>
-              <div id="${alumni._id}" class="collapse show" >
-                <div class="card-body">
-                  <h5>${alumni.email}</h5>
-                  <p>${alumni.linkedin}</p>
-                  <p>${alumni.batch}</p>
-                </div>
-              </div>     
-          </div>
-        </div>
-        `;
+			let wholeContent = '';
+			wholeContent += '<div class="row">';
+			for (let alumni of alumnis) {
+				let content = '';
+				let { imageURL } = alumni;
+				if (imageURL !== null && imageURL.length === 0) imageURL = null;
 
-				container.innerHTML += content;
-			});
+				content += `
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="our-team">
+        <div class="picture">
+          <img class="img-fluid" src=${imageURL === null ? '/images/user_default.png' : imageURL}>
+        </div>
+        <div class="team-content">
+          <h3 class="name">${alumni.name}</h3>
+          <h5 class="title">${alumni.batch}</h5>
+        </div>
+        <ul class="social">
+          <li><a href="mailto:${alumni.email}" class="fa fa-google-plus" aria-hidden="true"></a></li>
+          <li><a href="${alumni.linkedin}" class="fa fa-linkedin" aria-hidden="true"></a></li>
+        </ul>
+      </div>
+    </div>
+
+        `;
+				wholeContent += content;
+			}
+			wholeContent += '</div>';
+			container.innerHTML = wholeContent;
 		},
 		error: function (err) {
 			console.error('error ', err);
@@ -54,7 +49,7 @@ menu.onchange = function (e) {
 
 window.onload = function () {
 	var currentBatch = sessionStorage.getItem('batch');
-	console.log('batch is ', currentBatch);
+	// console.log('batch is ', currentBatch);
 	if (currentBatch == null) {
 		currentBatch = 'all';
 	}
