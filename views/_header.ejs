@@ -2,10 +2,12 @@
 <nav id="mainnavbar" class="navbar navbar-expand-lg navbar-light ">
   <div id='justbg'>
   </div>
-  <a href="/">
-    <img id="logoimage" class="headerladclogo" src="images\ladclogo.png" alt="ladc logo">
-  </a>
+  <img onclick='window.location.href="/"' id="logoimage" class="headerladclogo" src="images\ladclogo.png"
+    alt="ladc logo">
   <a class="navbar-brand" href="#"></a>
+  <!-- <div>
+    <i class="fa fa-bars"></i>
+  </div> -->
   <button onclick="hamburgerexpandtoggler()" id="menubutton" class="navbar-toggler" type="button" data-toggle="collapse"
     data-target="#navbarToggleExternalContent" aria-controls="navbarSupportedContent" aria-expanded="false"
     aria-label="Toggle navigation">
@@ -53,5 +55,8 @@
     </ul>
   </div>
 </nav>
+<div id='upButton'>
+  <i class="fa fa-arrow-up"></i>
+</div>
 
 <script defer src="scripts\header.js"></script>

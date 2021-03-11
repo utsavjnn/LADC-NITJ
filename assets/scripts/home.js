@@ -1,4 +1,11 @@
 console.log('hi');
+anchors.forEach(ele => ele.classList.remove('white'));
+window.scroll({
+    top: 0,
+    left: 0,
+    behavior: "smooth"
+});
+anchors.forEach(ele => ele.classList.add('black'));
 window.onscroll = function(event){
     let scrollAmount = document.scrollingElement.scrollTop;
     let headerHt = $('.homeimage')[0].offsetHeight;
@@ -9,8 +16,12 @@ window.onscroll = function(event){
     if(bg.offsetHeight === 100){
         let anchors = Array.from(document.getElementsByClassName('nav-link'));
         anchors.forEach(ele => ele.style.color = 'white');
+        anchors.forEach(ele => ele.classList.remove('black'));
+        anchors.forEach(ele => ele.classList.add('white'));
     } else {
         let anchors = Array.from(document.getElementsByClassName('nav-link'));
         anchors.forEach(ele => ele.style.color = 'black');
+        anchors.forEach(ele => ele.classList.remove('white'));
+        anchors.forEach(ele => ele.classList.add('black'))
     }
 }

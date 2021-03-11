@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
 .josefine-sans {
 	font-family: Josefin Sans;
 }
@@ -90,13 +92,16 @@ p {
 	background-color: #df980c;
 	letter-spacing: 3px;
 	color: white;
-	font-family: Josefin sans;
+	font-family: 'Oswald', 'sans-serif';
 	font-size: 1rem;
 	font-weight: bold;
 	border-color: #df980c;
 	border-radius: 3px;
+	transition: all 100ms ease-in-out 0s;
 }
-
-.section-2btn:hover {
-	background-color: #d49f34;
+.section-2btn[class~='history']:hover{
+	transform: translate(-5px,0px);
+}
+.section-2btn[class~='contact']:hover{
+	transform: translate(5px,0px);
 }
