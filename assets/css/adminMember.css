@@ -1,6 +1,64 @@
+
+.marg-top{
+    margin-top:40px;
+}
+
+.formmain{
+    background-color:bisque;
+    text-align: center;
+    width:70%;
+    margin:auto;
+    margin-top:50px;
+    padding:40px;
+}
+
+
+.forminput{
+    padding-top:30px;
+    padding-left:45px;
+    padding-right:45px;
+
+}
+
+.forminp{
+    margin-bottom:10px;
+    height:50px;
+}
+
+#explanation{
+    width:100%;
+    margin-bottom:10px;
+}
+
+.formbtn{
+    margin-top: 6px;
+    width:30%;
+    height:50px; 
+    text-align: center;
+    background-color: #df980c;
+    letter-spacing: 3px;
+    color: white;
+    font-family: futura-pt;
+    font-size: 1rem;
+    font-weight: bold;
+    border-color: #df980c;
+    border-radius: 3px;   
+}
+
+.formbtn:hover{
+    background-color: #d49f34;
+    color: white;
+  }
+
+.form-control:focus {
+    border-color: #28a745;
+    box-shadow: 0 0 0 0.2rem #fada5e;
+} 
+
+
 .card {
     padding: 1rem;
     border: 1px solid black;
     margin: 1rem;
-    width: 500px;
+    width: 1000px;
 }

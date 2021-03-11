@@ -26,7 +26,8 @@ async function addMember(req,res){
 
 async function getAllMembers(req,res){
     try {
-        let members = await Member.find({approve:true});
+        let members = await Member.find({});
+        console.log(members,"hoola");
         res.status(200).send(members);
    
     } catch (err) {
@@ -38,7 +39,7 @@ async function getAllMembers(req,res){
 async function getMembersByBatch(req,res){
     try {
      
-        let members = await Member.find({batch:req.params.batch,approve:true});
+        let members = await Member.find({batch:req.params.batch});
         res.status(200).send(members)
        
     } catch (err) {
