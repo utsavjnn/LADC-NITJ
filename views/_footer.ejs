@@ -7,8 +7,8 @@
 <footer class="site-footer">
   <div class="container ">
     <div class="row">
-      <div id="admincolumn" class="col-12 col-sm-12 col-md-6">
-        <h6 id="admin-heading" >Admin</h6>
+      <div id="admincolumn" class="col-12 col-sm-12 col-xs-12 col-md-6">
+        <!-- <h6 id="admin-heading" >Admin</h6> -->
         <% if(!locals.user) {%>
         <form action="/admin/sign-in" method="POST">
           <!-- <div class="form-group col-md-6">
@@ -23,6 +23,7 @@
           </div>
                 <button type="submit" class="footerbtn ">Submit</button> -->
                 <div class="wrap">
+                  <h6 id="admin-heading" >Admin</h6>
                   <div class="mat-div form-group">
                     <label for="username" class="mat-label">Username</label>
                     <input type="text" name="username" class="mat-input form-control" autocomplete="off" id="username">
@@ -37,6 +38,7 @@
         </form>
         
         <%} else {%>
+          <h6 id="admin-heading" >Admin</h6>
           <form action="/admin" method="GET">
             
                   <button  id="dashboardbtn" type="submit" class="footerbtn">Go To Dashboard</button>
@@ -50,16 +52,16 @@
           <% }%>
       </div>
 
-      <div class="col-xs-3 col-sm-6 col-md-3 footer-col">
+      <!-- <div class=" col-md-3 footer-col"> -->
         <!-- <h6>Quick Links</h6>
         <ul class="footer-links">
           <li><a href="/about">About Us</a></li>
           <li><a href="contact">Contact Us</a></li>
           <li><a href="events">Events</a></li>
         </ul> -->
-      </div>
+      <!-- </div> -->
 
-      <div class=" footer-col col-xs-3 col-sm-6 col-md-3">
+      <div class=" footer-col col-xs-6 col-sm-12 col-md-6">
         <h6>Contact Us</h6>
         <ul class="footer-links">
           <li>Mail us at:</li>
@@ -68,6 +70,12 @@
 
         </ul>
       </div>
+    </div>
+
+    <div class="container developers">
+      <a href="#">
+        DEVELOPERS
+      </a>
     </div>
     <hr />
   </div>

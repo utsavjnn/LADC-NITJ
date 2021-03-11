@@ -151,7 +151,7 @@
 
 .wrap {
   width: 350px;
-  margin: 0 ;
+  margin: auto ;
 }
 
 .mat-label {
@@ -205,4 +205,8 @@
 .is-completed .mat-label {
   font-size: 12px;
   transform: translateY(0);
+}
+
+.developers{
+  text-align: center;
 }
