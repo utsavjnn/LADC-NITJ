@@ -39,3 +39,13 @@ button.onclick = function(event){
   window.scroll({top: 0,left: 0, behavior : "smooth"})
 };
 
+//SETTING UP SIDEBAR:
+let bars = $('.bars')[0];
+let sidebar = $('.sidebar')[0];
+let cross = $('.cross')[0];
+bars.onclick = function(event){
+  sidebar.style.transform = 'scaleX(1)';
+}
+cross.onclick = function(event){
+  sidebar.style.transform = 'scaleX(0)';
+}

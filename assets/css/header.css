@@ -1,5 +1,69 @@
-
-  
+/*NEW DROP DOWN - START*/
+.bars{
+    height: 80%;
+    width: 50px;
+    font-size: 2rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 5px;
+    display: none;
+    transition-duration: 250ms;
+    color: white;
+}
+.bars i{
+    margin: 0px;
+}
+.sidebar{
+    /* display: none; */
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    z-index: 2000;
+    width: 25%;
+    height: 100%;
+    background-color: #0e585d;
+    color: white;
+    transition-duration: 250ms;
+    transform-origin: right bottom;
+    transform: scaleX(0);
+}
+.sidebar .nav-link{
+    color: white !important;
+}
+.sidebar .white::before{
+    background: white;
+}
+.sidebar .black::before{
+    background: white;
+}
+.sidebar ul{
+    padding: 10px;
+}
+.cross{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+@media (max-width: 600px){
+    .sidebar{
+        width: 40%;
+    }
+}
+@media (max-width: 400px){
+    .sidebar{
+        width: 60%;
+    }
+}
+@media (max-width: 992px){
+    .bars{
+        display: flex;
+    }
+}
+/*NEW DROP DOWN - END*/
 
 .active{
     color: yellow !important;
@@ -59,6 +123,7 @@
 .headerladclogo{
     height: 20vh;
     width: 20vh;
+    cursor: pointer;
 }
 
 .logodisappear{
@@ -122,8 +187,11 @@
 }
 
 @media (max-width: 992px){
+    .nav-link{
+        width: fit-content;
+    }
     .white::before, .black::before{
-        height: 0px;
+        margin-left: 0px;
     }
     .white:hover{
         color: black;

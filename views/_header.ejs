@@ -5,14 +5,9 @@
   <img onclick='window.location.href="/"' id="logoimage" class="headerladclogo" src="images\ladclogo.png"
     alt="ladc logo">
   <a class="navbar-brand" href="#"></a>
-  <!-- <div>
+  <div class='bars'>
     <i class="fa fa-bars"></i>
-  </div> -->
-  <button onclick="hamburgerexpandtoggler()" id="menubutton" class="navbar-toggler" type="button" data-toggle="collapse"
-    data-target="#navbarToggleExternalContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-    aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+  </div>
   <div class="collapse navbar-collapse" id="navbarToggleExternalContent">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
@@ -57,6 +52,25 @@
 </nav>
 <div id='upButton'>
   <i class="fa fa-arrow-up"></i>
+</div>
+<div class='sidebar'>
+  <ul class="">
+    <div class='cross'>
+      <i class="fa fa-times"></i>
+    </div>
+    <a class="nav-link <%= title == " LADC-NITJ" ? "active" : "" %>" href="/">HOME</a>
+    <a class="nav-link <%= title == " About" ? "active" : "" %>" href="/about">ABOUT</a>
+    <a class="nav-link <%= title == " Events" ? "active" : "" %>" href="/events">EVENTS</a>
+    <a class="nav-link <%= title == " Membership" ? "active" : "" %>" href="/membership">MEMBERSHIP</a>
+    <a class="nav-link <%= title == " Alumni" ? "active" : "" %>" href="/alumni">ALUMNI</a>
+    <a class="nav-link <%= title == " Newsletter" ? "active" : "" %>" href="/newsletter">NEWSLETTER</a>
+    <a class="nav-link <%= title == " Blog" ? "active" : "" %>" href="/blog">BLOG</a>
+    <a class="nav-link <%= title == " Contact" ? "active" : "" %>" href="/contact">CONTACT</a>
+    <% if(locals.user) {%>
+      <a class="nav-link " href="/admin/alumni">Alumni Approve</a>
+      <a class="nav-link " href="/admin/blog">Blogs Approve</a>
+      <%} %>
+  </ul>
 </div>
 
 <script defer src="scripts\header.js"></script>
