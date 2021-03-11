@@ -1,9 +1,8 @@
-
 function hamburgerexpandtoggler() 
 {
   var logoimage=document.getElementById("logoimage");
    var element = document.getElementById("mainheading");
-   if(window.location.href=="http://localhost:8000/")
+   if(window.location.pathname=="/")
    {
     element.classList.toggle("maintexterase");
    }
@@ -21,3 +20,16 @@ function hamburgerexpandtoggler()
    logoimage.classList.remove("logodisappear");
   }
 }
+
+let anchors = Array.from(document.getElementsByClassName('nav-link'));
+let atHome = window.location.pathname === '/';
+anchors.forEach(ele => ele.style.color = (atHome ? 'black' : 'white'));
+
+let mainNav = document.getElementById('mainnavbar');
+console.log(atHome);
+if(atHome){
+  mainNav.style.background = 'linear-gradient(to bottom, rgba(255,255,255,1.0) 0%, rgba(255,255,255,0) 100%)'
+} else {
+  mainNav.style.background = '#0e585d';
+}
+console.log(mainNav.style.background);

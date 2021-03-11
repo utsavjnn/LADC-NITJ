@@ -1,9 +1,5 @@
 
   
-.navbar {
-    background-color: #0e585d;
-    height: 20vh;
-}
 
 .active{
     color: yellow !important;
@@ -17,9 +13,10 @@
 
 .nav-link {
     margin-left: 5px;
-    color: white !important;
+    color: white;
     font-weight: bold;
     font-family: Josefin Sans;
+    transition-duration: 250ms;
 }
 
 .nav-link:hover {
@@ -27,21 +24,9 @@
     font-weight: bold;
 }
 
-
-
-
 .headerladclogo{
-    position: absolute;
-    top: 5px;
-    left: 5px;
     height: 20vh;
     width: 20vh;
-    transition: 1s;
-}
-
-.headerladclogo:hover{
-    height: 25vh;
-    width: 25vh;
 }
 
 .logodisappear{
@@ -56,3 +41,26 @@
     background-color: #5d0e0e  !important;
 }
 
+#mainnavbar{
+	position: sticky;
+	top: 0px;
+	z-index: 1000;
+	height: 100px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    transition-duration: 250ms;
+}
+#mainnavbar *{
+	z-index: 1001;
+}
+
+#justbg{
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 0%;
+    background-color: #0e585d;
+}
