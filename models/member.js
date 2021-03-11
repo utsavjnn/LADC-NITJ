@@ -14,9 +14,9 @@ const memberSchema=new mongoose.Schema({
         type:String,
         required:true
     },
-    approve:{
-        type:Boolean,
-        default:false
+    image:{
+        type:String,
+        required:true
     }
 });
 
