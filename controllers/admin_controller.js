@@ -139,31 +139,42 @@ module.exports.memberHome=(req,res)=>{
   }
 }
 
-module.exports.getMemberAdmin=async function(req,res)
-{
-    try{
-      // console.log('ehiiiiii')
-            let members = await Member.find({approve:false});
-            res.status(200).send(members);
-    }
-    catch(err)
-    {
-        console.log("Error occurred in getAlumniAdmin ", err);
-        res.status(500).send("something went wrong");
-    }
+module.exports.addMember=async function addMember(req,res){
+  try{
+        console.log(req.body);
+          let member = new Member(req.body);
+          let result = await member.save();
+         
+          res.redirect('back');
+  }
+  catch(err)
+  {
+          console.log('Error to add member',err);
+         
+          res.status(500).send("Something wrong try later")
+  }
 }
 
-module.exports.approveMember=async function(req,res)
+
+module.exports.updateMemberInfo=async function updateMemberInfo(req,res){
+  try {
+    
+      let updatedMember = await Member.findOneAndUpdate({ _id: req.params.id }, req.body);
+      res.status(200).send({ 'member': updatedMember });
+  } catch (err) {
+      console.log("Error occurred in updateMemberInfo ", err);
+      res.status(500).send("something went wrong");
+  }
+}
+
+module.exports.deleteMember=async function deleteMember(req,res)
 {
-    try{
-          // console.log('id is ',req.body._id);
-            let approved = await Member.findOneAndUpdate({_id:req.body._id},{approve:true});
-            
-            res.status(200).send('Alumni approved');
-    }
-    catch(err)
-    {
-        console.log("Error occurred in approveMember ", err);
-        res.status(500).send("something went wrong");
-    }
+  try {
+      console.log("id is ",req.params.id);
+      let result = await Member.findOneAndDelete({ _id: req.params.id});
+      res.status(200).send(`member ID: ${result._id} deleted successfully`);
+  } catch (err) {
+      console.log("Error occurred in deleteMember ", err);
+      res.status(500).send('something went wrong');
+  }
 }

@@ -12,7 +12,10 @@ router.get("/alumni", adminController.alumniHome);
 router.put('/approve-blog',adminController.approveBlog);
 router.get('/blog-admin',adminController.getBlogAdmin);
 router.get('/blog',adminController.blogHome);
-router.put('/approve-member',adminController.approveMember);
-router.get('/member-admin',adminController.getMemberAdmin);
+
+router.post('/add-member',adminController.addMember);
+router.put('/update-info/:id',adminController.updateMemberInfo);
+router.delete('/:id',adminController.deleteMember);
+
 router.get('/member',adminController.memberHome);
 module.exports = router;
