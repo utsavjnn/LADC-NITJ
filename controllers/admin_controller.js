@@ -3,7 +3,10 @@ const Admin = require("../models/admin");
 const passport = require("passport");
 const passportLocalMongoose = require("passport-local-mongoose");
 const Alumni = require('../models/alumni');
-const blog = require('../models/blog');
+
+const Member = require('../models/member');
+const blog=require('../models/blog');
+
 
 module.exports.home = (req, res) => {
 	if (req.isAuthenticated()) res.render('admin', { title: 'admin' });
@@ -137,6 +140,58 @@ module.exports.approveBlog = async function (req, res) {
 	}
 };
 
+
+
+module.exports.memberHome=(req,res)=>{
+  if (req.isAuthenticated())
+  {
+    res.render("adminMember", { title: "Admin Member" });
+  }
+  else {
+    res.redirect("/");
+  }
+}
+
+module.exports.addMember=async function addMember(req,res){
+  try{
+        console.log(req.body);
+          let member = new Member(req.body);
+          let result = await member.save();
+         
+          res.redirect('back');
+  }
+  catch(err)
+  {
+          console.log('Error to add member',err);
+         
+          res.status(500).send("Something wrong try later")
+  }
+}
+
+
+module.exports.updateMemberInfo=async function updateMemberInfo(req,res){
+  try {
+    
+      let updatedMember = await Member.findOneAndUpdate({ _id: req.params.id }, req.body);
+      res.status(200).send({ 'member': updatedMember });
+  } catch (err) {
+      console.log("Error occurred in updateMemberInfo ", err);
+      res.status(500).send("something went wrong");
+  }
+}
+
+module.exports.deleteMember=async function deleteMember(req,res)
+{
+  try {
+      console.log("id is ",req.params.id);
+      let result = await Member.findOneAndDelete({ _id: req.params.id});
+      res.status(200).send(`member ID: ${result._id} deleted successfully`);
+  } catch (err) {
+      console.log("Error occurred in deleteMember ", err);
+      res.status(500).send('something went wrong');
+  }
+}
+
 module.exports.approveAlumni = async function (req, res) {
 	try {
 		// console.log('id is ',req.body._id);
@@ -148,3 +203,4 @@ module.exports.approveAlumni = async function (req, res) {
 		res.status(500).send('something went wrong');
 	}
 };
+
