@@ -4,7 +4,6 @@
   </div>
   <img onclick='window.location.href="/"' id="logoimage" class="headerladclogo" src="images\ladclogo.png"
     alt="ladc logo">
-  <a class="navbar-brand" href="#"></a>
   <div class='bars'>
     <i class="fa fa-bars"></i>
   </div>
@@ -35,15 +34,14 @@
         <a class="nav-link <%= title == " Contact" ? "active" : "" %>" href="/contact">CONTACT</a>
       </li>
       <% if(locals.user) {%>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            DASHBOARD
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-
+        <li class='nav-item'>
+          <a class='nav-link dashdropdownbutton'>DASHBOARD <i class="fa fa-sort-down"></i></a>
+          <div class='dashdropdown'>
+            <div class='dropbg'>
+            </div>
             <a class="nav-link " href="/admin/alumni">Alumni Approve</a>
             <a class="nav-link " href="/admin/blog">Blogs Approve</a>
+            <a class="nav-link " href="/admin/member">Add Member</a>
           </div>
         </li>
         <%} %>
@@ -69,6 +67,7 @@
     <% if(locals.user) {%>
       <a class="nav-link " href="/admin/alumni">Alumni Approve</a>
       <a class="nav-link " href="/admin/blog">Blogs Approve</a>
+      <a class="nav-link " href="/admin/member">Add Member</a>
       <%} %>
   </ul>
 </div>

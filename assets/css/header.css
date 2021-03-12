@@ -1,4 +1,65 @@
 /*NEW DROP DOWN - START*/
+#mainnavbar *{
+	z-index: 1001;
+}
+.dashdropdownbutton{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    cursor: pointer;
+}
+.dashdropdownbutton i{
+    margin: 0px;
+    margin-left: 5px;
+}
+.dashdropdown{
+    display: none;
+    position: absolute;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    top: 100%;
+    right: 0px;
+    background: rgba(204, 204, 204, 0.541);
+    background: #0e585d;
+    border-top: none;
+    width: 154px;
+}
+.dashdropdown a{
+    margin: 0px;
+    margin-bottom: 15px;
+}
+.nav-item:last-child{
+    overflow: visible;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    z-index: 999;
+}
+.navbar-nav{
+    width: fit-content;
+    position: relative;
+    overflow: visible;
+    justify-content: flex-end;
+    height: 90px;
+}
+.dropbg{
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 0%;
+    background-color: #0e585d;    
+    max-height: 100%;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+/*NEW DROP DOWN - END*/
+
+/*NEW SIDEBAR DOWN - START*/
 .bars{
     height: 80%;
     width: 50px;
@@ -19,6 +80,7 @@
 .sidebar{
     /* display: none; */
     position: fixed;
+    overflow-y: auto;
     top: 0px;
     right: 0px;
     z-index: 2000;
@@ -63,7 +125,7 @@
         display: flex;
     }
 }
-/*NEW DROP DOWN - END*/
+/*NEW SIDEBAR - END*/
 
 .active{
     color: yellow !important;
@@ -74,12 +136,6 @@
     text-align: left;
     z-index: 1;
 }
-
-.navbar-nav{
-    justify-content: flex-start;
-    overflow: auto;
-}
-
 .nav-link {
     margin-left: 5px;
     margin-top: 25px;
@@ -121,9 +177,11 @@
 }
 
 .headerladclogo{
-    height: 20vh;
-    width: 20vh;
+    height: 100px;
+    width: 100px;
     cursor: pointer;
+    position: relative;
+    z-index: 3000 !important;
 }
 
 .logodisappear{
@@ -146,16 +204,15 @@
 	position: sticky;
 	top: 0px;
 	z-index: 1000;
-	height: 100px;
+	height: 90px;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between ;
     align-items: flex-start;
     transition-duration: 250ms;
-    padding: 2px;
-}
-#mainnavbar *{
-	z-index: 1001;
+    padding-top: 2px;
+    padding: 0px;
+    margin: 0px;
 }
 
 #justbg{
@@ -165,6 +222,7 @@
     width: 100%;
     height: 0%;
     background-color: #0e585d;
+    z-index: 1000;
 }
 
 #upButton{

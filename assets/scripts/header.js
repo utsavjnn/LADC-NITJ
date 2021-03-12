@@ -49,3 +49,13 @@ bars.onclick = function(event){
 cross.onclick = function(event){
   sidebar.style.transform = 'scaleX(0)';
 }
+
+//SETTING UP DROP DOWN
+let dropdown = $('.dashdropdown')[0];
+let dropdownbutton = $('.dashdropdownbutton')[0];
+if(dropdown ?? dropdownbutton ?? false){
+  console.log(dropdown, dropdownbutton)
+  dropdownbutton.onclick = function(event){
+    dropdown.style.display = (dropdown.style.display === 'none' ? 'flex' : 'none');
+  }
+}
