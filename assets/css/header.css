@@ -77,7 +77,6 @@
 
 .navbar-nav{
     justify-content: flex-start;
-    overflow: auto;
 }
 
 .nav-link {
