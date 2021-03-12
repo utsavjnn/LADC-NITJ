@@ -2,7 +2,7 @@ console.log('hi');
 anchors.forEach(ele => ele.classList.remove('white'));
 bars.style.color = 'black'
 window.scroll({
-    top: 0,
+    top: 250,
     left: 0,
     behavior: "smooth"
 });

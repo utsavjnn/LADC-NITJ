@@ -37,13 +37,21 @@
           <%} else {%>
             <h6 id="admin-heading">Admin</h6>
             <form action="/admin" method="GET">
-
-              <button id="dashboardbtn" type="submit" class="footerbtn">Go To Dashboard</button>
+              <button id="dashboardbtn" type="submit" class="footerbtn">
+                <span style='position: relative;z-index: 1001;'>
+                  Go To
+                  Dashboard
+                </span>
+              </button>
             </form>
 
             <form action="/admin/sign-out" method="GET">
 
-              <button type="submit" class="footerbtn">Sign Out</button>
+              <button type="submit" class="footerbtn">
+                <span style='position: relative;z-index: 1001;'>
+                  Sign Out
+                </span>
+              </button>
             </form>
 
             <% }%>
