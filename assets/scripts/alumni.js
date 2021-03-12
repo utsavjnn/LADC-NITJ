@@ -1,81 +1,84 @@
+function getAlumniList(batch) {
+	$.ajax({
+		url: `http://localhost:8000/alumni/batch/${batch}`,
+		type: 'GET',
+		success: function (alumnis) {
+			document.getElementById('all-alumnis').innerHTML = '';
+			const container = document.getElementById('all-alumnis');
+			let wholeContent = '';
+			wholeContent += '<div class="row">';
+			for (let alumni of alumnis) {
+				let content = '';
+				let { imageURL } = alumni;
+				if (imageURL !== null && imageURL.length === 0) imageURL = null;
 
-function getAlumniList(batch)
-{
-  $.ajax({
-    url:`http://localhost:8000/alumni/batch/${batch}`,
-    type:"GET",
-    success:function(alumnis){
-      document.getElementById("all-alumnis").innerHTML = "";
-      const container = document.getElementById("all-alumnis");
-      alumnis.forEach(alumni => {
-        const card = document.createElement('div');
-        card.classList = 'card-body';
-              
-        // Construct card content
-        let content = `
-          <div class="card col-md-8 col-12">
-          <div class="card-header" id="heading-${alumni._id}">
-            <h5 class="mb-0">
-                  ${alumni.name}
-            </h5>
-          </div>
-      
-          <div id="${alumni._id}" class="collapse show" >
-            <div class="card-body">
-      
-              <h5>${alumni.email}</h5>
-              <p>${alumni.linkedin}</p>
-              <p>${alumni.batch}</p>
-            </div>
-          </div>
-         
-         
+				content += `
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="our-team">
+        <div class="picture">
+          <img class="img-fluid" src=${imageURL === null ? '/images/user_default.png' : imageURL}>
         </div>
+        <div class="team-content">
+          <h3 class="name">${alumni.name}</h3>
+          <h5 class="title">${alumni.batch}</h5>
+        </div>
+        <ul class="social">
+          <li><a href="mailto:${alumni.email}" class="fa fa-google-plus" aria-hidden="true"></a></li>
+          <li><a href="${alumni.linkedin}" class="fa fa-linkedin" aria-hidden="true"></a></li>
+        </ul>
+      </div>
+    </div>
+
         `;
-      
-              container.innerHTML += content;
-      });
-    },
-    error:function(err){
-      console.log('error ',err);
-    }
-  })
+				wholeContent += content;
+			}
+			wholeContent += '</div>';
+			container.innerHTML = wholeContent;
+		},
+		error: function (err) {
+			console.error('error ', err);
+		},
+	});
 }
 
-var menu = document.getElementById("batch");
-  menu.onchange=function(e){
-  e.preventDefault();
+var menu = document.getElementById('batch');
+menu.onchange = function (e) {
+	e.preventDefault();
+	getAlumniList(menu.value);
+};
 
-  getAlumniList(menu.value);
-}
+window.onload = function () {
+	var currentBatch = sessionStorage.getItem('batch');
+	// console.log('batch is ', currentBatch);
+	if (currentBatch == null) {
+		currentBatch = 'all';
+	}
+	$('#batch').val(currentBatch);
+	getAlumniList(currentBatch);
+};
 
+$('#batch').change(function () {
+	var selVal = $(this).val();
+	sessionStorage.setItem('batch', selVal);
+});
 
-// let alumniList = function(alumni){
-//   return $(`
-//     <div id="${alumni._id}">
-//   <li>
-//               <p>
-//                   ${ alumni.name }
-//                   <br>
-//                   <small>
-//                   ${ alumni.linkedin }
-//                   </small>
-//               </p>         
-//           </li></div>`)
-// }
+const hideModal = function (event) {
+	const form = $('.alumni-submit')[0];
+	form.style.transitionDuration = '0ms';
+	form.style.transform = 'scale(0)';
+	let heading = $('.alumni-submit')[0].children[0].children[0];
+	heading.innerHTML = 'Register as an Alumnus';
+	this.style.display = 'none';
+};
 
-
-window.onload = function() {
-  var currentBatch = sessionStorage.getItem("batch");  
-  console.log('batch is ',currentBatch);
-  if(currentBatch==null)
-  {
-    currentBatch = "all";
-  }
-  $('#batch').val(currentBatch);
-  getAlumniList(currentBatch);
-  }
-  $('#batch').change(function() { 
-      var selVal = $(this).val();
-      sessionStorage.setItem("batch", selVal);
-  });
+const showModal = event => {
+	const cbutton = $('.cancel-button')[0];
+	cbutton.style.display = 'block';
+	const form = $('.alumni-submit')[0];
+	form.style.transitionDuration = '200ms';
+	form.style.transform = 'scale(1)';
+	if (window.innerWidth <= 450) {
+		let heading = $('.alumni-submit')[0].children[0].children[0];
+		heading.innerHTML = 'Register';
+	}
+};

@@ -1,17 +1,13 @@
-
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="/css/footer.css">
 <footer class="site-footer">
   <div class="container ">
     <div class="row">
-      <div class="col-12 col-sm-12 col-md-6">
-        <h6 class="ml-3">Admin</h6>
+      <div id="admincolumn" class="col-12 col-sm-12 col-xs-12 col-md-6">
+        <!-- <h6 id="admin-heading" >Admin</h6> -->
         <% if(!locals.user) {%>
-        <form action="/admin/sign-in" method="POST">
-          <div class="form-group col-md-6">
+          <form action="/admin/sign-in" method="POST">
+            <!-- <div class="form-group col-md-6">
             <label for="exampleInputEmail1">Username</label>
             <input type="text" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter username">
 
@@ -21,33 +17,48 @@
             <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
             
           </div>
-                <button type="submit" class="footerbtn ">Submit</button>
-        </form>
-        
-        <%} else {%>
-          <form action="/admin" method="GET">
-            
-                  <button type="submit" class="footerbtn">Go To Dashboard</button>
+                <button type="submit" class="footerbtn ">Submit</button> -->
+            <div class="wrap">
+              <h6 id="admin-heading">Admin</h6>
+              <div class="mat-div form-group">
+                <label for="username" class="mat-label">Username</label>
+                <input type="text" name="username" class="mat-input form-control" autocomplete="off" id="username">
+              </div>
+
+              <div class="mat-div form-group">
+                <label for="password" class="mat-label">Password</label>
+                <input type="password" name="password" class="mat-input form-control" id="password">
+              </div>
+              <button type="submit" class="footerbtn "><span
+                  style='position: relative;z-index: 1001;'>Submit</span></button>
+            </div>
           </form>
-          
-          <form action="/admin/sign-out" method="GET">
-            
-            <button type="submit" class="footerbtn">Sign Out</button>
+
+          <%} else {%>
+            <h6 id="admin-heading">Admin</h6>
+            <form action="/admin" method="GET">
+
+              <button id="dashboardbtn" type="submit" class="footerbtn">Go To Dashboard</button>
             </form>
 
-          <% }%>
+            <form action="/admin/sign-out" method="GET">
+
+              <button type="submit" class="footerbtn">Sign Out</button>
+            </form>
+
+            <% }%>
       </div>
 
-      <div class="col-xs-3 col-sm-6 col-md-3 footer-col">
-        <h6>Quick Links</h6>
+      <!-- <div class=" col-md-3 footer-col"> -->
+      <!-- <h6>Quick Links</h6>
         <ul class="footer-links">
           <li><a href="/about">About Us</a></li>
           <li><a href="contact">Contact Us</a></li>
           <li><a href="events">Events</a></li>
-        </ul>
-      </div>
+        </ul> -->
+      <!-- </div> -->
 
-      <div class=" footer-col col-xs-3 col-sm-6 col-md-3">
+      <div class=" footer-col col-xs-6 col-sm-12 col-md-6">
         <h6>Contact Us</h6>
         <ul class="footer-links">
           <li>Mail us at:</li>
@@ -57,6 +68,12 @@
         </ul>
       </div>
     </div>
+
+    <div class="container developers">
+      <a href="#">
+        DEVELOPERS
+      </a>
+    </div>
     <hr />
   </div>
   <div class="container">
@@ -64,21 +81,13 @@
       <div class="col">
         <ul class="social-icons">
           <li>
-            <a
-              target="_blank"
-              class="facebook"
-              href="https://www.facebook.com/ladsnitj/"
-              ><i class="fa fa-facebook"></i
-            ></a>
+            <a target="_blank" class="facebook" href="https://www.facebook.com/ladsnitj/"><i
+                class="fa fa-facebook"></i></a>
           </li>
           <!-- <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li> -->
           <li>
-            <a
-              target="_blank"
-              class="dribbble"
-              href="https://www.instagram.com/ladc_nitj/"
-              ><i class="fa fa-instagram"></i
-            ></a>
+            <a target="_blank" class="dribbble" href="https://www.instagram.com/ladc_nitj/"><i
+                class="fa fa-instagram"></i></a>
           </li>
           <!-- <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li> -->
         </ul>
@@ -86,3 +95,5 @@
     </div>
   </div>
 </footer>
+
+<script defer src="scripts\footer.js"></script>

@@ -1,47 +1,129 @@
-
-  
-.navbar {
-    background-color: #5d0e0e;
-    height: 20vh;
+/*NEW DROP DOWN - START*/
+.bars{
+    height: 80%;
+    width: 50px;
+    font-size: 2rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 5px;
+    display: none;
+    transition-duration: 250ms;
+    color: white;
 }
+.bars i{
+    margin: 0px;
+}
+.sidebar{
+    /* display: none; */
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    z-index: 2000;
+    width: 25%;
+    height: 100%;
+    background-color: #0e585d;
+    color: white;
+    transition-duration: 250ms;
+    transform-origin: right bottom;
+    transform: scaleX(0);
+}
+.sidebar .nav-link{
+    color: white !important;
+}
+.sidebar .white::before{
+    background: white;
+}
+.sidebar .black::before{
+    background: white;
+}
+.sidebar ul{
+    padding: 10px;
+}
+.cross{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+@media (max-width: 600px){
+    .sidebar{
+        width: 40%;
+    }
+}
+@media (max-width: 400px){
+    .sidebar{
+        width: 60%;
+    }
+}
+@media (max-width: 992px){
+    .bars{
+        display: flex;
+    }
+}
+/*NEW DROP DOWN - END*/
 
 .active{
     color: yellow !important;
 }
 
 .navcolor {
-    background-color: #5d0e0e;
+    background-color: #0e585d;
     text-align: left;
     z-index: 1;
 }
 
+.navbar-nav{
+    justify-content: flex-start;
+    overflow: auto;
+}
+
 .nav-link {
     margin-left: 5px;
-    color: white !important;
+    margin-top: 25px;
+    color: white;
     font-weight: bold;
     font-family: Josefin Sans;
+    transition-duration: 250ms;
+    position: relative;
+    font-size: 0.9rem;
+    padding: 2px 3px;
+    background-color: white;
+    background: transparent;
+}
+.white::before{
+    position: absolute;
+    content: "";
+    left: 0px;
+    bottom: 0px;
+    width: 0%;
+    margin-left: 5%;
+    background-color: white;
+    height: 2px;
+    transition-duration: 250ms;
+}
+.black::before{
+    position: absolute;
+    content: "";
+    left: 0px;
+    bottom: 0px;
+    width: 0%;
+    margin-left:5%;
+    background-color: black;
+    height: 2px;
+    transition-duration: 250ms;
 }
 
-.nav-link:hover {
-    color: yellow !important;
-    font-weight: bold;
+.nav-link:hover::before {
+    width: 90%;
 }
-
-
-
 
 .headerladclogo{
-    position: absolute;
-    top: 5px;
-    left: 5px;
     height: 20vh;
     width: 20vh;
-    transition: 1s;
-}
-
-.headerladclogo:hover{
-    height: 25vh;
-    width: 25vh;
+    cursor: pointer;
 }
 
 .logodisappear{
@@ -52,3 +134,79 @@
     color:yellow !important;
 }
 
+.dropdown-menu{
+    background-color: #0e585d  !important;
+}
+
+#menubutton{
+    margin-top: 15px;
+}
+
+#mainnavbar{
+	position: sticky;
+	top: 0px;
+	z-index: 1000;
+	height: 100px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between ;
+    align-items: flex-start;
+    transition-duration: 250ms;
+    padding: 2px;
+}
+#mainnavbar *{
+	z-index: 1001;
+}
+
+#justbg{
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 0%;
+    background-color: #0e585d;
+}
+
+#upButton{
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    background-color: gray;
+    width: 40px;
+    color: white;
+    height: 40px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+#upButton i{
+    margin: 0px;
+    font-size: 1.2rem;
+}
+
+@media (max-width: 992px){
+    .nav-link{
+        width: fit-content;
+    }
+    .white::before, .black::before{
+        margin-left: 0px;
+    }
+    .white:hover{
+        color: black;
+    }
+    .black:hover{
+        color: white;
+    }
+}
+
+@media (max-width: 500px){
+    #upButton{
+        bottom: 10px;
+        right: 10px;
+        width: 30px;
+        height: 30px;
+        font-size: 1rem;
+    }
+}

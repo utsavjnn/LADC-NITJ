@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
 .text-justify {
   text-align: justify;
 }
@@ -63,6 +65,13 @@
     margin-right: 0;
     font-weight: 600;
   }
+  #admincolumn{
+    text-align: center;
+  }
+
+  #admin-heading{
+    margin-left: 0px !important;
+  }
 }
 
 .social-icons {
@@ -87,8 +96,8 @@
   background-color: #33353d;
   color: #818a91;
   font-size: 16px;
-  display: inline-block;
-  line-height: 44px;
+  /* display: inline-block; */
+  /* line-height: 44px; */
   width: 44px;
   height: 44px;
   text-align: center;
@@ -98,6 +107,10 @@
   -webkit-transition: all 0.2s linear;
   -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .social-icons a.facebook:hover {
@@ -109,28 +122,128 @@
 .fa {
   margin-top: 30%;
 }
+.social-icons i{
+  margin: 0px;
+  font-size: 1rem;
+}
 
 
 .footerbtn {
+  cursor: pointer;
   margin: auto;
-  margin-top: 7%;
+  margin-top: 5%;
   margin-bottom: 10%;
+  margin-left: 0;
   text-align: center;
-  height: 6vh;
-  width: 27vh;
+  height: 35px;
+  width: 100px;
   letter-spacing: 3px;
   background-color: transparent;
   color: white;
-  font-family: futura-pt;
+  font-family: 'Oswald', sans-serif;
   font-size: 1rem;
   font-weight: bold;
   border-color: white;
   border-radius: 3px;
+  transition-duration: 250ms;
+  position: relative;
+  box-shadow: 0px 0px 0px 2px white;
+  border: none;
+  outline: none;
 }
 
 
 .footerbtn:hover {
-  background-color: white;
   color: black;
+}
+.footerbtn::before{
+  position: absolute;
+  content:"";
+  color: black;
+  text-align: center;
+  padding-top: 5px;
+  top:0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  transform: scale(0);
+  transition: 250ms;
+  z-index: 999;
+}
+.footerbtn:hover::before{
+  transform: scale(1);
+}
 
+#dashboardbtn{
+  height: 60px;
+}
+
+/* Form input */
+
+.wrap {
+  width: 280px;
+  margin: auto;
+}
+
+.mat-label {
+  display: block;
+  font-size: 16px;
+  transform: translateY(25px);
+  color: white;
+  transition: all 0.5s;
+}
+
+.mat-input {
+  position: relative;
+  background: transparent;  
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 8px 0;
+  font-size: 16px;
+  color: white;
+}
+.mat-input:focus{
+  background-color: transparent;
+  box-shadow: 0px 0px 0px 3px white;
+}
+
+.mat-div {
+  padding: 30px 0 0 0;
+  position: relative;
+}
+
+.mat-div:after, .mat-div:before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: white; 
+  bottom: 0;
+  left: 0;
+  transition: all 0.5s;
+}
+
+.mat-div::after {
+  background-color: black;
+  transform: scaleX(0);
+} 
+
+.is-active::after {
+  transform: scaleX(1);
+}
+
+.is-active .mat-label {
+  color: white;
+}
+
+.is-completed .mat-label {
+  font-size: 12px;
+  transform: translateY(0);
+}
+
+.developers{
+  text-align: center;
 }

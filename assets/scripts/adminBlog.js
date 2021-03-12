@@ -51,9 +51,9 @@ function getBlogList()
             <div class="col-lg-7 order-2 order-lg-1">
             <div class="padding-60px-lr md-padding-50px-lr sm-padding-30px-all xs-padding-25px-all">
               <h5
-                class="margin-15px-bottom md-margin-10px-bottom font-size22 md-font-size20 xs-font-size18 font-weight-500 title-mg-phone">
+                style='word-wrap: break-word' class="margin-15px-bottom md-margin-10px-bottom font-size22 md-font-size20 xs-font-size18 font-weight-500 title-mg-phone">
                 ${blog.title}</h5>
-              <p>
+              <p style='word-wrap: break-word'>
                 ${blog.desc}
               </p>
               <!-- <a class="butn small margin-10px-top md-no-margin-top" href="event-details.html">Read More <i class="fas fa-long-arrow-alt-right margin-10px-left"></i></a> -->
@@ -70,8 +70,8 @@ function getBlogList()
                 aria-labelledby="exampleModalLongTitle" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                   <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLongTitle">${blog.modaltitle}</h5>
+                    <div style='word-wrap: break-word' class="modal-header">
+                      <h5 style='word-wrap: break-word' class="modal-title" id="exampleModalLongTitle">${blog.modaltitle}</h5>
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                       </button>
@@ -127,10 +127,10 @@ function getBlogList()
           <div class="col-lg-7 col-sm-12">
             <div class="padding-60px-lr md-padding-50px-lr sm-padding-30px-all xs-padding-25px-all">
               <h5
-                class="margin-15px-bottom md-margin-10px-bottom font-size22 md-font-size20 xs-font-size18 font-weight-500 title-mg-phone">
+              style='word-wrap: break-word' class="margin-15px-bottom md-margin-10px-bottom font-size22 md-font-size20 xs-font-size18 font-weight-500 title-mg-phone">
               ${blog.title}</h5>
           
-              <p>${blog.desc}</p>
+              <p style='word-wrap: break-word'>${blog.desc}</p>
               <!-- <a class="butn small margin-10px-top md-no-margin-top" href="event-details.html">Read More <i class="fas fa-long-arrow-alt-right margin-10px-left"></i></a> -->
               <!-- Button trigger modal -->
               <button type="button" class="rmbtn " data-toggle="modal" data-target="#${blog._id}" style="outline: none;">
@@ -145,8 +145,8 @@ function getBlogList()
                 aria-labelledby="exampleModalLongTitle" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                   <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLongTitle">${blog.modaltitle}</h5>
+                    <div style='word-wrap: break-word' class="modal-header">
+                      <h5 style='word-wrap: break-word' class="modal-title" id="exampleModalLongTitle">${blog.modaltitle}</h5>
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                       </button>

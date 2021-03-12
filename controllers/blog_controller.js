@@ -6,15 +6,41 @@ module.exports.home = function(req,res){
         if(err)
         console.log(err);
         else
-        {
+        {  
             return res.render('blog',{
                 title:"Blog",allblogs:result
             });
 
         }
     })
+}
 
-   
+module.exports.deleteBlog = (req,res) => {
+    console.log(req.body);
+    blog.deleteOne({_id : req.body.id}, (dberr,dbres) => {
+        if(dberr){
+            res.status(500).json({err : "an internal error occurred."});
+        } else res.status(200).json({});
+    })
+}
+
+module.exports.checkAuth  = (req,res) => {
+    if(req.user){
+        res.status(200).end();
+        return;
+    } 
+    res.status(401).end();
+}
+
+module.exports.getBlogs = (req,res) => {
+    blog.find({approve : true}, (dberr,dbres) => {
+        if(dberr){
+            console.error(dberr);
+            res.status(500).json({dberr : "An internal server error occurred."});
+        } else {
+            return res.status(200).json({blogs : dbres});
+        }
+    })
 }
 
 module.exports.addblog= (req,res) =>{
@@ -82,9 +108,6 @@ console.log('nae is ',req.body.name);
         title: req.body.title,
         desc: req.body.desc,
         date:date,
-        // day: Day,
-        // month: mon,
-        // year:year,
         imageLink: req.body.imgurl,
         modaltitle: req.body.title,
         modalDesc: req.body.explanation
