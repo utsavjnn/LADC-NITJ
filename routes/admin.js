@@ -12,4 +12,11 @@ router.put('/approve-blog', adminController.approveBlog);
 router.get('/blog-admin', adminController.getBlogAdmin);
 router.get('/blog', adminController.blogHome);
 
+router.post('/add-member',adminController.addMember);
+router.put('/update-info/:id',adminController.updateMemberInfo);
+router.delete('/:id',adminController.deleteMember);
+
+router.get('/member',adminController.memberHome);
+
+
 module.exports = router;
