@@ -3,7 +3,8 @@ const Subscribers=require('../models/newsletter');
 
 
 home = function(req,res){
-    
+    if (req.isAuthenticated()) 
+    {
     if(req.query.msg)
     {
     return res.render('newsletter',{
@@ -17,26 +18,31 @@ else
     });
 }
 }
-
+else
+{
+    res.redirect('/');
+}
+}
 
 // console.log(Subscribers)
 subscribe=function(req,res,next){
     
-
+console.log(req.body.name);
         Subscribers.create({name:req.body.name,email:req.body.email},(err)=>{
             if(err)
             {
                 if(err.name==='MongoError'&&err.code===11000)
                 {
-                   res.redirect('/newsletter?msg='+"This email is already registered");
+                  
+                   res.jsonp({msg:"This email is already registered"});
                 }
                 else
                 {
-                    res.redirect('/newsletter?msg='+"Try Again");
+                    res.jsonp({msg:"Internal error occurred, Try again"});
                 }
             }
             else
-            res.redirect('/newsletter?msg='+"Successfully Registered");
+            res.jsonp({msg:"Successfully Registered"});
           
         }); 
 }
@@ -53,6 +59,8 @@ async function sendMail(user,req){
 }
 
 postnewsletter=function(req,res){
+    if (!req.isAuthenticated())
+    return res.redirect('/');
 
     Subscribers.find({},(err,result)=>{
         if(err)
@@ -69,7 +77,7 @@ postnewsletter=function(req,res){
 
     })
     
-    res.redirect('/newsletter');
+    res.redirect('/admin/newsletter');
 }
 
 module.exports={
