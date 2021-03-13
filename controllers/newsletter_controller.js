@@ -72,6 +72,9 @@ async function sendMail(user,req){
            <img style="height:300px; width:100%;" src="https://woub.org/wp-content/uploads/2019/10/hsieh_angela_politics_demdebates_4-2bf911b583226ad136844b664daa5dc9363512b7-e1571183130210.jpg" alt="">
        </div>
        <p style="font-family: Arial, Helvetica, sans-serif; font-weight:900; text-align: center;">
+       Hi ${user.name}, Here we are with our next Newsletter.
+       </p>
+       <p style="font-family: Arial, Helvetica, sans-serif; font-weight:900; text-align: center;">
         ${req.body.newslettercontent}
     </p>
     <form action="http://localhost:8000/unsubscribe" method="POST">
