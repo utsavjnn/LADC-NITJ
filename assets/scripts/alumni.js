@@ -1,3 +1,32 @@
+//CODE FOR FORM SUBMISSION
+function submitAlumniForm(e){
+		(async () => {
+			let inputs = Array.from(this.getElementsByTagName('input'));
+			let thisForm = new FormData();
+			for(let ele of inputs){
+				if(ele.type === 'file'){
+					let file = ele.files[0];
+					if(file.type == 'image/jpeg' || file.type === 'image/png'){
+						let buffer = await file.arrayBuffer();
+						let blob = new Blob([buffer]);
+						thisForm.append('image',blob);
+					} else return;
+				} else {
+					thisForm.append(ele.name, ele.value);
+				}
+			}
+			let res = await fetch('/alumni/add-alumni', {
+				method : "POST",
+				body : thisForm
+			});
+			if(res.err){
+				alert(res.err);
+			}
+		})();
+}
+//END
+
+
 function getAlumniList(batch) {
 	$.ajax({
 		url: `http://localhost:8000/alumni/batch/${batch}`,

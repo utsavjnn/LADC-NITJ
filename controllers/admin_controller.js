@@ -6,6 +6,7 @@ const Alumni = require('../models/alumni');
 
 const Member = require('../models/member');
 const blog=require('../models/blog');
+const cloudinary = require('cloudinary').v2;
 
 
 module.exports.home = (req, res) => {
@@ -154,17 +155,34 @@ module.exports.memberHome=(req,res)=>{
 
 module.exports.addMember=async function addMember(req,res){
   try{
-        console.log(req.body);
-          let member = new Member(req.body);
-          let result = await member.save();
-         
-          res.redirect('back');
+	let buffer = Buffer.from(req.file.buffer);
+	cloudinary.uploader.upload_stream({
+		use_filename : false,
+		access_control : JSON.stringify({access_type : "anonymous"}),	
+	}, async (clerr, clres) => {
+		if(clerr){
+			console.log(clerr);
+			console.log("__________________");
+			res.status(500).json({err : true});
+		} else {
+			try{
+				let {url} = clres;
+				let toSave = {...req.body};
+				toSave['image'] = buffer; 
+				let tempMember = new Member(toSave);
+				let savedMember = await tempMember.save();
+				res.status(200).json({stored : true});
+			} catch(err){
+				console.log(err);
+				res.status(500).json({err : "An internal server error occurred."});
+			}
+		}
+	}).end(buffer);
   }
   catch(err)
   {
-          console.log('Error to add member',err);
-         
-          res.status(500).send("Something wrong try later")
+	console.log('Error to add member',err);
+	res.status(500).send("Something wrong try later")
   }
 }
 

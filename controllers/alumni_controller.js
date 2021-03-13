@@ -1,3 +1,5 @@
+const cloudinary = require('cloudinary').v2;
+
 module.exports.home = function (req, res) {
 	return res.render('alumni', {
 		title: 'Alumni',
@@ -7,21 +9,40 @@ module.exports.home = function (req, res) {
 const Alumni = require('../models/alumni');
 
 async function addAlumni(req, res) {
-	try {
-		console.log(req.body);
-		let alumni = new Alumni(req.body);
-		let result = await alumni.save();
-		res.redirect('/alumni');
-	} catch (err) {
-		console.log('Error to add alumni', err);
-		res.status(500).send('Something wrong try later');
+	try{
+		let file = req.file;
+		let buffer = Buffer.from(file.buffer);
+		cloudinary.uploader.upload_stream({
+			use_filename : false,
+			access_control : JSON.stringify({access_type : "anonymous"}),	
+		}, async (clerr, clres) => {
+			if(clerr){
+				console.log(clerr);
+				console.log("__________________");
+				res.status(500).json({err : true});
+			} else {
+				try{
+					let {url} = clres;
+					let toSave = {...req.body};
+					toSave['imageURL'] = url; 
+					let alumni = new Alumni(toSave);
+					let result = await alumni.save();
+					res.status(200).json({stored : true});
+				} catch(err){
+					console.log(err);
+					res.status(500).json({err : "An internal server error occurred."});
+				}
+			}
+		}).end(buffer);
+	} catch(err){
+		console.log(err);
+		res.status(500).json({ err : "An internal server error occurred." });
 	}
 }
 
 async function getAllAlumni(req, res) {
 	try {
 		let alumnis = await Alumni.find({ approve: true });
-		console.log('here', alumnis);
 		res.status(200).send(alumnis);
 	} catch (err) {
 		console.log('Error occurred in getAllAlumni ', err);

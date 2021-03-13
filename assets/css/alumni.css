@@ -68,7 +68,7 @@
 	height: 100%;
 	top: 0px;
 	left: 0px;
-	z-index: 100;
+	z-index: 5000;
 	flex-flow: column nowrap;
 	justify-content: center;
 	align-items: center;
@@ -100,7 +100,7 @@
 	display: none;
 	color: white;
 	font-size: 1.3rem;
-	z-index: 101;
+	z-index: 5001;
 	-webkit-text-stroke-width: 1px;
 	-webkit-text-stroke-color: black;
 	cursor: pointer;
