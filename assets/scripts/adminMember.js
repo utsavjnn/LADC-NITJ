@@ -15,13 +15,14 @@ async function submitForm(e){
       thisForm.append(ele.name, ele.value);
     }
   }
-  let res = await fetch('/admin/add-member', {
+  fetch('/admin/add-member', {
     method : "POST",
     body : thisForm
+  }).then(res => res.json()).then(res => {
+    if(res.err){
+      alert(res.err);
+    }
   });
-  if(res.err){
-    alert(res.err);
-  }
 }
 //END
 

@@ -22,6 +22,7 @@ async function addAlumni(req, res) {
 				res.status(500).json({err : true});
 			} else {
 				try{
+					console.log(clres);
 					let {url} = clres;
 					let toSave = {...req.body};
 					toSave['imageURL'] = url; 

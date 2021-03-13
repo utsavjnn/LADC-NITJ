@@ -168,7 +168,7 @@ module.exports.addMember=async function addMember(req,res){
 			try{
 				let {url} = clres;
 				let toSave = {...req.body};
-				toSave['image'] = buffer; 
+				toSave['image'] = url; 
 				let tempMember = new Member(toSave);
 				let savedMember = await tempMember.save();
 				res.status(200).json({stored : true});

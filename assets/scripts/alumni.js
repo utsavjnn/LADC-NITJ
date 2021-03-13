@@ -15,13 +15,14 @@ function submitAlumniForm(e){
 					thisForm.append(ele.name, ele.value);
 				}
 			}
-			let res = await fetch('/alumni/add-alumni', {
+			fetch('/alumni/add-alumni', {
 				method : "POST",
 				body : thisForm
-			});
-			if(res.err){
-				alert(res.err);
-			}
+			  }).then(res => res.json()).then(res => {
+				if(res.err){
+				  alert(res.err);
+				}
+			  });
 		})();
 }
 //END
