@@ -1,3 +1,31 @@
+//FORM SUBMISSION
+async function submitForm(e){
+  console.log(this);
+  let inputs = Array.from(this.getElementsByTagName('input'));
+  let thisForm = new FormData();
+  for(let ele of inputs){
+    if(ele.type === 'file'){
+      let file = ele.files[0];
+      if(file.type === 'image/jpeg' || file.type === 'image/png'){
+        let buffer = await file.arrayBuffer();
+        let blob = new Blob([buffer]);
+        thisForm.append('image', blob);
+      } else return;
+    } else {
+      thisForm.append(ele.name, ele.value);
+    }
+  }
+  fetch('/admin/add-member', {
+    method : "POST",
+    body : thisForm
+  }).then(res => res.json()).then(res => {
+    if(res.err){
+      alert(res.err);
+    }
+  });
+}
+//END
+
 function Approve(member_id){
     console.log('approvedfff',member_id)
     $.ajax({

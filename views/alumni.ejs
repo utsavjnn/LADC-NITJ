@@ -34,7 +34,7 @@
     </div>
 
     <div class="form-container">
-      <form action="/alumni/add-alumni" method="POST">
+      <form onsubmit='submitAlumniForm.call(this,event); return false;' action="/alumni/add-alumni" method="POST">
         <div class='row align-items-center justify-content-center'>
           <div class="form-group col-8">
             <label for="name">Name</label>
@@ -61,8 +61,8 @@
         </div>
         <div class='row align-items-center justify-content-center'>
           <div class="form-group col-8">
-            <label for="imageURL">Image URL</label>
-            <input type="text" name="imageURL" class="form-control" placeholder="Image URL">
+            <label for="image">Select Image</label>
+            <input type="file" name="image" class="form-control">
           </div>
         </div>
         <div class='row align-items-center justify-content-center'>
@@ -76,8 +76,8 @@
 
 
   <div id="all-alumnis" class="container">
-   
-  </div>  
+
+  </div>
 </div>
 
 

@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const adminController = require('../controllers/admin_controller');
+const file = require('multer')();
 const newsletter_controller = require('../controllers/newsletter_controller');
 router.get('/', adminController.home);
 router.post('/sign-in', adminController.signIn);
@@ -13,7 +14,7 @@ router.put('/approve-blog', adminController.approveBlog);
 router.get('/blog-admin', adminController.getBlogAdmin);
 router.get('/blog', adminController.blogHome);
 
-router.post('/add-member',adminController.addMember);
+router.post('/add-member',file.single('image'),adminController.addMember);
 router.put('/update-info/:id',adminController.updateMemberInfo);
 router.delete('/:id',adminController.deleteMember);
 
