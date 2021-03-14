@@ -4,13 +4,17 @@ async function submitForm(e){
   let inputs = Array.from(this.getElementsByTagName('input'));
   let thisForm = new FormData();
   for(let ele of inputs){
-    if(ele.type === 'file'){
+    if(ele.type === 'file' && (ele.files[0] ?? false)){
       let file = ele.files[0];
-      if(file.type === 'image/jpeg' || file.type === 'image/png'){
+      if(file.size <= 10485760 && (file.type == 'image/jpeg' || file.type === 'image/png')){
         let buffer = await file.arrayBuffer();
         let blob = new Blob([buffer]);
         thisForm.append('image', blob);
-      } else return;
+      } else{
+        if(file.size > 10485760) alert('File Size exceeds 10MB');
+        else alert('Incorrect File Format please select a jpeg or a png');
+        return;
+      }
     } else {
       thisForm.append(ele.name, ele.value);
     }
@@ -21,6 +25,8 @@ async function submitForm(e){
   }).then(res => res.json()).then(res => {
     if(res.err){
       alert(res.err);
+    } else {
+      alert('Successfully added member');
     }
   });
 }

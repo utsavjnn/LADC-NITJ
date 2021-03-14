@@ -38,25 +38,25 @@
         <div class='row align-items-center justify-content-center'>
           <div class="form-group col-8">
             <label for="name">Name</label>
-            <input type="text" name="name" class="form-control" placeholder="Enter Name">
+            <input required type="text" name="name" class="form-control" placeholder="Enter Name">
           </div>
         </div>
         <div class='row align-items-center justify-content-center'>
           <div class="form-group col-8">
             <label for="email">Email</label>
-            <input type="email" name="email" class="form-control" placeholder="Email">
+            <input required type="email" name="email" class="form-control" placeholder="Email">
           </div>
         </div>
         <div class='row align-items-center justify-content-center'>
           <div class="form-group col-8">
             <label for="linkedin">Linkedin</label>
-            <input type="text" name="linkedin" class="form-control" placeholder="Linkedin Profile">
+            <input required type="url" name="linkedin" class="form-control" placeholder="Linkedin Profile">
           </div>
         </div>
         <div class='row align-items-center justify-content-center'>
           <div class="form-group col-8">
             <label for="batch">Batch</label>
-            <input type="text" name="batch" class="form-control" placeholder="Batch">
+            <input required type="number" name="batch" class="form-control" placeholder="Batch">
           </div>
         </div>
         <div class='row align-items-center justify-content-center'>
@@ -65,8 +65,9 @@
             <input type="file" name="image" class="form-control">
           </div>
         </div>
-        <div class='row align-items-center justify-content-center'>
-          <button type="submit" class="btn btn-primary ml-4">Submit</button>
+        <div id='submitButtonWrapper' class='row align-items-center justify-content-center'>
+          <button id='submitButton' type="submit" class="btn btn-primary ml-4">Submit</button>
+          <img id="preloader" src="/images/preloader.svg" />
         </div>
       </form>
     </div>

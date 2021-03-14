@@ -11,33 +11,52 @@ const Alumni = require('../models/alumni');
 async function addAlumni(req, res) {
 	try{
 		let file = req.file;
-		let buffer = Buffer.from(file.buffer);
-		cloudinary.uploader.upload_stream({
-			use_filename : false,
-			access_control : JSON.stringify({access_type : "anonymous"}),	
-		}, async (clerr, clres) => {
-			if(clerr){
-				console.log(clerr);
-				console.log("__________________");
-				res.status(500).json({err : true});
-			} else {
-				try{
-					console.log(clres);
-					let {url} = clres;
-					let toSave = {...req.body};
-					toSave['imageURL'] = url; 
-					let alumni = new Alumni(toSave);
-					let result = await alumni.save();
-					res.status(200).json({stored : true});
-				} catch(err){
-					console.log(err);
-					res.status(500).json({err : "An internal server error occurred."});
-				}
+		if(req.file === undefined || req.file === null){
+			let alum = new Alumni(req.body);
+			let savedAlum = await alum.save();
+			res.status(200).json({stored : true});
+		} else {
+			let buffer = Buffer.from(file.buffer);
+			let findmail = await Alumni.findOne({email: req.body.email});
+			if(findmail){
+				res.status(400).json({err : "This email is already registered."});
+				return;
 			}
-		}).end(buffer);
+			cloudinary.uploader.upload_stream({
+				use_filename : false,
+				access_control : JSON.stringify({access_type : "anonymous"}),	
+			}, async (clerr, clres) => {
+				if(clerr){
+					console.log(clerr);
+					console.log("__________________");
+					res.status(500).json({err : "An internal server error occurred, please try again."});
+				} else {
+					try{
+						console.log(clres);
+						let {url} = clres;
+						let toSave = {...req.body};
+						toSave['imageURL'] = url; 
+						let alumni = new Alumni(toSave);
+						let result = await alumni.save();
+						res.status(200).json({stored : true});
+					} catch(err){
+						console.log(err);
+						if(err.name==='MongoError' && err.code===11000){
+							res.status(500).json({ err : "This email is already registered."});
+						} else {
+							res.status(500).json({err : "An internal server error occurred."});
+						}
+					}
+				}
+			}).end(buffer);
+		}
 	} catch(err){
 		console.log(err);
-		res.status(500).json({ err : "An internal server error occurred." });
+		if(err.name==='MongoError' && err.code===11000){
+			res.status(500).json({ err : "This email is already registered."});
+		} else {
+			res.status(500).json({err : "An internal server error occurred."});
+		}
 	}
 }
 

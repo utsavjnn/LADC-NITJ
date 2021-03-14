@@ -4,23 +4,38 @@ function submitAlumniForm(e){
 			let inputs = Array.from(this.getElementsByTagName('input'));
 			let thisForm = new FormData();
 			for(let ele of inputs){
-				if(ele.type === 'file'){
+				if(ele.type === 'file' && (ele.files[0] ?? false)){
 					let file = ele.files[0];
-					if(file.type == 'image/jpeg' || file.type === 'image/png'){
+					//file size limit @ 10 mb
+					if(file.size <= 10485760 && (file.type == 'image/jpeg' || file.type === 'image/png')){
 						let buffer = await file.arrayBuffer();
 						let blob = new Blob([buffer]);
 						thisForm.append('image',blob);
-					} else return;
+					} else{
+						if(file.size > 10485760) alert('File Size exceeds 10MB');
+						else alert('Incorrect File Format please select a jpeg or a png');
+						return;
+					  }
 				} else {
 					thisForm.append(ele.name, ele.value);
 				}
 			}
+			let submitButton = document.getElementById('submitButton');
+			let preloader = document.getElementById('preloader');
+			console.log(preloader, submitButton)
+			submitButton.style.transform = 'scale(0)';
+			preloader.style.transform = 'scale(1)';
 			fetch('/alumni/add-alumni', {
 				method : "POST",
 				body : thisForm
 			  }).then(res => res.json()).then(res => {
+				  preloader.style.transform = 'scale(0)'
+				  submitButton.style.transform = 'scale(1)';
 				if(res.err){
 				  alert(res.err);
+				} else {
+					alert('Your application has been submitted');
+					hideModalHelper();
 				}
 			  });
 		})();
@@ -91,6 +106,11 @@ $('#batch').change(function () {
 	var selVal = $(this).val();
 	sessionStorage.setItem('batch', selVal);
 });
+
+const hideModalHelper = () => {
+	let cbutton = $('.cancel-button')[0];
+	hideModal.call(cbutton,'');
+}
 
 const hideModal = function (event) {
 	const form = $('.alumni-submit')[0];

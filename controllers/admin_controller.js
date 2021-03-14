@@ -155,7 +155,19 @@ module.exports.memberHome=(req,res)=>{
 
 module.exports.addMember=async function addMember(req,res){
   try{
+	if(req.file === undefined || req.file === null){
+		console.log('nothign sent');
+		let tempMember = new Member(req.body);
+		let savedMember = await tempMember.save();
+		res.status(200).json({stored : true});
+		return;
+	}
 	let buffer = Buffer.from(req.file.buffer);
+	let findmail = await Member.findOne({email: req.body.email});
+	if(findmail){
+		res.status(400).json({err : "This email is already registered."});
+		return;
+	}
 	cloudinary.uploader.upload_stream({
 		use_filename : false,
 		access_control : JSON.stringify({access_type : "anonymous"}),	
@@ -163,7 +175,7 @@ module.exports.addMember=async function addMember(req,res){
 		if(clerr){
 			console.log(clerr);
 			console.log("__________________");
-			res.status(500).json({err : true});
+			res.status(500).json({err : "An internal server error occurred"});
 		} else {
 			try{
 				let {url} = clres;
@@ -174,7 +186,11 @@ module.exports.addMember=async function addMember(req,res){
 				res.status(200).json({stored : true});
 			} catch(err){
 				console.log(err);
-				res.status(500).json({err : "An internal server error occurred."});
+				if(err.name==='MongoError' && err.code===11000){
+					res.status(500).json({ err : "This email is already registered."});
+				} else {
+					res.status(500).json({err : "An internal server error occurred."});
+				}
 			}
 		}
 	}).end(buffer);
@@ -182,7 +198,11 @@ module.exports.addMember=async function addMember(req,res){
   catch(err)
   {
 	console.log('Error to add member',err);
-	res.status(500).send("Something wrong try later")
+	if(err.name==='MongoError' && err.code===11000){
+		res.status(500).json({ err : "This email is already registered."});
+	} else {
+		res.status(500).json({err : "An internal server error occurred."});
+	}
   }
 }
 

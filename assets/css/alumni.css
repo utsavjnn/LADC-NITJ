@@ -255,3 +255,18 @@
   width: 50px !important;
   height: 50px  !important;
 } */
+
+#submitButton{
+	transition-duration: 250ms;
+}
+#preloader{
+	transition-duration: 250ms;
+	transform: scale(0);
+}
+#submitButtonWrapper{
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: center;
+	padding: 5px;
+}
