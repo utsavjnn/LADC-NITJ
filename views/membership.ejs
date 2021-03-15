@@ -1,35 +1,31 @@
-<h1> <%= title %> Home Page</h1>
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
   integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
-  <link rel="stylesheet" href="/css/membership.css">
+<link rel="stylesheet" href="/css/membership.css">
 
 
+<div class='bigHeader'>
+  <h1> Meet the Team </h1>
 
-
-  
-    <div class="form-container">
-      <form >
-          <label for="Batch">Choose a batch:</label>
-          <select name="batch" id="batch" onchange='this.form.submit()'>
-            <option value="all" >All</option>
-            <option value="2018">2018</option>
-            <option value="2019">2019</option>
-            <option value="2020">2020</option>
-            <option value="2020">2021</option>
-          </select>
-          <br><br>
-          <!-- <input type="submit" value="Submit" id="submitbtn"> -->
-          <!-- <noscript><input type="submit" value="Submit" id="submitbtn"></noscript> -->
-        </form>
-  
-        <ul id="all-members">
-  
-        </ul>
+  <div class="form-container batchSel">
+    <form>
+      <div class='input-group'>
+        <div class='input-group-prepend'>
+          <label class="input-group-text" for="Batch">Batch</label>
+        </div>
+        <select aria-label="Default select example" class='custom-select' name="batch" id="batch"
+          onchange='this.form.submit()'>
+          <option selected value="all">All</option>
+          <option value="2018">2018</option>
+          <option value="2019">2019</option>
+          <option value="2020">2020</option>
+          <option value="2021">2021</option>
+        </select>
+      </div>
+    </form>
   </div>
+</div>
+<ul id="all-members">
 
-    <script defer src="scripts\membership.js"></script>
- 
+</ul>
 
-
-
+<script defer src="scripts\membership.js"></script>

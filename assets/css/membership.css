@@ -61,3 +61,120 @@
     margin: 1rem;
     width: 1000px;
 }
+
+#all-members{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    height: fit-content;
+    padding: 50px;
+    width: 100%;
+    box-sizing: border-box;
+}
+#all-members > div{
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+/*MEMBER CARD*/
+.memberCard{
+    width: 200px;
+    height: 300px;
+    background: white;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    cursor: default;
+    box-shadow: 4px 4px 4px 0px rgb(202, 202, 202);
+    animation: opacity0to100 750ms linear 0ms 1 normal forwards running;
+    margin: 20px;
+}
+.memberImage{
+    width: 200px;
+    height: 250px;
+    border-radius: 5px;
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: center;
+    background-repeat: no-repeat;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    filter: grayscale(100%);
+    transition-duration: 250ms;
+}
+.memberDetails{
+    height: fit-content;
+    position: relative;
+    overflow: hidden;
+    word-wrap: break-word;
+}
+.memberDetails h5{
+    color: rgb(105, 105, 105);
+    transition-duration: 250ms;
+    transform-origin: center bottom;
+    transform: scaleY(1);
+    transition-delay: 250ms;
+    max-width: 100%;
+}
+.memberDetails h6{
+    transform-origin: center top;
+    transform: scaleY(0);
+    transition-delay: 250ms;
+    transition-duration: 250ms;
+    position: absolute;
+    bottom: 5px;
+}
+.memberCard:hover .memberDetails h5{
+    color: black;
+}
+.memberDetails:hover h6{
+    transform: scaleY(1);
+}
+.memberDetails:hover h5{
+    transform: scaleY(0);
+}
+.memberCard:hover .memberImage{
+    filter: grayscale(0%);
+}
+.bigHeader{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 35px;
+    cursor: default;
+    /* border-bottom: 1px solid gainsboro; */
+}
+.bigHeader h1{
+    animation: opacity0to100 500ms linear 0s 1 normal forwards running;
+}
+
+.form-container{
+    margin-left: 15px;
+}
+
+body{
+    background: #ebebeb;
+    background: white;;
+}
+.input-group-text{
+    background: rgb(114, 114, 114);
+    color: white;
+}
+.batchSel{
+    width: 180px;
+    animation: opacity0to100 750ms linear 0ms 1 normal forwards running;
+}
+
+/*ANIMATIONS*/
+@keyframes opacity0to100{
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
