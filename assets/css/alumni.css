@@ -270,3 +270,13 @@
 	align-items: center;
 	padding: 5px;
 }
+
+.input-group-text{
+    /* background: rgb(114, 114, 114); */
+	background: #0e585d;
+    color: white;
+}
+.batchSel{
+    width: 180px;
+    animation: opacity0to100 750ms linear 0ms 1 normal forwards running;
+}

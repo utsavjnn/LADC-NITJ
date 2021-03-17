@@ -4,6 +4,7 @@ const router = express.Router();
 const membershipController = require('../controllers/membership_controller');
 
 router.get('/',membershipController.home);
+router.get('/developers',membershipController.developers);
 router.get('/batch/all',membershipController.getAllMembers);
 router.get('/batch/:batch',membershipController.getMembersByBatch);
 

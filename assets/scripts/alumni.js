@@ -68,8 +68,8 @@ function getAlumniList(batch) {
           <h5 class="title">${alumni.batch}</h5>
         </div>
         <ul class="social">
-          <li><a href="mailto:${alumni.email}" class="fa fa-google-plus" aria-hidden="true"></a></li>
-          <li><a href="${alumni.linkedin}" class="fa fa-linkedin" aria-hidden="true"></a></li>
+          <li><a href="mailto:${alumni.email}" class="fa fa-google-plus" aria-hidden="true" target="_blank"></a></li>
+          <li><a href="${alumni.linkedin}" class="fa fa-linkedin" aria-hidden="true" target="_blank"></a></li>
         </ul>
       </div>
     </div>

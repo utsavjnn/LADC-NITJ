@@ -32,16 +32,16 @@ function getMemberList(batch)
         const card = document.createElement('div');
         card.classList = 'card-body';
         // Construct card content
-        let content = `
-        <div class='memberCard'>
-          <div style='background-image:url("${member.image}")' class='memberImage'>
-          </div>
-          <div class='memberDetails'>
-            <h5>${member.name}</h5>
-            <h6>${member.batch}</h6>
-          </div>
-        </div>
-        `;
+        // let content = `
+        // <div class='memberCard'>
+        //   <div style='background-image:url("${member.image}")' class='memberImage'>
+        //   </div>
+        //   <div class='memberDetails'>
+        //     <h5>${member.name}</h5>
+        //     <h6>${member.batch}</h6>
+        //   </div>
+        // </div>
+        // `;
         // let content = `
         //   <div class="card col-md-8 col-12">
         //   <div class="card-header" id="heading-${member._id}">
@@ -62,6 +62,25 @@ function getMemberList(batch)
          
         // </div>
         // `;
+
+    content = `
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="our-team">
+        <div class="picture">
+          <img class="img-fluid" src=${member.image === null ? '/images/user_default.png' : member.image}>
+        </div>
+        <div class="team-content">
+          <h3 class="name">${member.name}</h3>
+          <h5 class="title">${member.batch}</h5>
+        </div>
+        <ul class="social">
+          <li><a href="#" class="fa fa-google-plus" aria-hidden="true" target="_blank"></a></li>
+          <li><a href="#" class="fa fa-linkedin" aria-hidden="true" target="_blank"></a></li>
+        </ul>
+      </div>
+    </div>
+
+        `;
       
               container.innerHTML += content;
       });

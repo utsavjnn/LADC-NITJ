@@ -3,7 +3,11 @@ module.exports.home = function(req,res){
         title:"Membership"
     });
 }
-
+module.exports.developers = function(req,res){
+    return res.render('developers',{
+        title:"Developers",
+    });
+}
 
 
 const Member = require('../models/member');
