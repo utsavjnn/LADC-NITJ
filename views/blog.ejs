@@ -5,20 +5,6 @@
 
 
 <div class='alum-nav'>
-  <!-- <span>
-    <label for="Batch">Choose a batch:</label>
-    <select name="batch" id="batch" onchange='this.form.submit()'>
-      <option value="all">All</option>
-      <option value="2013">2013</option>
-      <option value="2014">2014</option>
-      <option value="2015">2015</option>
-      <option value="2016">2016</option>
-      <option value="2017">2017</option>
-      <option value="2018">2018</option>
-      <option value="2019">2019</option>
-      <option value="2020">2020</option>
-    </select>
-  </span> -->
   <button onclick='showModal(event)' class="btn btn-info">Submit</button>
 </div>
 
@@ -35,12 +21,28 @@
       <div class="forminput">
         <input type="text" class="form-control forminp" id="name" placeholder="Name" name="name">
         <input type="text" class="form-control forminp" id="branch" placeholder="Branch" name="branch">
+        <div class="input-group mb-2">
+          <div class="input-group-prepend">
+            <div id='titleLabel' class="input-group-text">0/50</div>
+          </div>
+          <input type="text" class="form-control forminp" id="title" placeholder="Title" name="title" required>
+        </div>
         <input type="text" class="form-control forminp" id="year" placeholder="Year" name="year">
-        <input type="text" class="form-control forminp" id="title" placeholder="Title" name="title" required>
-        <input type="text" class="form-control forminp" id="desc" placeholder="Short Description" name="desc" required>
-        <input type="text" class="form-control forminp" id="imgurl" placeholder="Image Url(optinal)" name="imgurl">
-        <textarea class="form-control" name="explanation" id="explanation" cols="30" rows="5"
-          placeholder="Explanation"></textarea>
+        <div class="input-group mb-2">
+          <div class="input-group-prepend">
+            <div id='descLabel' class="input-group-text">0/100</div>
+          </div>
+          <input type="text" class="form-control forminp" id="desc" placeholder="Short Description" name="desc"
+            required>
+        </div>
+        <input type="text" class="form-control forminp" id="imgurl" placeholder="Image URL (optional)" name="imgurl">
+        <div class="input-group mb-2">
+          <div class="input-group-prepend">
+            <div id='explanationLabel' class="input-group-text">0/1000</div>
+          </div>
+          <textarea class="form-control" name="explanation" id="explanation" cols="30" rows="5"
+            placeholder="Explanation"></textarea>
+        </div>
         <button type="submit" class="btn btn-warning formbtn">Post</button>
       </div>
     </div>
@@ -51,6 +53,6 @@
 
 
 
-<div class="container top-mg">
+<div class="allParent">
   <!-- end event block -->
 </div>
