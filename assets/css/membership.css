@@ -62,7 +62,7 @@
     width: 1000px;
 }
 
-#all-members{
+.members {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
@@ -72,7 +72,7 @@
     width: 100%;
     box-sizing: border-box;
 }
-#all-members > div{
+.members > div{
     flex-grow: 0;
     flex-shrink: 0;
 }
@@ -177,4 +177,8 @@ body{
     to {
         opacity: 1;
     }
+}
+
+.josephine-sans{
+    font-family: Josephine Sans;
 }
