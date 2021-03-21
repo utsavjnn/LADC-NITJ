@@ -2,7 +2,9 @@
 
 .blog-body{
     width: 90%;
-    height: 80%;
+    /* height: 80%; */
+    height: fit-content;
+    /* overflow: auto; */
     display: flex;
     flex-flow: column nowrap;
     justify-content: flex-start;
@@ -137,6 +139,9 @@
     .blog-desc-footer{
         max-height: 300px !important;
     }
+}
+.allParent{
+    overflow: auto;
 }
 /*END*/
 
