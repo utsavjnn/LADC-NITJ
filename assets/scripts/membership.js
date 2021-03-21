@@ -15,7 +15,7 @@ window.onscroll = function(event){
   }
 }
 //END
-
+let elementsToShow = document.querySelectorAll('.memberCard');
 
 function getMemberList(batch)
 {
@@ -23,10 +23,8 @@ function getMemberList(batch)
     url:`http://localhost:8000/membership/batch/all`,
     type:"GET",
     success:function(members){
-      // document.getElementById("all-members").innerHTML = "";
-      // const container = document.getElementById("all-members");
+      
       const container = document.getElementById("final-year");
-      console.log('container is ',container);
       let finalYear = members.filter(member => member.batch==2021)
       let content;
       finalYear.forEach(member => {
@@ -46,15 +44,12 @@ function getMemberList(batch)
           </div>
         </div>
         `;
-
               container.innerHTML += content;
       });
 
       let prefinal = members.filter(member => member.batch==2022);
-      console.log('prefinal ',prefinal)
       // document.getElementById("third-year").innerHTML = "";
       const container1 = document.getElementById("third-year");
-      console.log("third year is ",container1);
       prefinal.forEach(member => {
         let url = member.image ?? '/images/user_default.png';
         if(typeof member.image !== 'string')
@@ -81,40 +76,42 @@ function getMemberList(batch)
   })
 }
 
-// var menu = document.getElementById("batch");
-//   menu.onchange=function(e){
-//   e.preventDefault();
-
-//   getMemberList(menu.value);
-// }
-
-
-// let alumniList = function(alumni){
-//   return $(`
-//     <div id="${alumni._id}">
-//   <li>
-//               <p>
-//                   ${ alumni.name }
-//                   <br>
-//                   <small>
-//                   ${ alumni.linkedin }
-//                   </small>
-//               </p>         
-//           </li></div>`)
-// }
-
-
 window.onload = function() {
-  // var currentBatch = sessionStorage.getItem("batch");  
-  // console.log('batch is ',currentBatch);
-  // if(currentBatch==null)
-  // {
-  //   currentBatch = "all";
-  // }
-  // $('#batch').val(currentBatch);
   getMemberList('all');
+}
+
+function isElementInViewport(el) {
+
+  if (typeof jQuery === "function" && el instanceof jQuery) {
+    el = el[0];
   }
-  // $('#batch').change(function() { 
-  //     var selVal = $(this).val();
-  //     sessionStorage.setItem("batch", selVal);
-  // });
+  var rect = el.getBoundingClientRect();
+  return (
+    (rect.top <= 0
+      && rect.bottom >= 0)
+    ||
+    (rect.bottom >= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.top <= (window.innerHeight || document.documentElement.clientHeight))
+    ||
+    (rect.top >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight))
+  );
+}
+
+var scroll = window.requestAnimationFrame ||
+            function(callback){ window.setTimeout(callback, 1000/60)};
+
+            function loop() {
+                elementsToShow = document.querySelectorAll('.memberCard');
+              elementsToShow.forEach(function (element) {
+                if (isElementInViewport(element)) {
+                  element.classList.add('is-visible');
+                } else {
+                  element.classList.remove('is-visible');
+                }
+              });
+            
+              scroll(loop);
+            }
+            loop();
+  
