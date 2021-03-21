@@ -50,8 +50,8 @@ const edit_blogs = async id => {
     let opt = await getAuthStatus();
     let newPosts = posts.filter(ele => ele._id !== id);
     posts = newPosts;
-    let resp = '< class="blog-body">';
-    const parent = $('.container')[0];
+    let resp = '<div class="blog-body">';
+    const parent = $('.allParent')[0];
     for(let [i,vali] of newPosts.entries()){
         let {title,desc,_id : id,name = 'Anonymous',branch,year,imageLink,date,modaltitle: modalTitle,modalDesc} = vali;
         if(imageLink.length === 0)
@@ -59,6 +59,7 @@ const edit_blogs = async id => {
         let args = [title,desc,id,name,branch,year,imageLink,date,modalTitle,modalDesc,() => injectButton(opt,id)];
         resp += alternateTemplate(...args);
       }
+    resp += '</div>'
     parent.innerHTML = resp;
 };
 
