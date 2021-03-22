@@ -65,7 +65,7 @@
 .members {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     height: fit-content;
     padding: 50px;
