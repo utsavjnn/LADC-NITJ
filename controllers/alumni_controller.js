@@ -62,7 +62,7 @@ async function addAlumni(req, res) {
 
 async function getAllAlumni(req, res) {
 	try {
-		let alumnis = await Alumni.find({ approve: true });
+		let alumnis = await Alumni.find({ approve: true }).sort('batch');
 		res.status(200).send(alumnis);
 	} catch (err) {
 		console.log('Error occurred in getAllAlumni ', err);

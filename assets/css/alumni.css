@@ -270,3 +270,14 @@
 	align-items: center;
 	padding: 5px;
 }
+.Josephine-Sans{
+	font-family: Josephine-Sans;
+}
+.main-head{
+	text-align: center;
+}
+.wrapper{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
